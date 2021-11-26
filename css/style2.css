@@ -1,0 +1,54 @@
+.navbar{
+    width: 1560px;
+    height: 64px;;
+    background-color: #525252;
+
+}
+.bookall{
+    list-style-type: none;
+    text-decoration: none;
+    display: inline-flex;
+    margin-top: -47px;
+    color: #FFFFFF;
+}
+.booknow{
+    width: 111px;
+height: 40px;
+background: #29626D 0% 0% no-repeat padding-box;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+padding-left: 19px;
+    padding-top: 4px;
+}
+.prices{
+    width: 161px;
+height: 40px;
+
+background: #29626D 0% 0% no-repeat padding-box;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+padding-left: 19px;
+    padding-top: 4px;
+}
+.login{
+    width: 83px;
+height: 40px;
+background: #29626D 0% 0% no-repeat padding-box;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+padding-left: 19px;
+    padding-top: 4px;
+}
+.become{
+    width: 161px;
+height: 40px;
+background: #29626D 0% 0% no-repeat padding-box;
+border: 1px solid #FFFFFF80;
+border-radius: 20px;
+opacity: 1;
+padding-left: 19px;
+    padding-top: 4px;
+}

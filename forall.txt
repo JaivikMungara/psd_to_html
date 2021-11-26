@@ -1,0 +1,41 @@
+.Book-a-Cleaner-Prices-Our-Guarantee-B {
+  width: 545px;
+  height: 16px;
+  margin: 45px 4px 259px 117px;
+  font-family: Roboto;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+  text-align: right;
+  color: #fff;
+}
+HTML
+<span class="Book-a-Cleaner-Prices-Our-Guarantee-B Text-Style-2">
+  Book a Cleaner          Prices          Our Guarantee         Blog         Contact us
+</span>
+
+.Rounded-Rectangle-5-copy-4 {
+  width: 161px;
+  height: 40px;
+  margin: 33px 62px 247px 92px;
+  border-radius: 20px;
+  border: solid 1px var(--white-50);
+  background-color: #006072;
+}
+.Book-a-Cleaner-Prices-Our-Guarantee-B {
+  width: 545px;
+  height: 16px;
+  margin: 45px 4px 259px 117px;
+  font-family: Roboto;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+  text-align: right;
+  color: #fff;
+}
