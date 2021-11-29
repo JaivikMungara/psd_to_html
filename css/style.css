@@ -118,6 +118,7 @@ padding-right: 41px; */
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .ll1{
 letter-spacing: 0px;
@@ -485,6 +486,8 @@ span.end{
 }
 .endnav {
   align-items: center;
+  display: flex;
+    flex-wrap: wrap;
 }
 .endnav a {
   padding: 0px 10px;
@@ -521,6 +524,7 @@ span.end{
 }
 .mainhelper{display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .mainlorem {
   
@@ -531,14 +535,17 @@ span.end{
 .firstlorem{
   display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .firstblog{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .maincust{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 /*.navbar-nav{

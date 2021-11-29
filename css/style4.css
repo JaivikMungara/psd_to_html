@@ -1,0 +1,45 @@
+.navbar{
+    height: 64px;;
+    background-color: #525252;
+
+}
+.nav1 a{
+    padding: 0px 10px;
+    text-decoration: none;
+    color: white;
+}
+.mainstar{
+    display: flex;
+    justify-content: center;
+    margin-top: 9px;
+}
+@media only screen and (max-width: 996px){
+    .navbar{
+        height: none;
+        background-color: #525252;
+    
+    }
+    .nav1{
+        margin-top: 15px;
+justify-content: center;
+flex-basis: min-content;
+    }
+    .book123{
+
+    }
+    .featuredBtn {
+        width: -webkit-fill-available;
+        height: 66px;
+        color: white;
+        background-color: #1d7a8c;
+        border: none;
+        letter-spacing: 2px;
+        outline: none;
+      }
+      .endnav{
+          justify-content: center;
+      } 
+
+
+  }  
+ 

@@ -1,6 +1,5 @@
 .navbar{
-    width: 1560px;
-    height: 64px;;
+    height: 64px;
     background-color: #525252;
 
 }
@@ -52,3 +51,104 @@ opacity: 1;
 padding-left: 19px;
     padding-top: 4px;
 }
+.nav1 a{
+    padding: 0px 10px;
+    text-decoration: none;
+    color: white;
+}
+.mainstar{
+    display: flex;
+    justify-content: center;
+    margin-top: 9px;
+}
+.featuredBtn.active {
+    background-color: white;
+    color: #646464;
+  }
+  
+  .featuredBtn {
+    width: 473px;
+    height: 66px;
+    color: white;
+    background-color: #1d7a8c;
+    border: none;
+    letter-spacing: 2px;
+    outline: none;
+  }
+  #tr2{
+    display:none;
+    }
+
+    .endsection {
+        background: #111111 0% 0% no-repeat padding-box;
+        opacity: 1;
+        text-align: left;
+        letter-spacing: 0px;
+        color: #f1f1f1;
+        opacity: 1;
+        /* display: flex;
+        justify-content: space-around;
+        align-items: center; */
+        padding: 20px;
+        display: flex;
+    flex-direction: column;
+      }
+
+
+      .endnav {
+        align-items: center;
+        display: flex;
+          flex-wrap: wrap;
+      }
+      .endnav a {
+        padding: 0px 10px;
+        text-decoration: none;
+        color: white;
+      }
+
+
+      @media only screen and (max-width: 996px){
+        .navbar{
+            height: none;
+            background-color: #525252;
+        
+        }
+        .nav1{
+            margin-top: 15px;
+    justify-content: center;
+    flex-basis: min-content;
+        }
+        .book123{
+
+        }
+        .featuredBtn {
+            width: -webkit-fill-available;
+            height: 66px;
+            color: white;
+            background-color: #1d7a8c;
+            border: none;
+            letter-spacing: 2px;
+            outline: none;
+          }
+          .endnav{
+              justify-content: center;
+          } 
+
+
+      }  
+      /* @media only screen and (max-width: 722px){
+          .9raw{
+
+
+          }
+
+      } */
+      @media only screen and (max-width: 717px){
+          .nineraw123{
+              display: block;
+
+          }
+          .mainaarow2{
+              margin-top: auto;
+          }
+      }
