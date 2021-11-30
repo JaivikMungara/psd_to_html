@@ -1,44 +1,46 @@
-.navbar{
-    height: 64px;;
+.navbar {
+    height: 64px;
+    ;
     background-color: #525252;
-
 }
-.nav1 a{
+
+.nav1 a {
     padding: 0px 10px;
     text-decoration: none;
     color: white;
 }
-.mainstar{
+
+.mainstar {
     display: flex;
     justify-content: center;
     margin-top: 9px;
 }
-.g1{
+
+.g1 {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     /* align-items: flex-end; */
     margin-top: 31px;
-  
-  
-  }
-  .g11{
+}
+
+.g11 {
     /* background-color: blue; */
     /* display: flex; */
-  }
-  .g12
-  {
+}
+
+.g12 {
     /* display: flex; */
     justify-content: center;
-  }
-    
-  .g13{
+}
+
+.g13 {
     /* background-color: green; */
     /* display: flex; */
     /* justify-content: flex-end; */
-  
-  }
-  .Ellipse-649 {
+}
+
+.Ellipse-649 {
     width: 48px;
     height: 48px;
     background-color: #525252;
@@ -61,34 +63,32 @@
     align-items: center; */
     padding: 20px;
     display: flex;
-flex-direction: column;
-  }
+    flex-direction: column;
+}
 
-
-  .endnav {
+.endnav {
     align-items: center;
     display: flex;
-      flex-wrap: wrap;
-  }
-  .endnav a {
+    flex-wrap: wrap;
+}
+
+.endnav a {
     padding: 0px 10px;
     text-decoration: none;
     color: white;
-  }
-  @media only screen and (max-width: 996px){
-    .navbar{
+}
+
+@media only screen and (max-width: 996px) {
+    .navbar {
         height: none;
         background-color: #525252;
-    
     }
-    .nav1{
+    .nav1 {
         margin-top: 15px;
-justify-content: center;
-flex-basis: min-content;
+        justify-content: center;
+        flex-basis: min-content;
     }
-    .book123{
-
-    }
+    .book123 {}
     .featuredBtn {
         width: -webkit-fill-available;
         height: 66px;
@@ -97,11 +97,14 @@ flex-basis: min-content;
         border: none;
         letter-spacing: 2px;
         outline: none;
-      }
-      .endnav{
-          justify-content: center;
-      } 
+    }
+    .endnav {
+        justify-content: center;
+    }
+}
 
-
-  }  
-  
+@media only screen and (max-width: 574px) {
+    .onetime {
+        max-width: -webkit-fill-available;
+    }
+}

@@ -1,32 +1,131 @@
-.navbar{
-    height: 64px;;
+.navbar {
+    height: 64px;
+    ;
     background-color: #525252;
-
 }
-.nav1 a{
+
+.nav1 a {
     padding: 0px 10px;
     text-decoration: none;
     color: white;
 }
-.mainstar{
+
+.mainstar {
     display: flex;
     justify-content: center;
     margin-top: 9px;
 }
-@media only screen and (max-width: 996px){
-    .navbar{
+
+#fname {
+    width: 299px;
+    height: 46px;
+    border: 1px solid #C8C8C8;
+    font-size: 16px;
+}
+
+#lname {
+    width: 299px;
+    height: 46px;
+    border: 1px solid #C8C8C8;
+    font-size: 16px;
+    margin-left: 16px;
+}
+
+#mobile {
+    width: 242px;
+    height: 46px;
+    border: 1px solid #C8C8C8;
+    font-size: 16px;
+}
+
+#number {
+    width: 57px;
+    height: 46px;
+    background-color: #c8c8c8;
+}
+
+#mobile-number {
+    width: 242px;
+    height: 46px;
+    border: 1px solid #C8C8C8;
+    font-size: 16px;
+}
+
+#email {
+    width: 299px;
+    height: 46px;
+    border: 1px solid #C8C8C8;
+    font-size: 16px;
+    margin-left: 16px;
+}
+
+#subject {
+    width: 614px;
+    height: 46px;
+    border: 1px solid #C8C8C8;
+    font-size: 16px;
+    color: #A0A0A0;
+}
+
+#message {
+    width: 614px;
+    height: 146px;
+    font-size: 16px;
+    color: #A0A0A0;
+    border: 1px solid #C8C8C8;
+}
+
+#submit {
+    width: 163px;
+    height: 46px;
+    background: #1D7A8C 0% 0% no-repeat padding-box;
+    border-radius: 23px;
+    opacity: 1;
+    color: white;
+    font-size: 20px;
+    font-style: bold;
+    /* text-align: center; */
+    margin-top: 15px;
+}
+
+.endnav {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.endnav a {
+    padding: 0px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.endsection {
+    background: #111111 0% 0% no-repeat padding-box;
+    opacity: 1;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #f1f1f1;
+    opacity: 1;
+    /* display: flex;
+    justify-content: space-around;
+    align-items: center; */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 996px) {
+    .navbar {
         height: none;
         background-color: #525252;
-    
     }
-    .nav1{
+    .nav1 {
         margin-top: 15px;
-justify-content: center;
-flex-basis: min-content;
+        justify-content: center;
+        flex-basis: min-content;
     }
-    .book123{
-
-    }
+    .book123 {}
     .featuredBtn {
         width: -webkit-fill-available;
         height: 66px;
@@ -35,11 +134,8 @@ flex-basis: min-content;
         border: none;
         letter-spacing: 2px;
         outline: none;
-      }
-      .endnav{
-          justify-content: center;
-      } 
-
-
-  }  
- 
+    }
+    .endnav {
+        justify-content: center;
+    }
+}
