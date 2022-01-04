@@ -1,0 +1,113 @@
+.navbar {
+    height: 64px;
+    ;
+    background-color: #525252;
+}
+
+.nav1 a {
+    padding: 0px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.mainstar {
+    display: flex;
+    justify-content: center;
+    margin-top: 9px;
+}
+
+.badge {
+    /* position: absolute; */
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
+
+.badge {
+    margin-block-end: auto;
+    margin-left: -13px;
+}
+
+.vl {
+    border-left: 1px solid white;
+}
+
+.ws {
+    background-color: #F9F9F9;
+    height: 119px;
+}
+
+.w {
+    font-size: 30px;
+    color: #4F4F4F;
+    text-align: center;
+    padding: 3%;
+}
+
+.s {
+    font-size: 30px;
+    color: #4F4F4F;
+    font-style: bold;
+}
+
+.aa {
+    font-weight: bold;
+}
+
+.vertical-menu {
+    width: 200px;
+    /* height: 712px; */
+}
+
+.vertical-menu a {
+    background-color: #1D7A8C;
+    color: white;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #146371;
+    color: white;
+}
+
+.mainservice {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30.99px;
+}
+
+.endnav {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.endnav a {
+    padding: 0px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.endsection {
+    background: #111111 0% 0% no-repeat padding-box;
+    opacity: 1;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #f1f1f1;
+    opacity: 1;
+    /* display: flex;
+    justify-content: space-around;
+    align-items: center; */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
