@@ -1,0 +1,100 @@
+.helperland {
+    color: white;
+    font-size: 37.5px;
+}
+
+.navbar {
+    background-color: #1fb6ff;
+}
+
+.nav1 {
+    display: flex;
+    margin-inline-start: auto;
+}
+
+.james {
+    color: white;
+    text-align: center;
+    display: flex;
+    margin: auto;
+}
+
+.vertical-menu {
+    width: 273px;
+    /* height: 712px; */
+}
+
+.vertical-menu a {
+    /* background-color: white; */
+    /* color: white; */
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+}
+
+.vertical-menu a:hover {
+    background-color: #1FB6FF;
+}
+
+.vertical-menu a.active {
+    /* background-color: #146371; */
+    color: #1FB6FF;
+}
+
+.um {
+    font-size: 22px;
+    font-weight: bold;
+    color: #646464;
+}
+
+.main123 {
+    display: flex;
+}
+
+.anu {
+    background-color: #1FB6FF;
+    color: white;
+    /* display: flex; */
+    /* margin-inline-start: auto; */
+    width: 132px;
+    height: 36px;
+}
+
+#number {
+    width: 57px;
+    height: 46px;
+    background-color: #c8c8c8;
+}
+
+#mobile {
+    width: 162px;
+    height: 46px;
+    border: 1px solid #C8C8C8;
+    font-size: 16px;
+}
+
+#zip {
+    width: 140px;
+    height: 46px;
+    border: 1px solid #DEDDDD;
+}
+
+#search {
+    background-color: #1FB6FF;
+    color: white;
+    width: 84px;
+    height: 46px;
+    border-color: none;
+}
+
+#clear {
+    border: 1px solid #DEDDDD;
+    width: 84px;
+    height: 46px;
+    background-color: white;
+}
+
+.dropbtn {
+    background-color: white;
+}
