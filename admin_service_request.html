@@ -131,12 +131,12 @@
         <p class="helperland">helperland</p>
 
         <div class="nav1">
-            <a class="" href=""><img style="margin-right: 14px;" src="images/admin-user.png"></a>
+            <a class="" href=""><img class="admin_user" src="images/admin-user.png"></a>
 
 
 
             <p class="james"> James Smith</p>
-            <a class="" href="" style="margin-right: 18.36px;"><img style="margin-top: 4px;" src="images/logout.png"></a>
+            <a class="" href="" style="margin-right: 18.36px;"><img class="logout" src="images/logout.png"></a>
 
         </div>
     </section>
@@ -145,7 +145,7 @@
         <div>
             <div class="vertical-menu border" style="background-color: white;">
                 <a href="#" class="service">Service Management</a>
-                <a href="#" class="service" style="border-bottom: 1px solid #e5e5e5;">Role Management</a>
+                <a href="#" class="service">Role Management</a>
                 <!-- <div style="display: flex;"> -->
                 <a href="#" class="service" style="background-color: #F9F9F9;" id="btn456">Coupon Code Management      
                     <!-- <div class="dropdown">
@@ -198,7 +198,7 @@
 
             <!-- <div style="display: flex;"> -->
             <a href="#" class="service" id="btn753" style="background-color: #F9F9F9;">Content Management
-                <button class="dd" style="margin-left: 75px;border: none;background-color: white;"><img src="images/admin-small-arrow.png"></button>
+                <button class="dd" id="content_management" ><img src="images/admin-small-arrow.png"></button>
             </a>
             <div id="dropdown-content123" style="background-color: #F9F9F9;">
                 <a href="#"> Blog</a>
@@ -236,16 +236,13 @@
         </div>
 
 
-        <div style="display: flex;margin-left: 20px;">
+        <div class="maininlineform">
             <form class="form-inline" action="/action_page.php">
-                <div class="serviceid123" style="margin-left: 20px;">
-                    <input name="id" placeholder="Service ID" class="servicenameid" style="border: 1px solid #DEDDDD;
-                    width: 110px;
-                    height: 46px;
-                    margin: auto;">
+                <div class="serviceid123">
+                    <input name="id" placeholder="Service ID" class="servicenameid">
                 </div>
 
-                <div class="dropdown" style="margin-left: 10px;">
+                <div class="dropdown">
                     <button class="btn" type="button" data-toggle="dropdown" style="width: 127px;"><div>Customer</div>
     <div><img src="images/admin-small-arrow.png"></div></button>
                     <ul class="dropdown-menu">
@@ -256,7 +253,7 @@
                 </div>
 
 
-                <div class="dropdown" style="margin-left: 10px;">
+                <div class="dropdown">
                     <button class="btn" type="button" data-toggle="dropdown" style="width: 152px;"><div>Service Provider</div>
     <div><img src="images/admin-small-arrow.png"></div></button>
                     <ul class="dropdown-menu">
@@ -267,7 +264,7 @@
                 </div>
 
 
-                <div class="dropdown" style="margin-left: 10px;">
+                <div class="dropdown">
                     <button class="btn" type="button" data-toggle="dropdown" style="width: 120px;"><div>Status</div>
     <div><img src="images/admin-small-arrow.png"></div></button>
                     <ul class="dropdown-menu">
@@ -277,17 +274,9 @@
                     </ul>
                 </div>
 
-                <div style="width: 135px;
-                height: 46px;
-                background: #FFFFFF 0% 0% no-repeat padding-box;
-                border: 1px solid #E1E1E1;
-                margin-top: 20px;
-                margin-left: 10px;
-               ">
+                <div class="main1stdate">
                     <a>
-                        <div style=" display: flex;
-                        justify-content: center;
-                        margin-top: 11px;"><img src="images/admin-calendar-blue.png" style="width: 19px;
+                        <div class="seconddate"><img src="images/admin-calendar-blue.png" style="width: 19px;
                             height: 20px;
                             margin-right: 10px;">
 
@@ -296,17 +285,9 @@
                     </a>
                 </div>
 
-                <div style="width: 135px;
-                height: 46px;
-                background: #FFFFFF 0% 0% no-repeat padding-box;
-                border: 1px solid #E1E1E1;
-                margin-top: 20px;
-                margin-left: 10px;
-               ">
+                <div class="main1sttodate">
                     <a>
-                        <div style=" display: flex;
-                        justify-content: center;
-                        margin-top: 11px;"><img src="images/admin-calendar-blue.png" style="width: 19px;
+                        <div class="secondtodate"><img src="images/admin-calendar-blue.png" style="width: 19px;
                             height: 20px;
                             margin-right: 10px;">
 
@@ -333,20 +314,14 @@
         </div>
 
         <div class="maintable" style="background-color: white;">
-            <table class="table table-hover display" id="table_id" rules="rows" style="border: 1px solid #E1E1E1;background-color: white;
-            margin-top: 20px;">
+            <table class="table table-hover display" id="table_id" rules="rows">
                 <thead>
                     <tr>
-                        <th scope="col">Service ID <img src="images/service_table_head_symbol.png" style="width: 14px;
-                      height: 14px;"></th>
-                        <th scope="col">Service Date <img src="images/service_table_head_symbol.png" style="width: 14px;
-                      height: 14px;"></th>
-                        <th scope="col">Customer Details <img src="images/service_table_head_symbol.png" style="width: 14px;
-                      height: 14px;"></th>
-                        <th scope="col">Service Provider <img src="images/service_table_head_symbol.png" style="width: 14px;
-                      height: 14px;"></th>
-                        <th scope="col">Status <img src="images/service_table_head_symbol.png" style="width: 14px;
-                        height: 14px;"></th>
+                        <th scope="col">Service ID <img src="images/service_table_head_symbol.png" class="head_symbol"></th>
+                        <th scope="col">Service Date <img src="images/service_table_head_symbol.png" class="head_symbol"></th>
+                        <th scope="col">Customer Details <img src="images/service_table_head_symbol.png" class="head_symbol"></th>
+                        <th scope="col">Service Provider <img src="images/service_table_head_symbol.png" class="head_symbol"></th>
+                        <th scope="col">Status <img src="images/service_table_head_symbol.png" class="head_symbol"></th>
 
                         <th scope="col">Action</th>
                     </tr>
@@ -371,7 +346,7 @@
 
                         </td>
                         <td>
-                            <button id="new" style="background-color: #F2BB37;color: white;">New</button>
+                            <button id="new">New</button>
 
                         </td>
 
@@ -413,7 +388,7 @@
 
                         </td>
                         <td>
-                            <button id="new" style="background-color: #F2BB37;color: white;">New</button>
+                            <button id="new">New</button>
 
                         </td>
 
@@ -454,19 +429,11 @@
                         <td>
                             <div style="display: flex;">
                                 <div>
-                                    <div id="circle" style="width: 44px;
-                        height: 44px;
-                        border-radius: 50%;
-                        /* color: black; */
-                        /* border-color: black; */
-                        border: 1px solid #e1e1e1;"><img src="images/cap.png" style="    /* padding: initial; */
+                                    <div id="circle"><img src="images/cap.png" style="    /* padding: initial; */
             margin-left: 6px;
             margin-top: 10px;"></div>
                                 </div>
-                                <div style="display: flex;
-                        /* align-content: flex-start; */
-                        /* align-items: center; */
-                        flex-direction: column;">
+                                <div class="mainlyumstar">
                                     <div>
                                         <p style="margin: auto;">Lyum Watson</p>
                                     </div>
@@ -476,7 +443,7 @@
                         </td>
 
                         <td>
-                            <button id="pending" style="background-color: #1FB6FF;color: white;">Pending</button>
+                            <button id="pending">Pending</button>
 
                         </td>
 
