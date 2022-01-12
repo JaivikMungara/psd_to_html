@@ -34,6 +34,418 @@ header.star {
     font-family: Roboto-Regular;
 }
 
+.helperlandi {
+    width: 175px;
+    height: 130px;
+}
+
+.forma1 {
+    width: 13px;
+    height: 10px;
+    margin-left: 59px;
+    margin-top: 21px;
+}
+
+.forma2 {
+    width: 13px;
+    height: 10px;
+    margin-top: -21px;
+    margin-left: 59px;
+}
+
+.forma3 {
+    width: 13px;
+    height: 10px;
+    margin-top: -17px;
+    margin-left: 59px;
+}
+
+.fl1 {
+    width: 52px;
+    height: 55px;
+    margin-bottom: 36px;
+}
+
+.fl2 {
+    width: 85px;
+    height: 23px;
+    margin-top: 21px;
+}
+
+.helper {
+    margin-left: 35.5px;
+    margin-right: 35.5px;
+}
+
+.pe1 {
+    font-size: 30px;
+    width: 272px;
+    height: 73px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #565656;
+    opacity: 1;
+}
+
+.pdo {
+    width: 325px;
+    height: 90px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #565656;
+    opacity: 1;
+}
+
+.helper3 {
+    margin-left: 35.5px;
+    margin-right: 35.5px;
+}
+
+.payment {
+    width: 325px;
+    height: 90px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #565656;
+    opacity: 1;
+}
+
+.psc {
+    font-size: 30px;
+    width: 272px;
+    height: 73px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #565656;
+    opacity: 1;
+}
+
+.weyboard {
+    width: 320px;
+    height: 320px;
+}
+
+.helper2 {
+    margin-left: 35.5px;
+    margin-right: 35.5px;
+}
+
+.ishape {
+    width: 15px;
+    height: 20px;
+    margin-left: -27px;
+    /* margin-right: -13px; */
+    /* padding-top: 8px; */
+    margin-top: 10px;
+}
+
+.hel {
+    width: 40px;
+    height: 40px;
+}
+
+.fourthl {
+    width: 52px;
+    height: 55px;
+    margin-bottom: 36px;
+}
+
+.headerlast {
+    display: flex;
+    justify-content: center;
+}
+
+.ig2 {
+    width: 52px;
+    height: 55px;
+    margin-bottom: 36px;
+}
+
+.step2 {
+    width: 85px;
+    height: 23px;
+    margin-top: 21px;
+}
+
+.pay {
+    width: 52px;
+    height: 55px;
+    margin-bottom: 36px;
+}
+
+.step1 {
+    width: 85px;
+    height: 23px;
+    margin-top: 21px;
+}
+
+.dedicated {
+    font-size: 30px;
+    width: 272px;
+    height: 73px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #565656;
+    opacity: 1;
+}
+
+.mainj2 {
+    text-align: left;
+    letter-spacing: 0px;
+    color: #A3A3A3;
+    opacity: 1;
+    font-size: 13px;
+    width: 99px;
+    height: 15px;
+}
+
+.read2 {
+    opacity: 1;
+    margin-top: -82px;
+    margin-left: 125px;
+}
+
+.blll3 {
+    width: 150px
+}
+
+.read1 {
+    opacity: 1;
+    margin-left: 123px;
+    margin-top: -83px;
+}
+
+.mainl2 {
+    width: 357px;
+    height: 164px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.mainj1 {
+    text-align: left;
+    letter-spacing: 0px;
+    color: #A3A3A3;
+    opacity: 1;
+    font-size: 13px;
+}
+
+.readmore1 {
+    font-size: 18px;
+    width: 100px;
+    color: #565656;
+    opacity: 1;
+    margin-left: 50px;
+    margin-top: -10px;
+}
+
+.say2 {
+    width: 70px;
+    height: 70px;
+    margin-left: 38px;
+    margin-top: 30px;
+}
+
+.imagem2 {
+    width: 33px;
+    height: 36px;
+    margin-left: 303.98px;
+    margin-top: 20px;
+}
+
+.righta1 {
+    opacity: 1;
+    width: 29px;
+    height: 9px;
+    margin-left: 151px;
+    margin-top: -83px;
+}
+
+.bigline1 {
+    margin-left: 239.43;
+    font-size: 16px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #565656;
+    opacity: 1;
+    width: 288.27px;
+    padding-top: 1px;
+    padding-left: 52px;
+}
+
+.bigline2 {
+    margin-left: 239.43;
+    font-size: 16px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #565656;
+    opacity: 1;
+    width: 288.27px;
+    padding-top: 1px;
+    padding-left: 52px;
+}
+
+.layer598 {
+    width: 63px;
+    height: 63px;
+    opacity: 1;
+}
+
+#submit {
+    background: #FF7B6D 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    opacity: 1;
+    width: 88px;
+}
+
+#email {
+    border: 1px solid #565656;
+    border-radius: 20px;
+    opacity: 1;
+    padding-left: 22.12px;
+    width: 233px;
+    height: 40px;
+}
+
+.getour {
+    text-align: center;
+    margin-top: 9px;
+}
+
+.whiteupper {
+    width: 19px;
+    height: 10px;
+    background-color: #525252;
+}
+
+.righta3 {
+    opacity: 1;
+    width: 29px;
+    height: 9px;
+    margin-left: 151px;
+    margin-top: -83px;
+}
+
+.readmore3 {
+    font-size: 18px;
+    width: 100px;
+    color: #565656;
+    opacity: 1;
+    margin-left: 50px;
+    margin-top: -10px;
+}
+
+.bigline3 {
+    margin-left: 239.43;
+    font-size: 16px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #565656;
+    opacity: 1;
+    width: 288.27px;
+    padding-top: 1px;
+    padding-left: 52px;
+}
+
+.manch3 {
+    margin-left: 109px;
+    margin-top: -54px;
+    font-size: 13.95px;
+    width: 74px;
+    height: 16px;
+}
+
+.say3 {
+    width: 70px;
+    height: 70px;
+    margin-left: 38px;
+    margin-top: 30px;
+}
+
+.message3 {
+    width: 33px;
+    height: 36px;
+    margin-left: 303.98px;
+    margin-top: 20px;
+}
+
+.righta2 {
+    opacity: 1;
+    width: 29px;
+    height: 9px;
+    margin-left: 151px;
+    margin-top: -83px;
+}
+
+.readmore2 {
+    font-size: 18px;
+    width: 100px;
+    color: #565656;
+    opacity: 1;
+    margin-left: 50px;
+    margin-top: -10px;
+}
+
+.manch2 {
+    margin-left: 109px;
+    margin-top: -54px;
+    font-size: 13.95px;
+    width: 74px;
+    height: 16px;
+}
+
+.manch1 {
+    margin-left: 109px;
+    margin-top: -54px;
+    font-size: 13.95px;
+    width: 74px;
+    height: 16px;
+}
+
+.say1 {
+    width: 70px;
+    height: 70px;
+    margin-left: 38px;
+    margin-top: 30px;
+}
+
+.imagem1 {
+    width: 33px;
+    height: 36px;
+    margin-left: 303.98px;
+    margin-top: 20px;
+}
+
+.mainl1 {
+    width: 357px;
+    height: 164px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.whatour {
+    text-align: center;
+    padding-top: 57px;
+    letter-spacing: 0px;
+    color: #4F4F4F;
+    opacity: 1;
+    font-size: 40px
+}
+
+.ib1 {
+    width: 357px;
+    height: 164px;
+}
+
+.toour {
+    width: 325px;
+    height: 90px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #565656;
+    opacity: 1;
+}
+
 a.nav-link.round-rectangle.book {
     padding-left: 27px;
 }

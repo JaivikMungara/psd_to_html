@@ -103,12 +103,12 @@
         <p class="helperland">helperland</p>
 
         <div class="nav1">
-            <button class="btn" type="button"><img src="images/admin-user.png"></button>
+            <a class="" href=""><img style="margin-right: 14px;" src="images/admin-user.png"></a>
 
 
 
             <p class="james"> James Smith</p>
-            <button class="btn" type="button"><img src="images/logout.png"></button>
+            <a class="" href="" style="margin-right: 18.36px;"><img style="margin-top: 4px;" src="images/logout.png"></a>
 
         </div>
     </section>
@@ -116,10 +116,10 @@
     <div class="main123">
         <div>
             <div class="vertical-menu border" style="background-color: white;">
-                <a href="#" style="border-bottom: 1px solid #e5e5e5;">Service Management</a>
-                <a href="#" style="border-bottom: 1px solid #e5e5e5;">Role Management</a>
+                <a href="#" class="service">Service Management</a>
+                <a href="#" class="service" style="border-bottom: 1px solid #e5e5e5;">Role Management</a>
                 <!-- <div style="display: flex;"> -->
-                <a href="#" style="border-bottom: 1px solid #e5e5e5;">Coupon Code Management      
+                <a href="#" class="service">Coupon Code Management      
                     <!-- <div class="dropdown">
                         <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">
             <img src="images/sp-arrow-down.png"></button>
@@ -132,29 +132,29 @@
 
 
 
-            <button class="dd" style="margin-left: 38px;border: none;background-color: white;"><img src="images/admin-small-arrow.png"></button>
+            <button class="dd"><img src="images/admin-small-arrow.png"></button>
 
             </a>
             <!-- </div> -->
-            <a href="#" style="border-bottom: 1px solid #e5e5e5;">Escalation Management</a>
-            <a href="#" style="border-bottom: 1px solid #e5e5e5;"> Service Request </a>
-            <a href="#" style="border-bottom: 1px solid #e5e5e5;">Service Provider</a>
+            <a href="#" class="service">Escalation Management</a>
+            <a href="#" class="service"> Service Request </a>
+            <a href="#" class="service">Service Provider</a>
             <a href="#" class="active" style="border-bottom: 1px solid #e5e5e5;">User Management</a>
             <!-- <div style="display: flex;"> -->
-            <a href="#" style="border-bottom: 1px solid #e5e5e5;">Finanace Module
+            <a href="#" class="service">Finanace Module
 
 
 
             <button class="dd" style="margin-left: 102px;border: none;background-color: white;"><img src="images/admin-small-arrow.png"></button>
             </a>
             <!-- </div> -->
-            <a href="#" style="border-bottom: 1px solid #e5e5e5;">Zip Code Management</a>
-            <a href="#" style="border-bottom: 1px solid #e5e5e5;">Rating Management</a>
-            <a href="#" style="border-bottom: 1px solid #e5e5e5;">Inquiry Management</a>
-            <a href="#" style="border-bottom: 1px solid #e5e5e5;">Newsletter Management</a>
+            <a href="#" class="service">Zip Code Management</a>
+            <a href="#" class="service">Rating Management</a>
+            <a href="#" class="service">Inquiry Management</a>
+            <a href="#" class="service">Newsletter Management</a>
 
             <!-- <div style="display: flex;"> -->
-            <a href="#" style="border-bottom: 1px solid #e5e5e5;">Content Management
+            <a href="#" class="service">Content Management
                 <button class="dd" style="margin-left: 75px;border: none;background-color: white;"><img src="images/admin-small-arrow.png"></button>
             </a>
             <!-- </div> -->
@@ -192,22 +192,18 @@
     <div>
         <div style="display: flex;">
             <div>
-                <p class="um " style="margin-left: 23.7px;">User Management</p>
+                <p class="um ">User Management</p>
             </div>
-            <div style="margin-inline-start:auto; margin-right:20px;"> <button class="anu "><img src="images/add.png">     Add New User</button></div>
+            <div class="add1"> <button class="anu "><img src="images/add.png">     Add New User</button></div>
         </div>
         <!--     
         <div></div>
         <div></div> -->
         <!-- </div> -->
         <div style="display: flex;">
-            <form class="form-inline" action="/action_page.php" style="display: flex;width: 1053px;
-            height: 86px;background-color: white;margin-top: 6px;">
-                <div class="dropdown" style="margin-top: 20px;margin-left: 20px;">
-                    <button class="btn  " type="button" data-toggle="dropdown" style="border: 1px solid #DEDDDD;width: 205px;
-                    height: 46px;display: flex;
-    justify-content: space-between;
-    align-items: center;"><div>user name</div>
+            <form class="form-inline" action="/action_page.php">
+                <div class="dropdown">
+                    <button class="btn  " type="button" data-toggle="dropdown"><div>user name</div>
         <div><img src="images/admin-small-arrow.png"></div></button>
                     <ul class="dropdown-menu">
                         <li><a href="#">HTML</a></li>
@@ -217,10 +213,7 @@
                 </div>
 
                 <div class="dropdown" style="margin-left: 15px;margin-top: 20px;">
-                    <button class="btn  " type="button" data-toggle="dropdown" style="border: 1px solid #DEDDDD;width: 205px;
-                    height: 46px;display: flex;
-    justify-content: space-between;
-    align-items: center;"><div>user Role</div>
+                    <button class="btn  " type="button" data-toggle="dropdown"><div>user Role</div>
         <div><img src="images/admin-small-arrow.png"></div></button>
                     <ul class="dropdown-menu">
                         <li><a href="#">HTML</a></li>
@@ -229,25 +222,22 @@
                     </ul>
                 </div>
 
-                <div style="display: flex;margin-left: 15px;margin-top: 20px;
-                 /* padding-top: 15px; */
-                 ">
+                <div class="maincall">
                     <div id="number">
-                        <p style="font-size: 16px;padding-left: 12px;
-                        padding-top: 13px;">+49</p>
+                        <p class="fourtynine">+49</p>
                     </div>
                     <div><input type="mobile-number" id="mobile" name="mobile" placeholder="Phone number"></div>
                 </div>
 
-                <div style="margin-left: 15px;margin-top: 20px;">
+                <div class="mainzip">
                     <input type="number" id="zip" name="Zipcode" placeholder="Zipcode">
                 </div>
 
-                <div style="margin-left: 15px;margin-top: 20px;">
+                <div class="mainsearch">
                     <button id="search">search</button>
                 </div>
 
-                <div style="margin-top: 20px;margin-left: 15px;">
+                <div class="mainclear">
                     <button id="clear">clear</button>
                 </div>
 
@@ -258,23 +248,19 @@
         </div>
 
 
-        <div style="margin-left: 20px;background-color: white;margin-top: 20px;">
+        <div class="maintable">
             <table class="table table-hover display" id="table_id" rules="rows" style="border: 1px solid #E1E1E1;">
                 <thead>
                     <tr>
-                        <th scope="col">User name <img src="images/service_table_head_symbol.png" style="width: 14px;
-                          height: 14px;"></th>
+                        <th scope="col">User name <img class="service_table" src="images/service_table_head_symbol.png"></th>
                         <th scope="col">User type</th>
                         <th scope="col">Role</th>
 
-                        <th scope="col">Postal Code<img src="images/service_table_head_symbol.png" style="width: 14px;
-                          height: 14px;"></th>
+                        <th scope="col">Postal Code<img src="images/service_table_head_symbol.png" class="service_table"></th>
                         <th scope="col">City</th>
 
-                        <th scope="col">Radius<img src="images/service_table_head_symbol.png" style="width: 14px;
-                          height: 14px;"></th>
-                        <th scope="col">User Status<img src="images/service_table_head_symbol.png" style="width: 14px;
-                            height: 14px;"></th>
+                        <th scope="col">Radius<img src="images/service_table_head_symbol.png" class="service_table"></th>
+                        <th scope="col">User Status<img src="images/service_table_head_symbol.png" class="service_table"></th>
 
                         <th scope="col">Action</th>
                     </tr>
@@ -305,7 +291,7 @@
 
                         </td>
                         <td>
-                            <button class="button1" style="background-color: #67b644;color: #FFFFFF; text-align: center;">Active</button>
+                            <button class="button1">Active</button>
                         </td>
                         <td>
                             <div class="dropdown">

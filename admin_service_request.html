@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>User Admin Request</title>
+    <link href="css/style10.css" rel="stylesheet">
+    <script>
+        $(document).ready(function() {
+            $("#btn456").click(function() {
+                $("#dropdown-content").toggle();
+                // $("#dropdown-content").style("background-color:#F9F9F9")
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#btn124578").click(function() {
+                $("#dropdown-content12").toggle();
+                // $("#dropdown-content").style("background-color:#F9F9F9")
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#btn753").click(function() {
+                $("#dropdown-content123").toggle();
+                // $("#dropdown-content").style("background-color:#F9F9F9")
+            });
+        });
+    </script>
+    <style>
+        .dropbtn {
+            /* background-color: #04AA6D; */
+            color: white;
+            /* padding: 16px; */
+            font-size: 16px;
+            border: none;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: white;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+    </style>
+
+
+    <!--cdn of jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!--jquery for data table-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#table_id').DataTable({
+
+                "dom": "tlip",
+                'dom': "<'row'<'col-sm-12'tr>>" +
+                    "<'row'<'col-sm-3'l>,<'col-sm-3'i><'col-sm-6'p>>",
+                "lengthMenu": [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "All"]
+                ],
+                'language': {
+                    'oPaginate': {
+                        'sNext': '<i class="fa fa fa-caret-right"></i>',
+                        'sPrevious': '<i class="fa fa fa-caret-left"></i>',
+
+                    }
+                },
+                'aoColumnDefs': [{
+                    'bSortable': false,
+                    'aTargets': [-1] /* 1st one, start by the right */
+                }],
+                "drawCallback": function(settings) {
+                    $("#tableservicerequest").wrap("<div class='table-responsive'></div>");
+                },
+            });
+
+        });
+    </script>
+
+
+
+</head>
+
+<body style="background-color: #dedddd;">
+    <section class="navbar">
+        <!-- <div> -->
+        <p class="helperland">helperland</p>
+
+        <div class="nav1">
+            <a class="" href=""><img style="margin-right: 14px;" src="images/admin-user.png"></a>
+
+
+
+            <p class="james"> James Smith</p>
+            <a class="" href="" style="margin-right: 18.36px;"><img style="margin-top: 4px;" src="images/logout.png"></a>
+
+        </div>
+    </section>
+
+    <div class="main123">
+        <div>
+            <div class="vertical-menu border" style="background-color: white;">
+                <a href="#" class="service">Service Management</a>
+                <a href="#" class="service" style="border-bottom: 1px solid #e5e5e5;">Role Management</a>
+                <!-- <div style="display: flex;"> -->
+                <a href="#" class="service" style="background-color: #F9F9F9;" id="btn456">Coupon Code Management      
+                    <!-- <div class="dropdown">
+                        <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">
+            <img src="images/sp-arrow-down.png"></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                </ul>
+            </div> -->
+
+
+
+            <button class="dd"><img src="images/admin-small-arrow.png">
+                </button>
+
+            </a>
+
+            <div id="dropdown-content" style="background-color: #F9F9F9;">
+                <a href="#">Coupon Codes</a>
+                <a href="#"> Usage History</a>
+
+            </div>
+
+
+            <!-- </div> -->
+            <a href="#" class="service">Escalation Management</a>
+            <a href="#" class="service"> Service Request </a>
+            <a href="#" class="service">Service Provider</a>
+            <a href="#" class="active" style="border-bottom: 1px solid #e5e5e5;">User Management</a>
+            <!-- <div style="display: flex;"> -->
+            <a href="#" class="service" id="btn124578" style="background-color: #F9F9F9;">Finanace Module
+
+
+
+            <button class="dd" style="margin-left: 102px;border: none;background-color: white;"><img src="images/admin-small-arrow.png"></button>
+            </a>
+            <div id="dropdown-content12" style="background-color: #F9F9F9;">
+                <a href="#">All Transactions  </a>
+                <a href="#"> Generate Payment</a>
+                <a href="#"> Customer Invoices</a>
+            </div>
+
+            <!-- </div> -->
+            <a href="#" class="service">Zip Code Management</a>
+            <a href="#" class="service">Rating Management</a>
+            <a href="#" class="service">Inquiry Management</a>
+            <a href="#" class="service">Newsletter Management</a>
+
+            <!-- <div style="display: flex;"> -->
+            <a href="#" class="service" id="btn753" style="background-color: #F9F9F9;">Content Management
+                <button class="dd" style="margin-left: 75px;border: none;background-color: white;"><img src="images/admin-small-arrow.png"></button>
+            </a>
+            <div id="dropdown-content123" style="background-color: #F9F9F9;">
+                <a href="#"> Blog</a>
+                <a href="#"> FAQS</a>
+
+            </div>
+
+            <!-- </div> -->
+
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <div>
+        <div style="display: flex;">
+            <div>
+                <p class="um ">User Management</p>
+            </div>
+            <!-- <div class="add1"> <button class="anu "><img src="images/add.png">     Add New User</button></div> -->
+        </div>
+
+
+        <div style="display: flex;margin-left: 20px;">
+            <form class="form-inline" action="/action_page.php">
+                <div class="serviceid123" style="margin-left: 20px;">
+                    <input name="id" placeholder="Service ID" class="servicenameid" style="border: 1px solid #DEDDDD;
+                    width: 110px;
+                    height: 46px;
+                    margin: auto;">
+                </div>
+
+                <div class="dropdown" style="margin-left: 10px;">
+                    <button class="btn" type="button" data-toggle="dropdown" style="width: 127px;"><div>Customer</div>
+    <div><img src="images/admin-small-arrow.png"></div></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="dropdown" style="margin-left: 10px;">
+                    <button class="btn" type="button" data-toggle="dropdown" style="width: 152px;"><div>Service Provider</div>
+    <div><img src="images/admin-small-arrow.png"></div></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="dropdown" style="margin-left: 10px;">
+                    <button class="btn" type="button" data-toggle="dropdown" style="width: 120px;"><div>Status</div>
+    <div><img src="images/admin-small-arrow.png"></div></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                    </ul>
+                </div>
+
+                <div style="width: 135px;
+                height: 46px;
+                background: #FFFFFF 0% 0% no-repeat padding-box;
+                border: 1px solid #E1E1E1;
+                margin-top: 20px;
+                margin-left: 10px;
+               ">
+                    <a>
+                        <div style=" display: flex;
+                        justify-content: center;
+                        margin-top: 11px;"><img src="images/admin-calendar-blue.png" style="width: 19px;
+                            height: 20px;
+                            margin-right: 10px;">
+
+                            <p style=""> From Date</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div style="width: 135px;
+                height: 46px;
+                background: #FFFFFF 0% 0% no-repeat padding-box;
+                border: 1px solid #E1E1E1;
+                margin-top: 20px;
+                margin-left: 10px;
+               ">
+                    <a>
+                        <div style=" display: flex;
+                        justify-content: center;
+                        margin-top: 11px;"><img src="images/admin-calendar-blue.png" style="width: 19px;
+                            height: 20px;
+                            margin-right: 10px;">
+
+                            <p style=""> To Date</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mainsearch">
+                    <button id="search">search</button>
+                </div>
+
+                <div class="mainclear">
+                    <button id="clear">clear</button>
+                </div>
+
+
+
+
+
+
+
+            </form>
+        </div>
+
+        <div class="maintable" style="background-color: white;">
+            <table class="table table-hover display" id="table_id" rules="rows" style="border: 1px solid #E1E1E1;background-color: white;
+            margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th scope="col">Service ID <img src="images/service_table_head_symbol.png" style="width: 14px;
+                      height: 14px;"></th>
+                        <th scope="col">Service Date <img src="images/service_table_head_symbol.png" style="width: 14px;
+                      height: 14px;"></th>
+                        <th scope="col">Customer Details <img src="images/service_table_head_symbol.png" style="width: 14px;
+                      height: 14px;"></th>
+                        <th scope="col">Service Provider <img src="images/service_table_head_symbol.png" style="width: 14px;
+                      height: 14px;"></th>
+                        <th scope="col">Status <img src="images/service_table_head_symbol.png" style="width: 14px;
+                        height: 14px;"></th>
+
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            323436
+
+                        </td>
+                        <td>
+                            <div><img src="images/calendar2.png">09/04/2018</div>
+                            <div><img src="images/layer-14.png">12:00 - 18:00</div>
+
+                        </td>
+                        <td>
+                            <div>David Bough</div>
+                            <div><img src="images/home.png"> Musterstrabe 5,12345 Bonn</div>
+                        </td>
+
+                        <td>
+
+                        </td>
+                        <td>
+                            <button id="new" style="background-color: #F2BB37;color: white;">New</button>
+
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><img src="images/3-dotts.png"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit & Reschedule</a>
+                                    <a href="#">Refund</a>
+                                    <a href="#">Cencel</a>
+                                    <a href="#">Change SP</a>
+                                    <a href="#">Escalate</a>
+                                    <a href="#">History Log</a>
+                                    <a href="#">Download Invoice</a>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            323436
+
+                        </td>
+                        <td>
+                            <div><img src="images/calendar2.png">09/04/2018</div>
+                            <div><img src="images/layer-14.png">12:00 - 18:00</div>
+
+                        </td>
+                        <td>
+                            <div>David Bough</div>
+                            <div><img src="images/home.png"> Musterstrabe 5,12345 Bonn</div>
+                        </td>
+
+                        <td>
+
+                        </td>
+                        <td>
+                            <button id="new" style="background-color: #F2BB37;color: white;">New</button>
+
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><img src="images/3-dotts.png"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit & Reschedule</a>
+                                    <a href="#">Refund</a>
+                                    <a href="#">Cencel</a>
+                                    <a href="#">Change SP</a>
+                                    <a href="#">Escalate</a>
+                                    <a href="#">History Log</a>
+                                    <a href="#">Download Invoice</a>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            323436
+
+                        </td>
+                        <td>
+                            <div><img src="images/calendar2.png">09/04/2018</div>
+                            <div><img src="images/layer-14.png">12:00 - 18:00</div>
+
+                        </td>
+                        <td>
+                            <div>David Bough</div>
+                            <div><img src="images/home.png"> Musterstrabe 5,12345 Bonn</div>
+                        </td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <div>
+                                    <div id="circle" style="width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        /* color: black; */
+                        /* border-color: black; */
+                        border: 1px solid #e1e1e1;"><img src="images/cap.png" style="    /* padding: initial; */
+            margin-left: 6px;
+            margin-top: 10px;"></div>
+                                </div>
+                                <div style="display: flex;
+                        /* align-content: flex-start; */
+                        /* align-items: center; */
+                        flex-direction: column;">
+                                    <div>
+                                        <p style="margin: auto;">Lyum Watson</p>
+                                    </div>
+                                    <div><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/black_star.png"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <button id="pending" style="background-color: #1FB6FF;color: white;">Pending</button>
+
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><img src="images/3-dotts.png"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit & Reschedule</a>
+                                    <a href="#">Refund</a>
+                                    <a href="#">Cencel</a>
+                                    <a href="#">Change SP</a>
+                                    <a href="#">Escalate</a>
+                                    <a href="#">History Log</a>
+                                    <a href="#">Download Invoice</a>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            323436
+
+                        </td>
+                        <td>
+                            <div><img src="images/calendar2.png">09/04/2018</div>
+                            <div><img src="images/layer-14.png">12:00 - 18:00</div>
+
+                        </td>
+                        <td>
+                            <div>David Bough</div>
+                            <div><img src="images/home.png"> Musterstrabe 5,12345 Bonn</div>
+                        </td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <div>
+                                    <div id="circle" style="width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        /* color: black; */
+                        /* border-color: black; */
+                        border: 1px solid #e1e1e1;"><img src="images/cap.png" style="    /* padding: initial; */
+            margin-left: 6px;
+            margin-top: 10px;"></div>
+                                </div>
+                                <div style="display: flex;
+                        /* align-content: flex-start; */
+                        /* align-items: center; */
+                        flex-direction: column;">
+                                    <div>
+                                        <p style="margin: auto;">Lyum Watson</p>
+                                    </div>
+                                    <div><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/black_star.png"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <button id="pending" style="background-color: #1FB6FF;color: white;">Pending</button>
+
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><img src="images/3-dotts.png"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit & Reschedule</a>
+                                    <a href="#">Refund</a>
+                                    <a href="#">Cencel</a>
+                                    <a href="#">Change SP</a>
+                                    <a href="#">Escalate</a>
+                                    <a href="#">History Log</a>
+                                    <a href="#">Download Invoice</a>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            323436
+
+                        </td>
+                        <td>
+                            <div><img src="images/calendar2.png">09/04/2018</div>
+                            <div><img src="images/layer-14.png">12:00 - 18:00</div>
+
+                        </td>
+                        <td>
+                            <div>David Bough</div>
+                            <div><img src="images/home.png"> Musterstrabe 5,12345 Bonn</div>
+                        </td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <div>
+                                    <div id="circle" style="width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        /* color: black; */
+                        /* border-color: black; */
+                        border: 1px solid #e1e1e1;"><img src="images/cap.png" style="    /* padding: initial; */
+            margin-left: 6px;
+            margin-top: 10px;"></div>
+                                </div>
+                                <div style="display: flex;
+                        /* align-content: flex-start; */
+                        /* align-items: center; */
+                        flex-direction: column;">
+                                    <div>
+                                        <p style="margin: auto;">Lyum Watson</p>
+                                    </div>
+                                    <div><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/black_star.png"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <button id="completed" style="background-color: #67B644;color: white;">Completed</button>
+
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><img src="images/3-dotts.png"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit & Reschedule</a>
+                                    <a href="#">Refund</a>
+                                    <a href="#">Cencel</a>
+                                    <a href="#">Change SP</a>
+                                    <a href="#">Escalate</a>
+                                    <a href="#">History Log</a>
+                                    <a href="#">Download Invoice</a>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            323436
+
+                        </td>
+                        <td>
+                            <div><img src="images/calendar2.png">09/04/2018</div>
+                            <div><img src="images/layer-14.png">12:00 - 18:00</div>
+
+                        </td>
+                        <td>
+                            <div>David Bough</div>
+                            <div><img src="images/home.png"> Musterstrabe 5,12345 Bonn</div>
+                        </td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <div>
+                                    <div id="circle" style="width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        /* color: black; */
+                        /* border-color: black; */
+                        border: 1px solid #e1e1e1;"><img src="images/cap.png" style="    /* padding: initial; */
+            margin-left: 6px;
+            margin-top: 10px;"></div>
+                                </div>
+                                <div style="display: flex;
+                        /* align-content: flex-start; */
+                        /* align-items: center; */
+                        flex-direction: column;">
+                                    <div>
+                                        <p style="margin: auto;">Lyum Watson</p>
+                                    </div>
+                                    <div><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/black_star.png"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <button id="completed" style="background-color: #67B644;color: white;">Completed</button>
+
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><img src="images/3-dotts.png"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit & Reschedule</a>
+                                    <a href="#">Refund</a>
+                                    <a href="#">Cencel</a>
+                                    <a href="#">Change SP</a>
+                                    <a href="#">Escalate</a>
+                                    <a href="#">History Log</a>
+                                    <a href="#">Download Invoice</a>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            323436
+
+                        </td>
+                        <td>
+                            <div><img src="images/calendar2.png">09/04/2018</div>
+                            <div><img src="images/layer-14.png">12:00 - 18:00</div>
+
+                        </td>
+                        <td>
+                            <div>David Bough</div>
+                            <div><img src="images/home.png"> Musterstrabe 5,12345 Bonn</div>
+                        </td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <div>
+                                    <div id="circle" style="width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        /* color: black; */
+                        /* border-color: black; */
+                        border: 1px solid #e1e1e1;"><img src="images/cap.png" style="    /* padding: initial; */
+            margin-left: 6px;
+            margin-top: 10px;"></div>
+                                </div>
+                                <div style="display: flex;
+                        /* align-content: flex-start; */
+                        /* align-items: center; */
+                        flex-direction: column;">
+                                    <div>
+                                        <p style="margin: auto;">Lyum Watson</p>
+                                    </div>
+                                    <div><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/black_star.png"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <button id="cancel" style="background-color: #FF6B6B;color: white;">Cancel</button>
+
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><img src="images/3-dotts.png"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit & Reschedule</a>
+                                    <a href="#">Refund</a>
+                                    <a href="#">Cencel</a>
+                                    <a href="#">Change SP</a>
+                                    <a href="#">Escalate</a>
+                                    <a href="#">History Log</a>
+                                    <a href="#">Download Invoice</a>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            323436
+
+                        </td>
+                        <td>
+                            <div><img src="images/calendar2.png">09/04/2018</div>
+                            <div><img src="images/layer-14.png">12:00 - 18:00</div>
+
+                        </td>
+                        <td>
+                            <div>David Bough</div>
+                            <div><img src="images/home.png"> Musterstrabe 5,12345 Bonn</div>
+                        </td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <div>
+                                    <div id="circle" style="width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        /* color: black; */
+                        /* border-color: black; */
+                        border: 1px solid #e1e1e1;"><img src="images/cap.png" style="    /* padding: initial; */
+            margin-left: 6px;
+            margin-top: 10px;"></div>
+                                </div>
+                                <div style="display: flex;
+                        /* align-content: flex-start; */
+                        /* align-items: center; */
+                        flex-direction: column;">
+                                    <div>
+                                        <p style="margin: auto;">Lyum Watson</p>
+                                    </div>
+                                    <div><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/black_star.png"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <button id="completed" style="background-color: #67B644;color: white;">Completed</button>
+
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><img src="images/3-dotts.png"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit & Reschedule</a>
+                                    <a href="#">Refund</a>
+                                    <a href="#">Cencel</a>
+                                    <a href="#">Change SP</a>
+                                    <a href="#">Escalate</a>
+                                    <a href="#">History Log</a>
+                                    <a href="#">Download Invoice</a>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            323436
+
+                        </td>
+                        <td>
+                            <div><img src="images/calendar2.png">09/04/2018</div>
+                            <div><img src="images/layer-14.png">12:00 - 18:00</div>
+
+                        </td>
+                        <td>
+                            <div>David Bough</div>
+                            <div><img src="images/home.png"> Musterstrabe 5,12345 Bonn</div>
+                        </td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <div>
+                                    <div id="circle" style="width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        /* color: black; */
+                        /* border-color: black; */
+                        border: 1px solid #e1e1e1;"><img src="images/cap.png" style="    /* padding: initial; */
+            margin-left: 6px;
+            margin-top: 10px;"></div>
+                                </div>
+                                <div style="display: flex;
+                        /* align-content: flex-start; */
+                        /* align-items: center; */
+                        flex-direction: column;">
+                                    <div>
+                                        <p style="margin: auto;">Lyum Watson</p>
+                                    </div>
+                                    <div><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/black_star.png"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <button id="cancel" style="background-color: #FF6B6B;color: white;">Cancel</button>
+
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><img src="images/3-dotts.png"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit & Reschedule</a>
+                                    <a href="#">Refund</a>
+                                    <a href="#">Cencel</a>
+                                    <a href="#">Change SP</a>
+                                    <a href="#">Escalate</a>
+                                    <a href="#">History Log</a>
+                                    <a href="#">Download Invoice</a>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            323436
+
+                        </td>
+                        <td>
+                            <div><img src="images/calendar2.png">09/04/2018</div>
+                            <div><img src="images/layer-14.png">12:00 - 18:00</div>
+
+                        </td>
+                        <td>
+                            <div>David Bough</div>
+                            <div><img src="images/home.png"> Musterstrabe 5,12345 Bonn</div>
+                        </td>
+
+                        <td>
+                            <div style="display: flex;">
+                                <div>
+                                    <div id="circle" style="width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        /* color: black; */
+                        /* border-color: black; */
+                        border: 1px solid #e1e1e1;"><img src="images/cap.png" style="    /* padding: initial; */
+            margin-left: 6px;
+            margin-top: 10px;"></div>
+                                </div>
+                                <div style="display: flex;
+                        /* align-content: flex-start; */
+                        /* align-items: center; */
+                        flex-direction: column;">
+                                    <div>
+                                        <p style="margin: auto;">Lyum Watson</p>
+                                    </div>
+                                    <div><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/golden_star.png"><img src="images/black_star.png"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <button id="completed" style="background-color: #67B644;color: white;">Completed</button>
+
+                        </td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn"><img src="images/3-dotts.png"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit & Reschedule</a>
+                                    <a href="#">Refund</a>
+                                    <a href="#">Cencel</a>
+                                    <a href="#">Change SP</a>
+                                    <a href="#">Escalate</a>
+                                    <a href="#">History Log</a>
+                                    <a href="#">Download Invoice</a>
+                                </div>
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+    </div>
+    </div>
+
+
+
+</body>
+
+</html>

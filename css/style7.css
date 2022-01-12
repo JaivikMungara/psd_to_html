@@ -4,6 +4,89 @@
     background-color: #525252;
 }
 
+.whitelogo {
+    width: 73px;
+    height: 54px;
+    margin: auto;
+    margin-top: -3px;
+    margin-left: 15px;
+}
+
+.nav1 {
+    margin-left: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.warranty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog {
+    height: 40px;
+    opacity: 1;
+    margin-left: 15px;
+    margin-right: 10px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.button1 {
+    border-radius: 17px;
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+}
+
+.mainline {
+    width: 1320px;
+    height: 1px;
+    opacity: 1;
+    border-bottom: 1px solid #424242;
+    margin-top: 14px;
+}
+
+.mainallrights {
+    display: flex;
+    justify-content: center;
+}
+
+.allrights {
+    color: #9BA0A3;
+    font-size: 14px;
+    height: 16px;
+    margin-bottom: 0px;
+    margin-top: 9px;
+}
+
+.contact852 {
+    height: 40px;
+    margin: auto;
+    opacity: 1;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon1 {
+    width: px;
+    height: px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .nav1 a {
     padding: 0px 10px;
     text-decoration: none;

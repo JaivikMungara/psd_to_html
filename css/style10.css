@@ -21,6 +21,98 @@
     margin-right: 14px;
 }
 
+.main123 {
+    display: flex;
+}
+
+.service {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.dd {
+    margin-left: 38px;
+    border: none;
+    background-color: white;
+}
+
+.vertical-menu {
+    width: 273px;
+    /* height: 712px; */
+}
+
+.vertical-menu a {
+    /* background-color: white; */
+    /* color: white; */
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+}
+
+.vertical-menu a:hover {
+    background-color: #1FB6FF;
+}
+
+.vertical-menu a.active {
+    /* background-color: #146371; */
+    color: #1FB6FF;
+}
+
+.um {
+    font-size: 22px;
+    font-weight: bold;
+    color: #646464;
+}
+
+.um {
+    margin-left: 23.7px;
+}
+
+.form-inline {
+    display: flex;
+    width: 1053px;
+    height: 86px;
+    background-color: white;
+    margin-top: 6px;
+}
+
+.dropdown {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.btn {
+    border: 1px solid #DEDDDD;
+    width: 205px;
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.helperland {
+    color: white;
+    font-size: 37.5px;
+}
+
+.navbar {
+    background-color: #1fb6ff;
+}
+
+.nav1 {
+    display: flex;
+    margin-inline-start: auto;
+}
+
+.james {
+    color: white;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    /* margin-right: 18.36px; */
+    margin-right: 14px;
+}
+
 .service {
     border-bottom: 1px solid #e5e5e5;
 }
@@ -62,29 +154,15 @@
     align-items: center;
 }
 
-
-/* 
-input.servicenameid {
-    margin-top: 20px;
-} */
-
-
-/*  */
-
-.bt {
-    width: 127px;
-    height: 46px;
-    border: 1px solid #DEDDDD;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .maincall {
     display: flex;
     margin-left: 15px;
     margin-top: 20px;
     /* padding-top: 15px; */
+}
+
+.serviceid123 {
+    margin-top: 20px;
 }
 
 .fourtynine {
@@ -100,13 +178,13 @@ input.servicenameid {
 }
 
 .mainsearch {
-    margin-left: 15px;
+    margin-left: 10px;
     margin-top: 20px;
 }
 
 .mainclear {
     margin-top: 20px;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .maintable {
@@ -204,20 +282,4 @@ input.servicenameid {
 
 .dropbtn {
     background-color: white;
-}
-
-#serviceid {
-    width: 110px;
-    height: 46px;
-    border: 1px solid #DEDDDD;
-}
-
-.servicenameid {
-    border: 1px solid #DEDDDD;
-    width: 110px;
-    height: 46px;
-}
-
-.serviceid123 {
-    margin: auto;
 }
