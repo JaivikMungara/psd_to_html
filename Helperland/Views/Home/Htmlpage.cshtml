@@ -1,33 +1,25 @@
-<!DOCTYPE html>
+﻿@{
+    ViewBag.Title = "Htmlpage";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
 
+<!DOCTYPE html>
+<html>
 <head>
+    <meta charset="utf-8" />
     <title>Prices</title>
-    <link rel="stylesheet" type="text/css" href="css/style3.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
-
 <body>
-    <section class="navbar" style="height: auto;">
-        <img class="whitelogo" src="images/white-logo-transparent-background.png">
-        <div class="nav1">
-            <a class="book" href="#">Book now</a><a class="prices" href="#">Prices & services</a> <a class="warranty" href="#">Warranty</a>
-            <a class="blog" href="">Blog </a>
-            <a class="contact" href="">Contact</a> <a class="login" href="">Login </a>
-            <a class="become" href="">Become a Helper</a>
-        </div>
-    </section>
-
-    <img src="images/group-18.png" style="width: -webkit-fill-available;">
+    <img src="~/images/group-18.png" style="width:-webkit-fill-available;">
     <p class="ppp">Prices</p>
 
     <div class="mainstar">
         <div class="line"></div>
         <div clss="star123">
-            <img class="istar" src="images/star.png">
+            <img class="istar" src="~/images/star.png">
         </div>
         <div class="line"></div>
     </div>
@@ -47,47 +39,42 @@
                 <p style="font-size:30px;">/hr</p>
             </div>
         </div>
-        </div>
+        
 
 
 
         <div style="display: flex;
         flex-direction: column;">
             <div style="display: flex;">
-                <div><img src="images/rightmarkwithboxarrow.png" style="width: 24px;
-                height: 24px;"></div>
+                <div>
+                    <img src="~/images/rightmarkwithboxarrow.png" style="width: 24px;
+                height: 24px;">
+                </div>
                 <div>
                     <p style="font-size: 16px;">Lower prices</p>
                 </div>
             </div>
             <div style="display: flex;">
-                <div><img src="images/rightmarkwithboxarrow.png" style="width: 24px;
-                    height: 24px;"></div>
+                <div>
+                    <img src="~/images/rightmarkwithboxarrow.png" style="width: 24px;
+                    height: 24px;">
+                </div>
                 <div>
                     <p style="font-size: 16px;">Easy online & secure payment</p>
                 </div>
             </div>
             <div style="display: flex;">
-                <div><img src="images/rightmarkwithboxarrow.png" style="width: 24px;
-                        height: 24px;"></div>
+                <div>
+                    <img src="~/images/rightmarkwithboxarrow.png" style="width: 24px;
+                        height: 24px;">
+                </div>
                 <div>
                     <p style="font-size: 16px;">Easy amendment</p>
                 </div>
             </div>
         </div>
-        <!-- <div class="3onetimelines" style="display: flex;">
-                    <div><img src="images/rightmarkwithboxarrow.png" style="width: 24px;
-                        height: 24px;"></div><div><p style="font-size: 16px;">Easy online & secure payment</p></div>
-                                <div class="3onetimelines" style="display: flex;">
-                                    <div><img src="images/rightmarkwithboxarrow.png" style="width: 24px;
-                                        height: 24px;"></div><div><p style="font-size: 16px;">Easy amendment</p></div>
-         -->
-
-
-
-
-
-    </section>
+       
+  </section>
 
 
     <div class="line13">
@@ -100,7 +87,7 @@
         <div class="mainstar">
             <div class="line14"></div>
             <div clss="star123">
-                <img src="images/star.png" style="width: 24px;
+                <img src="~/images/star.png" style="width: 24px;
             height: 25px;
             opacity: 1;">
             </div>
@@ -110,21 +97,21 @@
 
 
         <!-- <section>
-            <div>
-                <div><p style="border: 1px solid blue; border-radius: 50%;"><img src="images/3.png" style="padding-top: 29px;
-                    padding-left: 29px;"></p></div>
-                    
-                    
-                     <div><p style="border: 1px solid #B0C9CE; border-radius:50%; width: 108px;
-height: 108px;"><img src="images/3.png" style="width: 37px;
-                    height: 48px;padding-top: 29px;
-    padding-left: 34px;"></p></div> -->
+                <div>
+                    <div><p style="border: 1px solid blue; border-radius: 50%;"><img src="images/3.png" style="padding-top: 29px;
+                        padding-left: 29px;"></p></div>
+
+
+                         <div><p style="border: 1px solid #B0C9CE; border-radius:50%; width: 108px;
+    height: 108px;"><img src="images/3.png" style="width: 37px;
+                        height: 48px;padding-top: 29px;
+        padding-left: 34px;"></p></div> -->
         <!-- </div>
-        </section>  -->
+    </section>  -->
         <section class="mainextra">
             <div>
                 <div>
-                    <p class="ic1"><img class="ic2" src="images/3.png"></p>
+                    <p class="ic1"><img class="ic2" src="~/images/3.png"></p>
                 </div>
                 <div>
                     <p style="font-size: 16px;">Inside cabinets</p>
@@ -136,7 +123,7 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
 
             <div>
                 <div>
-                    <p class="if1"><img class="if2" src="images/5.png"></p>
+                    <p class="if1"><img class="if2" src="~/images/5.png"></p>
                 </div>
                 <div>
                     <p style="font-size: 16px;">Inside fridge</p>
@@ -149,7 +136,7 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
 
             <div>
                 <div>
-                    <p class="io1"><img class="io2" src="images/4.png"></p>
+                    <p class="io1"><img class="io2" src="~/images/4.png"></p>
                 </div>
                 <div>
                     <p style="font-size: 16px;">Inside oven</p>
@@ -163,7 +150,7 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
 
             <div>
                 <div>
-                    <p class="lw1"><img class="lw2" src="images/2.png"></p>
+                    <p class="lw1"><img class="lw2" src="~/images/2.png"></p>
                 </div>
                 <div>
                     <p style="font-size: 16px;">Laundry wash & dry</p>
@@ -177,7 +164,7 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
 
             <div>
                 <div>
-                    <p class="iw1"><img class="iw2" src="images/1.png"></p>
+                    <p class="iw1"><img class="iw2" src="~/images/1.png"></p>
                 </div>
                 <div>
                     <p style="font-size: 16px;">Interior windows</p>
@@ -199,7 +186,7 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
             <div class="mainstar">
                 <div class="line"></div>
                 <div clss="star123">
-                    <img src="images/star.png" style="width: 24px;
+                    <img src="~/images/star.png" style="width: 24px;
   height: 25px;
   opacity: 1;">
                 </div>
@@ -211,30 +198,30 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
             <div class="clean123">
 
                 <div>
-                    <div><img class="c1i" src="images/clean1.png"></div>
+                    <div><img class="c1i" src="~/images/clean1.png"></div>
                     <div>
                         <p class="bedp">Bedroom and Living Room</p>
                     </div>
                     <div style="display: flex;">
-                        <div> <img class="rightarrow" src="images/right-arrow.png"></div>
+                        <div> <img class="rightarrow" src="~/images/right-arrow.png"></div>
                         <div>
                             <p class="hiip"> Dust all accessible surface </p>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip"> Wipe down all mirrors and glass fixtures </p>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip">Clean all floor surfaces </p>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip">Take out garbage and recycling</p>
                         </div>
@@ -244,36 +231,36 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
 
 
                 <div>
-                    <div><img class="clean2" src="images/clean2.png"></div>
+                    <div><img class="clean2" src="~/images/clean2.png"></div>
                     <div>
                         <p class="bathr">Bathrooms</p>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip">Wash and sanitize the toilet, shower, tub, sink </p>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip"> Dust all accessible surface </p>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip"> Wipe down all mirrors and glass fixtures </p>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip"> Clean all floor surfaces </p>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip"> Take out garbage and recycling </p>
                         </div>
@@ -284,36 +271,36 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
 
 
                 <div>
-                    <div><img class="clean3" src="images/clean3.png"></div>
+                    <div><img class="clean3" src="~/images/clean3.png"></div>
                     <div>
                         <p class="kitchen">Kitchen</p>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip">Dust all accessible surfaces </p>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip"> Empty sink and load up dishwasher </p>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip">Wipe down exterior of stove, oven and fridge </p>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip"> Clean all floor surfaces</p>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div> <img src="images/right-arrow.png" class="rightarrow"></div>
+                        <div> <img src="~/images/right-arrow.png" class="rightarrow"></div>
                         <div>
                             <p class="hiip"> Take out garbage and recycling</p>
                         </div>
@@ -329,7 +316,7 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
             <div class="mainstar">
                 <div class="line"></div>
                 <div clss="star123">
-                    <img class="i1star" src="images/star.png">
+                    <img class="i1star" src="~/images/star.png">
                 </div>
                 <div class="line"></div>
             </div>
@@ -354,7 +341,7 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
                     </div>
                 </div>
                 <div style="    margin-top: 42px;">
-                    <img src="images/the-best-img-1.png" style="">
+                    <img src="~/images/the-best-img-1.png" style="">
                 </div>
                 <div>
                     <div>
@@ -370,7 +357,8 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
                             <p class="secure">Secure online payment</p>
                         </div>
                         <div>
-                            <p class="payment">Payment is processed securely online. Customers pay safely online and manage the booking.
+                            <p class="payment">
+                                Payment is processed securely online. Customers pay safely online and manage the booking.
                             </p>
                         </div>
                     </div>
@@ -390,9 +378,11 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
                 <div class="g11">
                     <!-- <p>1</p> -->
                     <!-- <div class="Ellipse-649" id="arrow"><img src="images/white-upper.png" style="width: 19px;
-               height: 10px;  background-color: #525252;"> -->
-                    <button onclick="topFunction()" id="myBtn" class="Ellipse-649" title="Go to top"><img class="whiteupper"
-            src="images/white-upper.png"></button>
+                height: 10px;  background-color: #525252;"> -->
+                    <button onclick="topFunction()" id="myBtn" class="Ellipse-649" title="Go to top">
+                        <img class="whiteupper"
+                             src="~/images/white-upper.png">
+                    </button>
                     <!-- </div> -->
                 </div>
                 <div class="g12">
@@ -408,75 +398,35 @@ height: 108px;"><img src="images/3.png" style="width: 37px;
                 <div class="g13">
                     <!-- <p>3</p> -->
 
-                    <img class="layer598" src="images/layer-598.png">
+                    <img class="layer598" src="~/images/layer-598.png">
                 </div>
             </div>
         </div>
 
-        <section class="endsection">
 
-            <div class="2ndend" style="display: flex;
-    flex-direction: row;
-    justify-content: space-between;">
-                <img src="images/white-logo-transparent-background.png" style="width: 120px;
-    height: 92px; ">
-                <div class="endnav">
-                    <a href="#">HOME</a>
-                    <a href="#">ABOUT</a>
-                    <a href="#">TESTIMONIALS </a>
-                    <a href="">FAQS</a>
-                    <a href="">INSURANCE</a>
-                    <a href="">POLICY </a>
-                    <a href=" ">IMPRESSUM</a>
-                </div>
-                <div style=" display: flex; align-items: center; ">
-                    <img src=" images/ic-facebook.png " style=" width: 9px; height: 18px; opacity: 1; margin-right: 20px; ">
-                    <img src=" images/ic-instagram.png " style=" width: 20px; height: 20px; opacity: 1; ">
-                </div>
-            </div>
+        <script>
+            //Get the button
+            var mybutton = document.getElementById(" arrow ");
 
-            <div class=" 2ndend ">
-                <div class=" line456 "></div>
-            </div>
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () {
+                scrollFunction()
+            };
 
-            <div class=" secndraw ">
-                <p class="allrights ">©2018 Helperland. All rights reserved.Terms and Conditions|Privacy Policy</p>
-            </div>
-    </div>
-    </section>
-
-
-
-
-
-
-
-
-
-    <script>
-        //Get the button
-        var mybutton = document.getElementById(" arrow ");
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {
-            scrollFunction()
-        };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = " block ";
-            } else {
-                mybutton.style.display = " none ";
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = " block ";
+                } else {
+                    mybutton.style.display = " none ";
+                }
             }
-        }
 
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
 
 </body>
-
 </html>

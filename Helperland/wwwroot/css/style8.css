@@ -1,0 +1,240 @@
+.navbar {
+    height: 64px;
+    ;
+    background-color: #525252;
+}
+
+.whitelogo {
+    width: 73px;
+    height: 54px;
+    margin: auto;
+    margin-top: -3px;
+    margin-left: 15px;
+}
+
+.book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 111px;
+    height: 40px;
+    color: #FFFFFF;
+    border-radius: 20px;
+    background-color: #29626D;
+    margin: auto;
+}
+
+.prices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.warranty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog {
+    height: 40px;
+    opacity: 1;
+    margin-left: 15px;
+    margin-right: 10px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact444 {
+    height: 40px;
+    margin: auto;
+    opacity: 1;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon1 {
+    width: px;
+    height: px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fivestar {
+    display: flex;
+    /* align-content: flex-start; */
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.dolor {
+    color: #1d7a8c;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.button1 {
+    background-color: #67b644;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.button2 {
+    background-color: #6da9b5;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 17px;
+}
+
+.if {
+    display: flex;
+    align-items: center;
+}
+
+.fb {
+    width: 9px;
+    height: 18px;
+    opacity: 1;
+    margin-right: 20px;
+}
+
+.ig {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+}
+
+.line444 {
+    width: 1320px;
+    height: 1px;
+    opacity: 1;
+    border-bottom: 1px solid #424242;
+    margin-top: 14px;
+}
+
+.allrights {
+    color: #9BA0A3;
+    font-size: 14px;
+    height: 16px;
+    margin-bottom: 0px;
+    margin-top: 9px;
+}
+
+.mainallrights {
+    display: flex;
+    justify-content: center;
+}
+
+.nav1 a {
+    padding: 0px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.mainstar {
+    display: flex;
+    justify-content: center;
+    margin-top: 9px;
+}
+
+.badge {
+    /* position: absolute; */
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
+
+.badge {
+    margin-block-end: auto;
+    margin-left: -13px;
+}
+
+.vl {
+    border-left: 1px solid white;
+}
+
+.ws {
+    background-color: #F9F9F9;
+    height: 119px;
+}
+
+.w {
+    font-size: 30px;
+    color: #4F4F4F;
+    text-align: center;
+    padding: 3%;
+}
+
+.s {
+    font-size: 30px;
+    color: #4F4F4F;
+    font-style: bold;
+}
+
+.aa {
+    font-weight: bold;
+}
+
+.vertical-menu {
+    width: 200px;
+    /* height: 712px; */
+}
+
+.vertical-menu a {
+    background-color: #1D7A8C;
+    color: white;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #146371;
+    color: white;
+}
+
+.mainservice {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30.99px;
+}
+
+.endnav {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.endnav a {
+    padding: 0px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.endsection {
+    background: #111111 0% 0% no-repeat padding-box;
+    opacity: 1;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #f1f1f1;
+    opacity: 1;
+    /* display: flex;
+    justify-content: space-around;
+    align-items: center; */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}

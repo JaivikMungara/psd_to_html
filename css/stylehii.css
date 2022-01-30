@@ -1,0 +1,48 @@
+.helperlandi {
+    width: 175px;
+    height: 130px;
+}
+
+header.star {
+    background-image: url('../images/group-35.jpg');
+}
+
+a.nav1 {
+    color: white;
+    text-decoration: none;
+}
+
+.round-rectangle {
+    width: 161px;
+    height: 40px;
+    border-radius: 25px;
+    border: solid 1px white;
+}
+
+a.book.round-rectangle {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding-left: 24px;
+    padding-top: 6px;
+}
+
+.login {
+    width: 80px;
+    height: 40px;
+    border-radius: 25px;
+    border: solid 1px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.become {
+    width: 161px;
+    height: 40px;
+    border-radius: 25px;
+    border: solid 1px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
