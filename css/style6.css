@@ -1,3 +1,58 @@
+.scrolled {
+    background-color: black;
+}
+
+.scrolled.helperlandi {
+    width: 73px;
+    height: 54px;
+}
+
+.helperlandh {
+    width: 73px;
+    height: 54px;
+}
+
+.helperlandh {
+    width: 73px;
+    height: 54px;
+}
+
+.booknow {
+    background: #29626D 0% 0% no-repeat padding-box;
+}
+
+.loginnow123 {
+    background: #29626D 0% 0% no-repeat padding-box;
+}
+
+.becomenow123 {
+    background: #29626D 0% 0% no-repeat padding-box;
+}
+
+.navbar-brand {
+    width: 73px;
+    height: 54px;
+}
+
+header.star {
+    background-image: url('../images/group-35.jpg');
+    /* width: 1560px; */
+    /* height: 930px; */
+    height: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    object-fit: contain;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    font-family: Roboto-Regular;
+}
+
+.helperlandi {
+    width: 175px;
+    height: 130px;
+}
+
 header.star {
     background-image: url('../images/become-a-pro-banner.png');
     /* width: 1560px; */
@@ -16,6 +71,32 @@ header.star {
 
 a.nav-link.round-rectangle.book {
     padding-left: 27px;
+}
+
+a.nav-link.round-rectangle.book {
+    color: white;
+}
+
+a.nav-link.round-rectangle1.px-4 {
+    color: white;
+}
+
+a.nav-link.round-rectangle.px-3 {
+    color: white;
+}
+
+.round-rectangle {
+    width: 161px;
+    height: 40px;
+    border-radius: 25px;
+    border: solid 1px white;
+}
+
+.round-rectangle1 {
+    width: 80px;
+    height: 40px;
+    border-radius: 25px;
+    border: solid 1px white;
 }
 
 #navbarNavAltMarkup {

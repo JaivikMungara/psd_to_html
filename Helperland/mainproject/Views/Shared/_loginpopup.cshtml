@@ -1,0 +1,53 @@
+﻿<!-- Modal -->
+@model mainproject.Models.LoginUser
+<div class="modal fade" id="exampleModalToggle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered ">
+
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login to your account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="@TempData["add"] alert-danger alert-dismissible fade" role="alert" id="loginFailAlert">
+                @TempData["fail"]
+                @TempData["msg"]
+            </div>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+
+
+
+
+            <form asp-controller="UserManagement" asp-action="Login" method='post' >
+                <div class="modal-body ">
+
+
+                    <input type="text" class="form-control" placeholder="Email address">
+
+                    <br />
+                    <input type="password" class="form-control" placeholder="Password">
+
+                    <div class="form-check" style="text-align:left">
+                        <input type="checkbox" class="form-check-input" id="">
+                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <Button type="submit" class="nav-link faq-nav-link  faq-nav-link-border mx-auto">Login</Button>
+
+
+
+                </div>
+            </form>
+
+            <button style="text-decoration: none; color: #0366d6;" data-bs-toggle="modal" data-bs-target="#forgetPwdModal" data-bs-dismiss="modal" class="btn">Forgot password?</button>
+
+            <p style="text-align:center;">Don't have and account? <a asp-controller="UserManagemet" asp-action="CustomerSignUp">Register Now</a></p>
+
+        </div>
+
+
+    </div>
+</div>
+
+

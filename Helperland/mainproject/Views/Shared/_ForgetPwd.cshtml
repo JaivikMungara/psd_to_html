@@ -1,0 +1,64 @@
+﻿@model mainproject.Models.ForgetPassword
+@{
+    ViewData["Title"] = "ForgetPwd";
+}
+
+
+<!-- forget pwd modal starts -->
+<div class="modal fade" tabindex="-1" aria-labelledby="exampleModalToggleLabel2" id="forgetPwdModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel2">Forgot Password</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form asp-controller="UserManagement" asp-action="SendMail" method="post">
+
+                    <input type="text" asp-for="Email" id="loginEmail" placeholder="Email Address"><span><img src="" alt=""></span>
+                    <span></span>
+                    <button type="submit" id="forgetPwdSend" class="nav-link faq-nav-link  faq-nav-link-border mx-auto">Send</button>
+
+                </form>
+
+            </div>
+            <div class="modal-footer" style="margin:auto;">
+                <button class="btn " style="text-decoration: none; border: none; color: #0366d6;" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Login</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- forget pwd modal ends -->
+
+
+
+<a href="#" role="button" data-bs-toggle="modal" data-bs-target="#mailSended" id="mailSendedbtn" style="display:none;"></a>
+
+<div class="modal popupsLogin" tabindex="-1" id="mailSended">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Forgot Password</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div>
+                    <h3 class="text-success">if you have account, you will receive email for reset password.</h3>
+                </div>
+
+                <div>
+                    <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#mailSended">Resend Mail</a>
+                </div>
+
+                <div>
+                    <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Login now</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
