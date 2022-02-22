@@ -16,9 +16,12 @@
 
     </div>
 
-    <div class="text-center">
-        <img src="~/image/faq-seprator.png" class="img-fluid image-seprator" alt="...">
-    </div>
+    <div class="mainstar">
+        <div class="line"></div>
+        <div clss="star123">
+            <img class="star789" src="~/images/star.png">
+        </div>
+        <div class="line"></div>
 </section>
 
 <section class="container">
@@ -27,18 +30,18 @@
 
             <div class="tab">
                 <button class="tablinks" onclick="set_service(event, 'at1')" id="defaultOpen">
-                    <img src="~/image/setupservice.png" alt=".."> Setup service
+                    <img src="~/images/setupservice.png" alt=".."> Setup service
                 </button>
                 <button class="tablinks" onclick="set_service(event, 'at2')" id="form2Btn">
-                    <img src="~/image/schedule.png"
+                    <img src="~/images/schedule.png"
                          alt=".."> Schedule & Plan
                 </button>
                 <button class="tablinks" onclick="set_service(event, 'at3')" id="form3Btn">
-                    <img src="~/image/details.png"
+                    <img src="~/images/details.png"
                          alt=".."> Your Details
                 </button>
                 <button class="tablinks" onclick="set_service(event, 'at4')" id="form4Btn">
-                    <img src="~/image/payment.png" alt=".."> Make Payment
+                    <img src="~/images/payment.png" alt=".."> Make Payment
                 </button>
             </div>
 
@@ -169,7 +172,7 @@
                     <p class="card-text saving">*You will save $<span id="promo">0</span> according to §35a EStG.</p>
                 </div>
                 <div class="card-footer">
-                    <img src="~/image/smiley.png" alt=".."> See what is always included
+                    <img src="~/images/smiley.png" alt=".."> See what is always included
                 </div>
             </div>
 
@@ -180,7 +183,7 @@
                 <div class="que">
                     <a class="large-content" data-bs-toggle="collapse" href="#collapseExample1" role="button"
                        aria-expanded="false" aria-controls="collapseExample">
-                        <img src="~/image/right-arrow.png" alt=""> Which Helperland professional will come to my
+                        <img src="~/images/right-arrow.png" alt=""> Which Helperland professional will come to my
                         place?
                     </a>
                     <div class="collapse" id="collapseExample1">
@@ -192,7 +195,7 @@
                 <div class="que">
                     <a class="large-content" data-bs-toggle="collapse" href="#collapseExample2" role="button"
                        aria-expanded="false" aria-controls="collapseExample">
-                        <img src="~/image/right-arrow.png" alt=""> Which Helperland professional will come to my
+                        <img src="~/images/right-arrow.png" alt=""> Which Helperland professional will come to my
                         place?
                     </a>
                     <div class="collapse" id="collapseExample2">
@@ -205,7 +208,7 @@
 
                     <a class="large-content" data-bs-toggle="collapse" href="#collapseExample3" role="button"
                        aria-expanded="false" aria-controls="collapseExample">
-                        <img src="~/image/right-arrow.png" alt=""> Which Helperland professional will come to my
+                        <img src="~/images/right-arrow.png" alt=""> Which Helperland professional will come to my
                         place?
                     </a>
                     <div class="collapse" id="collapseExample3">
@@ -218,7 +221,7 @@
 
                     <a class="large-content" data-bs-toggle="collapse" href="#collapseExample4" role="button"
                        aria-expanded="false" aria-controls="collapseExample">
-                        <img src="~/image/right-arrow.png" alt=""> Which Helperland professional will come to my
+                        <img src="~/images/right-arrow.png" alt=""> Which Helperland professional will come to my
                         place?
                     </a>
                     <div class="collapse" id="collapseExample4">
@@ -231,7 +234,7 @@
 
                     <a class="large-content" data-bs-toggle="collapse" href="#collapseExample5" role="button"
                        aria-expanded="false" aria-controls="collapseExample">
-                        <img src="~/image/right-arrow.png" alt=""> Which Helperland professional will come to my
+                        <img src="~/images/right-arrow.png" alt=""> Which Helperland professional will come to my
                         place?
                     </a>
                     <div class="collapse" id="collapseExample5">
@@ -254,6 +257,245 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="~/js/bookService.js"></script>
 <script>
+    document.getElementById("defaultOpen").click();
+    function ClickFunction(id) {
+        document.getElementById(id).click();
+    }
 
+    function Disable(id) {
+        document.getElementById(id).disabled = true;
+    }
+    function Clickable(id) {
+        document.getElementById(id).disabled = false;
+    }
+    Disable('form2Btn');
+    Disable('form3Btn');
+    Disable('form4Btn');
+
+
+    function postalSubmit() {
+
+        var data = $("#form1").serialize();
+
+
+
+        $.ajax({
+            type: 'POST',
+            url: '/Customer/ValidPostalCode',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            data: data,
+            success: function (result) {
+                if (result.value == "true") {
+                    Clickable("form2Btn");
+                    ClickFunction("form2Btn");
+
+                }
+                else if (result.value == "false") {
+                    alert("No service avaliable ");
+                }
+                else {
+                    alert("Invalid Postal code");
+                }
+            },
+            error: function () {
+                alert('Failed to receive the Data');
+
+                console.log('Failed ');
+            }
+        });
+    }
+
+    function scheduleSubmit() {
+        var data = $("#form2").serialize();
+        console.log(data);
+
+        alert(data.toString());
+        //document.getElementById("form3").innerHTML="<h4>"+data.toString()+"</h4>";
+
+
+        $.ajax({
+            type: 'POST',
+            url: '/Customer/ScheduleService',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            data: data,
+            success: function (result) {
+                if (result.value == "true") {
+                    Clickable("form3Btn");
+                    ClickFunction("form3Btn");
+                    loadAddress();
+                }
+                else {
+                    alert("schedule is not valid");
+                }
+            },
+            error: function () {
+                alert('Failed to receive the Data');
+                console.log('Failed ');
+            }
+        });
+    }
+    function loadAddress() {
+        var data = $("#form1").serialize();
+        alert("Inside load address")
+        $.ajax({
+            type: 'get',
+            url: '/customer/detailsservice',
+            contenttype: 'application/x-www-form-urlencoded; charset=utf-8',
+            data: data,
+            success: function (result) {
+                var address = $("#address");
+                address.empty();
+                address.append('<p>Please select your addreee:</p>');
+                if (result.length == 0) {
+                    ClickFunction("addAddressBtn");
+                }
+                for (let i = 0; i < result.length; i++) {
+                    var checked = "";
+                    if (result[i].isDefault == true) {
+                        checked = "checked";
+                    }
+
+
+                    address.append(' <div class="row radiobutton">' +
+                        '<div style="max-width: 10px" class="col-1"><input type="radio" id=" ' + i + ' " ' + checked + ' name="address" value="' + result[i].addressId + '" /></div>' +
+                        ' <div class="col-11"><label for="' + i + '"><span>Address:</span><br><span>' + result[i].addressLine1 + '</span>,&nbsp;<span>' + result[i].addressLine2 + '</span><br><span>' + result[i].city + '</span>&nbsp;<span>' + result[i].postalCode + '</span>' +
+                        '<br><span>PHONE NUMBER:</span> ' + result[i].mobile + ' <span></span></label></div> </div>');
+
+                    checked = "";
+                }
+                console.log(result);
+            },
+            error: function () {
+                alert('failed to receive the data');
+                console.log('failed ');
+            }
+        });
+    }
+    function addAddressdiv() {
+        document.getElementById('addAddressBtn').style.display = "none";
+        document.getElementById('addNewaddressDiv').style.display = "block";
+        document.getElementById('addAddressPostalCode').value = document.getElementById("postalcode").value;
+        document.getElementById('addAddressPostalCode').disabled = true;
+
+
+    }
+    function saveAddress() {
+        alert("in save address 1")
+        var data = {};
+        data.AddressLine1 = document.getElementById("AddressLine1").value;
+        data.AddressLine2 = document.getElementById("AddressLine2").value;
+        data.PostalCode = document.getElementById("addAddressPostalCode").value;
+        data.City = document.getElementById("City").value;
+        data.Mobile = document.getElementById("Mobile").value;
+        alert("in save address 2")
+
+
+        $.ajax({
+            type: 'POST',
+            url: '/Customer/AddNewAddress',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            data: data,
+            success: function (result) {
+                if (result.value == "true") {
+
+                    ClickFunction("addressCancelBtn");
+                    loadAddress();
+
+                }
+                else {
+                    $("#detailServiceAlert").removeClass("d-none").text("Sorry! Something went wrong please try again later.");
+                }
+            },
+            error: function () {
+                alert('Failed to receive the Data');
+                console.log('Failed ');
+            }
+        });
+    }
+
+    function cancelAddress() {
+        document.getElementById("addNewaddressDiv").style.display = "none";
+        document.getElementById('addAddressBtn').style.display = "block";
+    }
+    function completeBookService() {
+        var data = {};
+        var extrahour = 0;
+        var cabinet = document.getElementById("InsideCabinat");
+        var window = document.getElementById("InsideWindow");
+        var fridge = document.getElementById("InsideFridge");
+        var oven = document.getElementById("InsideOven");
+        var laundry = document.getElementById("InsideLaundry");
+        if (cabinet.checked == true) {
+            extrahour += 0.5;
+            data.cabinet = true;
+        }
+        if (window.checked == true) {
+            extrahour += 0.5;
+            data.window = true;
+        }
+        if (fridge.checked == true) {
+            extrahour += 0.5;
+            data.fridge = true;
+        }
+        if (oven.checked == true) {
+            extrahour += 0.5;
+            data.oven = true;
+        }
+        if (laundry.checked == true) {
+            extrahour += 0.5;
+            data.laundry = true;
+        }
+        data.postalCode = document.getElementById("postalcode").value;
+
+
+        var temp = document.getElementById("Date").value;
+        data.serviceStartDate = temp + " " + document.getElementById("Time").value;
+
+
+
+        data.serviceHours = document.getElementById("Duration").value;
+        data.extraHours = extrahour;
+        var duration = parseFloat(document.getElementById("Duration").value);
+        var extra = parseFloat(extrahour);
+        // data.subTotal = (extrahour * 25) + ((document.getElementById("Duration").value) * 25);
+        data.subTotal = (extra + duration) * 25;
+        data.totalCost = data.subTotal; //Discount 0(out of scope)
+        data.comments = document.getElementById("comments").value;
+
+        data.HasPets = document.getElementById("flexCheckDefault").checked;
+        alert(document.getElementById("flexCheckDefault").checked);
+
+        //data.addressId = $('#addresses div input[type=radio]:checked').val();
+        data.addressId = document.querySelector('input[name="address"]:checked').value;
+        alert(data.addressId);
+
+        $.ajax({
+            type: 'post',
+            url: '/customer/completebooking',
+            contenttype: 'application/x-www-form-urlencoded; charset=utf-8',
+            data: data,
+            success: function (result) {
+                if (result.value == "false") {
+
+                    alert("schedule is not valid");
+                }
+                else {
+                    //$("#modalserviceid").text("service id : " + result.value);
+                    // $("#completebookingmodalbtn").click();
+                    alert("done")
+                }
+            },
+            error: function () {
+                alert('failed to receive the data');
+                console.log('failed ');
+            }
+        });
+    }
 </script>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="~/js/bookService.js"></script>
 

@@ -13,10 +13,7 @@ namespace mainproject.Controllers
 
         private readonly helperland_project1Context _database;
 
-        public CustomerController(helperland_project1Context db)
-        {
-            _database = db;
-        }
+        
         public IActionResult CustomerServiceHistory()
         {
 

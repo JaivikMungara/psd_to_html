@@ -1,4 +1,13 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model mainproject.ViewModel.PostalCode;
+<form id="form1">
+    <div id="at1" class="tabcontent">
+        <h2>Enter Your Postal code</h2>
+        <row>
+
+            <input type="text" asp-for="postalcode" id="postalcode" placeholder="Enter Your Postal code">
+            <span asp-validation-for="postalcode" class="formwarning"></span>
+
+            <button type="button" class="continue" onclick="postalSubmit()">Check Availability</button>
+        </row>
+    </div>
+</form>

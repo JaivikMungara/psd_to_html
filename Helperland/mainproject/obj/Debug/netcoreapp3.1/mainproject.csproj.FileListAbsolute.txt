@@ -437,3 +437,7 @@ C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Share
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\UserManagement\BecomeAProvider.cshtml.g.cs
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\UserManagement\CustomerSignUp.cshtml.g.cs
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Customer\BookService.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\form1.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\form2.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\form3.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\form4.cshtml.g.cs
