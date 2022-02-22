@@ -436,3 +436,4 @@ C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Share
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_PartialValidationScripts.cshtml.g.cs
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\UserManagement\BecomeAProvider.cshtml.g.cs
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\UserManagement\CustomerSignUp.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Customer\BookService.cshtml.g.cs
