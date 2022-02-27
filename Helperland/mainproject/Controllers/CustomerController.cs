@@ -13,7 +13,12 @@ namespace mainproject.Controllers
 
         private readonly helperland_project1Context _database;
 
-        
+
+        public CustomerController(helperland_project1Context database)
+        {
+            _database = database;
+        }
+
         public IActionResult CustomerServiceHistory()
         {
 
@@ -41,7 +46,7 @@ namespace mainproject.Controllers
                     return PartialView();
                 }
             }
-            return RedirectToAction("Index", "Public");
+            return RedirectToAction("Index", "Home");
 
 
         }
@@ -71,7 +76,7 @@ namespace mainproject.Controllers
             }
             TempData["add"] = "alert show";
             TempData["fail"] = "Please Login to book service";
-            return RedirectToAction("Index", "Public", new { loginFail = "true" });
+            return RedirectToAction("Index", "Home", new { loginFail = "true" });
 
 
         }

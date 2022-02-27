@@ -31,7 +31,6 @@ namespace mainproject.Models
         [DataType(DataType.EmailAddress, ErrorMessage = "E-mail is not valid")]
         public string Email { get; set; }
         [Required]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{6,14}$", ErrorMessage = "Please enter Stronge Password")]
         public string Password { get; set; }
         [NotMapped] // Does not effect with your database
         [Required(ErrorMessage = "Please Enter Confirm Password")]

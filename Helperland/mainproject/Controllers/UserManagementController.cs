@@ -13,8 +13,11 @@ namespace mainproject.Controllers
     {
 
         private readonly helperland_project1Context _database;
+        public UserManagementController(helperland_project1Context database)
+        {
+            _database = database;
+        }
 
-       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Login(LoginUser user)
@@ -145,7 +148,7 @@ namespace mainproject.Controllers
                 MimeMessage message = new MimeMessage();
 
                 MailboxAddress from = new MailboxAddress("Helperland",
-                "jaivik.mungara@gmail.com");
+                "helperland12345@gmail.com");
                 message.From.Add(from);
 
                 MailboxAddress to = new MailboxAddress(user.FirstName, email);
@@ -162,7 +165,7 @@ namespace mainproject.Controllers
 
                 SmtpClient client = new SmtpClient();
                 client.Connect("smtp.gmail.com", 587, false);
-                client.Authenticate("", "");
+                client.Authenticate("helperland12345@gmail.com", "password@34");
                 client.Send(message);
                 client.Disconnect(true);
                 client.Dispose();
