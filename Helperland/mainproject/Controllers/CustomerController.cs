@@ -22,34 +22,22 @@ namespace mainproject.Controllers
         public IActionResult CustomerServiceHistory()
         {
 
-
-
-
-            if (HttpContext.Session.GetInt32("userId") != null)
+            var Id = HttpContext.Session.GetInt32("id");
+            if (Id != null)
             {
-                var id = HttpContext.Session.GetInt32("userId");
-                User user = _database.Users.Find(id);
-                ViewBag.Name = user.FirstName;
-                ViewBag.UserType = user.UserTypeId;
-                if (user.UserTypeId == 0)
-                {
-                    return PartialView();
-                }
-            }
-            else if (Request.Cookies["userId"] != null)
-            {
-                var user = _database.Users.FirstOrDefault(x => x.UserId == Convert.ToInt32(Request.Cookies["userId"]));
-                ViewBag.Name = user.FirstName;
-                ViewBag.UserType = user.UserTypeId;
-                if (user.UserTypeId == 0)
-                {
-                    return PartialView();
-                }
-            }
-            return RedirectToAction("Index", "Home");
+                var obj = _database.Users.FirstOrDefault(x => x.UserId == Id);
+                ViewBag.Name = obj.FirstName;
 
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Public");
+            }
 
         }
+
+
 
         public IActionResult BookService()
         {

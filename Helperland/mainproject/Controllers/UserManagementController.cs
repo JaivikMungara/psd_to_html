@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using System;
 using System.Linq;
-
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace mainproject.Controllers
 {
@@ -18,38 +19,39 @@ namespace mainproject.Controllers
             _database = database;
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Login(LoginUser user)
+           [HttpPost]
+         [ValidateAntiForgeryToken]
+         public IActionResult Login(LoginUser user)
         {
-            if (ModelState.IsValid)
-            {
-                if (_database.Users.Where(x => x.Email == user.username && x.Password == user.password).Count() > 0)
-                {
+          if (ModelState.IsValid)
+        {
+          if (_database.Users.Where(x => x.Email == user.username && x.Password == user.password).Count() > 0)
+        {
 
-                    var U = _database.Users.FirstOrDefault(x => x.Email == user.username);
-                    HttpContext.Session.SetInt32("id", U.UserId);
+          var U = _database.Users.FirstOrDefault(x => x.Email == user.username);
+        HttpContext.Session.SetInt32("id", U.UserId);
 
-                    return RedirectToAction("CustomerServiceHistory", "Customer");
-                }
-                else
-                {
-                    TempData["add"] = "alert show";
-                    TempData["fail"] = "something is wrong.username and password are invalid";
-                    return RedirectToAction("Index", "Home", new { loginFail = "true" });
+        return RedirectToAction("CustomerServiceHistory", "Customer");
+        }
+        else
+        {
+          TempData["add"] = "alert show";
+        TempData["fail"] = "something is wrong.username and password are invalid";
+        return RedirectToAction("Index", "Home", new { loginFail = "true" });
 
-                }
-            }
+        }
+        }
 
-            TempData["add"] = "alert show";
-            TempData["fail"] = "something is wrong.username and password are required";
-            return RedirectToAction("Index", "Home", new { loginModal = "true" });
+        TempData["add"] = "alert show";
+        TempData["fail"] = "something is wrong.username and password are required";
+        return RedirectToAction("Index", "Home", new { loginModal = "true" });
 
 
 
 
 
         }
+        
 
         public IActionResult BecomeAProvider()
         {

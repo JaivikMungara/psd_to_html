@@ -8,6 +8,7 @@ namespace mainproject.Models
 {
     public class LoginUser
     {
+
         [Required]
         public string username { get; set; }
         [Required]
