@@ -21,21 +21,35 @@ namespace mainproject.Controllers
 
         public IActionResult CustomerServiceHistory()
         {
-
-            var Id = HttpContext.Session.GetInt32("id");
-            if (Id != null)
+            if (HttpContext.Session.GetInt32("userId") != null)
             {
-                var obj = _database.Users.FirstOrDefault(x => x.UserId == Id);
-                ViewBag.Name = obj.FirstName;
+                var id = HttpContext.Session.GetInt32("userId");
+                User user = _database.Users.Find(id);
+                ViewBag.Name = user.FirstName;
+                ViewBag.UserType = user.UserTypeId;
+                if (user.UserTypeId == 0)
+                {
+                    return PartialView();
+                }
 
-                return View();
+
             }
-            else
+            else if (Request.Cookies["userId"] != null)
             {
-                return RedirectToAction("Index", "Public");
+                var user = _database.Users.FirstOrDefault(x => x.UserId == Convert.ToInt32(Request.Cookies["userId"]));
+                ViewBag.Name = user.FirstName;
+                ViewBag.UserType = user.UserTypeId;
+                if (user.UserTypeId == 0)
+                {
+                    return PartialView();
+                }
             }
+            return RedirectToAction("Index", "Home");
+
 
         }
+
+
 
 
 
@@ -60,13 +74,12 @@ namespace mainproject.Controllers
                 if (user.UserTypeId == 0)
                 {
                     return PartialView();
+                    //return PartialView();
                 }
             }
             TempData["add"] = "alert show";
             TempData["fail"] = "Please Login to book service";
             return RedirectToAction("Index", "Home", new { loginFail = "true" });
-
-
         }
 
         [HttpPost]

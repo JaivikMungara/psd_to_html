@@ -30,8 +30,15 @@ namespace mainproject.Controllers
 
           var U = _database.Users.FirstOrDefault(x => x.Email == user.username);
         HttpContext.Session.SetInt32("id", U.UserId);
+                    HttpContext.Session.SetInt32("userId", U.UserId);
 
-        return RedirectToAction("CustomerServiceHistory", "Customer");
+                    if (U.UserTypeId == 0)
+                    {
+                        return RedirectToAction("CustomerServiceHistory", "Customer");
+                    }
+
+
+                    return RedirectToAction("CustomerServiceHistory", "Customer");
         }
         else
         {
