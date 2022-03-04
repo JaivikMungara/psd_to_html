@@ -19,46 +19,70 @@ namespace mainproject.Controllers
             _database = database;
         }
 
-           [HttpPost]
-         [ValidateAntiForgeryToken]
-         public IActionResult Login(LoginUser user)
+          [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Login(LoginUser user)
         {
-          if (ModelState.IsValid)
-        {
-          if (_database.Users.Where(x => x.Email == user.username && x.Password == user.password).Count() > 0)
-        {
+            if (ModelState.IsValid)
+            {
 
-          var U = _database.Users.FirstOrDefault(x => x.Email == user.username);
-        HttpContext.Session.SetInt32("id", U.UserId);
-                    HttpContext.Session.SetInt32("userId", U.UserId);
+                string password = _database.Users.FirstOrDefault(x => x.Email == user.username).Password;
 
-                    if (U.UserTypeId == 0)
+               /* bool pass = BCrypt.Net.BCrypt.Verify(user.password, password);*/
+                if (_database.Users.Where(x => x.Email == user.username && x.Password == user.password).Count() > 0)
+                {
+
+                    var U = _database.Users.FirstOrDefault(x => x.Email == user.username);
+
+                    Console.WriteLine("1");
+
+                    if (user.remember == true)
                     {
-                        return RedirectToAction("CustomerServiceHistory", "Customer");
+                        CookieOptions cookieRemember = new CookieOptions();
+                        cookieRemember.Expires = DateTime.Now.AddSeconds(604800);
+                        Response.Cookies.Append("userId", Convert.ToString(U.UserId), cookieRemember);
                     }
 
 
-                    return RedirectToAction("CustomerServiceHistory", "Customer");
-        }
-        else
-        {
-          TempData["add"] = "alert show";
-        TempData["fail"] = "something is wrong.username and password are invalid";
-        return RedirectToAction("Index", "Home", new { loginFail = "true" });
+                    HttpContext.Session.SetInt32("userId", U.UserId);
+
+
+
+                    if (U.UserTypeId == 0)
+                    {
+                        return RedirectToAction("CustomerDashboard", "Customer");
+                    }
+                    /* else if (user.UserTypeId == 2)
+                      {
+                          return RedirectToAction("SPUpcomingService", "ServicePro");
+                      }
+                      else if (user.UserTypeId == 3)
+                      {
+                          return RedirectToAction("ServiceRequest", "Admin");
+                      }*/
+
+                    return RedirectToAction("CustomerDashboard", "Customer");
+                }
+                else
+                {
+                    TempData["add"] = "alert show";
+                    TempData["fail"] = "username and password are invalid";
+                    return RedirectToAction("Index", "Home", new { loginFail = "true" });
+
+                }
+            }
+
+            TempData["add"] = "alert show";
+            TempData["fail"] = "username and password are required";
+            return RedirectToAction("Index", "Home", new { loginModal = "true" });
+
+
+
+
 
         }
-        }
-
-        TempData["add"] = "alert show";
-        TempData["fail"] = "something is wrong.username and password are required";
-        return RedirectToAction("Index", "Home", new { loginModal = "true" });
 
 
-
-
-
-        }
-        
 
         public IActionResult BecomeAProvider()
         {
@@ -203,6 +227,14 @@ namespace mainproject.Controllers
 
             return RedirectToAction("Index", "Home", new { loginModal = "true" });
         }
+        public IActionResult logout()
+        {
+            HttpContext.Session.Clear();
+
+            Response.Cookies.Delete("userId");
+            return RedirectToAction("Index", "Home", new { logoutModal = "true" });
+        }
+
 
     }
 }

@@ -21,11 +21,11 @@
         <img class="whitelogo" src="~/images/white-logo-transparent-background.png">
         <div class="nav1">
             <a class="book" asp-controller="Customer" asp-action="BookService">Book now</a>
-            <a class="prices" href="#">Prices & services</a> 
+            <a class="prices" asp-controller="Home" asp-action="Htmlpage">Prices & services</a> 
             <a class="warranty" href="#">Warranty</a>
             <a class="blog" href="">Blog </a>
-            <a class="contact" href="">Contact</a> <a class="login" href="">Login </a>
-            <a class="become" href="">Become a Helper</a>
+            <a class="contact" asp-controller="Home" asp-action="Contact">Contact</a> <a class="login" href="">Login </a>
+            <a class="become" asp-controller="UserManagement" asp-action="BecomeAProvider">Become a Helper</a>
         </div>
     </section>
 

@@ -1,118 +1,372 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<link href="~/css/style.css" rel="stylesheet" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <link href="~/css/style.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                var $nav = $(".helperhii");
+                $nav.toggleClass('helperlandh', $(this).scrollTop() > $nav.height());
+                var $nav = $(".book");
+                $nav.toggleClass('booknow', $(this).scrollTop() > $nav.height());
+                var $nav = $(".loginnow");
+                $nav.toggleClass('loginnow123', $(this).scrollTop() > $nav.height());
+                var $nav = $(".becomenow");
+                $nav.toggleClass('becomenow123', $(this).scrollTop() > $nav.height());
+
+            });
+        });
+    </script>
+    <!--Custome Css-->
+
+    <link rel="stylesheet" href="~/css/stylefornav.css" />
+    <style>
+        div.notification {
+            border-right: 1px solid #e1e1e1;
+            border-left: 1px solid #e1e1e1;
+            padding: 5px 25px 0 16px;
+            max-width: 70px;
+        }
+
+            div.notification span {
+                background-color: #ff1616;
+                top: -7px;
+                right: 11px;
+            }
+
+        .dropdown {
+            border: none;
+        }
+    </style>
+
+    <!--fonts-->
+    <!-- <script src="js\faq.js"></script> -->
 
 
-<section id="why">
-    <p class="w">Why Helperland</p>
+
+    <title>@ViewBag.title</title>
+
+
+</head>
+<body>
+    <header class="star">
+        <!--navbar starts from here-->
+        <div>
+            <nav class="navbar fixed-top  navabr-content navbar-expand-lg  navbar-light   ">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img class="helperhii " src="~/images/white-logo-transparent-background.png" class="helperlandi">
+                    </a>
+
+                    @if (ViewBag.Name != null)
+                    {
+                        <div class=" mb-2 notification position-relative nav-item order-lg-3 ">
+
+                            <img src="~/images/icon-notification (1).png" alt="">
+                            <span class="badge rounded-circle position-absolute">2</span>
+                        </div>
+                        <div class="mb-2 nav-item dropdown nav-padding order-lg-4 d-lg-block d-none " id="upcomingUser">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="~/images/admin-user.png" alt="">
+                            </a>
+                            <ul class="dropdown-menu dropdown dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li id="userWelcomeName">
+                                    Welcome,
+                                    <br />
+                                    <span id="UsernameNav">@ViewBag.Name</span>
+                                </li>
+                                <li><a asp-action="CustomerDashboard" asp-controller="Customer" class="dropdown-item">My Dashbord</a></li>
+                                <li><a class="dropdown-item">My Setting</a></li>
+                                <li><a class="dropdown-item" asp-controller="UserManagement" asp-action="Logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    }
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="mx-auto"></div>
+                        <div class=" navbar-nav  ">
+                            <a class="nav-link round-rectangle book" asp-controller="UserManagement" asp-action="BookService" style="padding-left: 27px;">Book now</a>
+                            <a class="nav-link active nav-ram px-3" aria-current="page" asp-controller="Home" asp-action="Htmlpage">prices</a>
+                            <a class="nav-link nav-ram px-3" href="#">Our Gurantee</a>
+                            <a class="nav-link nav-ram px-3" href="#">Blog</a>
+                            <a class="nav-link nav-ram px-3" asp-controller="Home" asp-action="Contact">Contact us</a>
+                            @if (ViewBag.Name == null)
+                            {
+                                <a class="nav-link round-rectangle1 loginnow px-4" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" href="#">Login</a>
+                                <a class="nav-link round-rectangle becomenow px-3" style="margin-left: 22px;" asp-controller="UserManagement" asp-action="BecomeAProvider">Become a Helper</a>
+                                <a class="nav-link nav-ram px-2" href="#"><img class="uslogo" src="~/images/ic-flag.png" style="margin-top: 3px; height: 16px; width: 25px;"></a>
+                                <a class="nav-link nav-ram px-2" href="#">
+                                    <img class="uslogo" src="~/images/final-navbar-down.png" style="margin-top: 3px; width: 12px;height: 7px;opacity: 1;">
+                                </a>
 
 
 
-    <div class="mainhelper">
-        <div class="helper">
-            <img src="images/helper-img-1.png" style="width: 320px; height: 320px;">
-            <p class="pe1">Experience & Vetted Professionals</p>
-            <p class="pdo">dominate the industry in scale and scope with an adaptable, extensive network that consistently delivers exceptional results.</p>
+                            }
+                            <a class="dropdown-item d-none" id="logoutBtn" data-bs-toggle="modal" data-bs-target="#logoutModel">Logout</a>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
 
+        <!--navbar starts from here-->
+        <!--    <div>
+                <nav class="navbar navbar-expand-lg navbar-dark ">
+                    <div class="container-fluid">
+                        <a class="home-navbar-brand navbar-brand" href="#">
+                            <img src="~/images/white-logo-transparent-background.png" alt="logo">
+                        </a>
 
-        <div class="helper2">
-            <img class="weyboard" src="images/weyboard.png">
-            <p class="pse">Secure Online Payment</p>
-            <p class="payment">payment is processed securely online.Custumer pay safely online and manage the booking. </p>
+                        @if (ViewBag.Name != null)
+                        {
+                            <div class=" mb-5 notification position-relative nav-item order-lg-3 ">
+
+                                <img src="~/images/icon-notification.png" alt="">
+                                <span class="badge rounded-circle position-absolute">2</span>
+                            </div>
+
+
+
+
+
+                            <div class="mb-5 nav-item dropdown nav-padding order-lg-4 d-lg-block d-none " id="upcomingUser">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="~/images/user.png" alt="">
+                                </a>
+                                <ul class="dropdown-menu dropdown dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li id="userWelcomeName">
+                                        Welcome,
+                                        <br />
+                                        <span id="UsernameNav">@ViewBag.Name</span>
+                                    </li>
+                                    <li><a asp-action="CustomerDashboard" asp-controller="Customer" class="dropdown-item">My Dashbord</a></li>
+                                    <li><a class="dropdown-item">My Setting</a></li>
+                                    <li><a class="dropdown-item" asp-controller="UserManagement" asp-action="Logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        }
+
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav home-navbar-nav ms-auto">
+
+                                <a class="nav-link home-nav-link nav-link-book-a-cleaner" asp-controller="Customer" asp-action="BookService">Book a Cleaner</a>
+                                <a class=" nav-link home-nav-link " asp-controller="Public" asp-action="Price"> Prices</a>
+                                <a class="nav-link home-nav-link ">Our Guarantee</a>
+                                <a class="nav-link home-nav-link ">Blog</a>
+                                <a class="nav-link home-nav-link " asp-controller="Public" asp-action="Contactus">Contact us</a>
+                                @if (ViewBag.Name == null)
+                                {
+                                    <a class="nav-link home-nav-link  nav-link-login" id="login-nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+                                    <a class="nav-link home-nav-link  nav-link-become-a-helper" asp-controller="UserManagement" asp-action="BecomeAProvider">Become a Helper</a>
+                                    <a class="nav-link home-nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="~/images/flag.png">
+                                    </a>
+                                }
+                                <a class="dropdown-item d-none" id="logoutBtn" data-bs-toggle="modal" data-bs-target="#logoutModel">Logout</a>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>-->
+        @await Html.PartialAsync("_loginpopup")
+        @await Html.PartialAsync("_ForgetPwd")
+
+
+        <div style="display: flow-root;">
+            <div class="text1">
+                <p>Lorem ipsum text</p>
+            </div>
+            <img src="~/images/forma-1-copy-10.png" class="forma1">
+            <p class="text2 ">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+
+            <img src="~/images/forma-1-copy-10.png" class="forma2">
+            <p class="text3">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+
+            <img src="~/images/forma-1-copy-10.png" class="forma3">
+            <p class="text4">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+
+
+            <div class="book1">
+                <p class="ract">Let’s Book a Cleaner</p>
+            </div>
+            <div class="allogo">
+
+
+                <div class="l1">
+                    <img src="~/images\forma-1-copy.png" class="fl1">
+
+                    <p class="ll1">Enter your postcode</p>
+                </div>
+
+                <img src="~/images/step-arrow-1.png" class="fl2">
+
+                <div class="l1">
+                    <img src="~/images/group-22.png" class="ig2">
+                    <p class="ll2">Select your plan</p>
+                </div>
+
+                <img src="~/images/step-arrow-1-copy.png" class="step1">
+
+
+                <div class="l1">
+                    <img src="~/images/forma-1.png" class="pay">
+                    <p class="ll3">Pay securely online</p>
+                </div>
+
+
+                <p class="logo6"><img src="~/images/step-arrow-1.png" class="step2"></p>
+
+                <div class="l1">
+                    <img src="~/images/4thlogo.png" class="fouethl">
+                    <p class="ll4">Enjoy amazing service</p>
+                </div>
+
+            </div>
+            <div class="headerlast">
+                <img src="~/images/ellipse-525.png" class="hel">
+
+                <img src="~/images/shape-1.png" class="ishape">
+            </div>
         </div>
+    </header>
 
 
-        <div class="helper3" style="">
-            <img src="images/headphones.png" style="width: 320px;
+
+    <link href="~/css/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+
+
+    <section id="why">
+        <p class="w">Why Helperland</p>
+        <div class="mainhelper">
+            <div class="helper">
+                <img src="images/helper-img-1.png" style="width: 320px; height: 320px;">
+                <p class="pe1">Experience & Vetted Professionals</p>
+                <p class="pdo">dominate the industry in scale and scope with an adaptable, extensive network that consistently delivers exceptional results.</p>
+            </div>
+
+
+            <div class="helper2">
+                <img class="weyboard" src="images/weyboard.png">
+                <p class="pse">Secure Online Payment</p>
+                <p class="payment">payment is processed securely online.Custumer pay safely online and manage the booking. </p>
+            </div>
+
+
+            <div class="helper3" style="">
+                <img src="images/headphones.png" style="width: 320px;
               height: 320px;   ">
-            <p class="dedicated">Dedicated Customer Service</p>
-            <p class="toour">to our customers and are guided in all we do by their needs. The team is always happy to support you and offer all the information. </p>
-        </div>
-    </div>
-    <div class="mainlorem">
-        <div class="firstlorem">
-            <div class="secondlorem">
-                <p class="lorem">Lorem ipsum dolor sit amet, consectetur</p>
-                <p class="lorem1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi sapien, suscipit ut accumsan vitae, pulvinar ac libero. </p>
-                <p class="lorem2">
-                    Aliquam erat volutpat. Nullam quis ex odio. Nam bibendum cursus purus, vel efficitur urna finibus vitae. Nullam finibus aliquet pharetra. Morbi in sem dolor. Integer pretium hendrerit ante quis vehicula.
-                </p>
-                <p class="lorem3">Mauris consequat ornare enim, sed lobortis quam ultrices sed.</p>
+                <p class="dedicated">Dedicated Customer Service</p>
+                <p class="toour">to our customers and are guided in all we do by their needs. The team is always happy to support you and offer all the information. </p>
             </div>
-            <div class="secondlorem">
-                <img src="images/groupphoto.png" style="width: 256px;
+        </div>
+        <div class="mainlorem">
+            <div class="firstlorem">
+                <div class="secondlorem">
+                    <p class="lorem">Lorem ipsum dolor sit amet, consectetur</p>
+                    <p class="lorem1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi sapien, suscipit ut accumsan vitae, pulvinar ac libero. </p>
+                    <p class="lorem2">
+                        Aliquam erat volutpat. Nullam quis ex odio. Nam bibendum cursus purus, vel efficitur urna finibus vitae. Nullam finibus aliquet pharetra. Morbi in sem dolor. Integer pretium hendrerit ante quis vehicula.
+                    </p>
+                    <p class="lorem3">Mauris consequat ornare enim, sed lobortis quam ultrices sed.</p>
+                </div>
+                <div class="secondlorem">
+                    <img src="images/groupphoto.png" style="width: 256px;
       height: 256px;">
+                </div>
             </div>
-        </div>
 
 
-        <div class="firstblog">
-            <div class="secondblog">
-                <section class="blog1">
-                    <img src="images/blog1.png" class="ib1">
-                    <p class="bl1">Lorem ipsum dolor sit amet</p>
-                    <p style="text-align: left;
+            <div class="firstblog">
+                <div class="secondblog">
+                    <section class="blog1">
+                        <img src="images/blog1.png" class="ib1">
+                        <p class="bl1">Lorem ipsum dolor sit amet</p>
+                        <p style="text-align: left;
             letter-spacing: 0px;
             color: #A3A3A3;
             opacity: 1; font-size:13px; ">January 28, 2019</p>
 
-                    <p class="bll1">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum metus pulvinar aliquet.
-                    </p>
-                    <p class="blll1">Read the Post</p>
-                    <img src="images/right-arrow.png" style="margin-left: 127px;
+                        <p class="bll1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum metus pulvinar aliquet.
+                        </p>
+                        <p class="blll1">Read the Post</p>
+                        <img src="images/right-arrow.png" style="margin-left: 127px;
                         /* margin-bottom: 36px; */
                         margin-top: -80px;
       opacity: 1;    ">
 
-                </section>
+                    </section>
+                </div>
+
+
+                <div class="secondblog">
+                    <section class="blog2">
+                        <img src="images/blog2.png" class="mainl1">
+                        <p class="bl2">Lorem ipsum dolor sit amet</p>
+                        <p class="mainj1">January 28, 2019</p>
+                        <p class="bll2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum metus pulvinar aliquet.
+                        </p>
+                        <p class="blll2">Read the Post</p>
+                        <img src="images/right-arrow.png" class="read1">
+                    </section>
+
+                </div>
+
+
+                <div class="secondblog">
+                    <section class="blog3">
+                        <img src="images/blog3.png" class="mainl2">
+                        <p class="bl3 ">Lorem ipsum dolor sit amet</p>
+                        <p class="mainj2 ">January 28, 2019</p>
+
+                        <p class="bll3 ">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum metus pulvinar aliquet.
+                        </p>
+                        <p class="blll3 ">Read the Post</p>
+                        <img src="images/right-arrow.png " class="read2">
+                    </section>-->
+                </div>
+
             </div>
-
-
-            <div class="secondblog">
-                <section class="blog2">
-                    <img src="images/blog2.png" class="mainl1">
-                    <p class="bl2">Lorem ipsum dolor sit amet</p>
-                    <p class="mainj1">January 28, 2019</p>
-                    <p class="bll2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum metus pulvinar aliquet.
-                    </p>
-                    <p class="blll2">Read the Post</p>
-                    <img src="images/right-arrow.png" class="read1">
-                </section>
-
-            </div>
-
-
-            <div class="secondblog">
-                <section class="blog3">
-                    <img src="images/blog3.png" class="mainl2">
-                    <p class="bl3 ">Lorem ipsum dolor sit amet</p>
-                    <p class="mainj2 ">January 28, 2019</p>
-
-                    <p class="bll3 ">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum metus pulvinar aliquet.
-                    </p>
-                    <p class="blll3 ">Read the Post</p>
-                    <img src="images/right-arrow.png " class="read2">
-                </section>-->
-            </div>
-
         </div>
-    </div>
-    </div>
-    </div>
+        </div>
+        </div>
 
 
 
 
 
 
-    
+
 
 
 
@@ -145,6 +399,33 @@
 
     </section>
 
+    <section class="endsection">
+        <img src="~/images/white-logo-transparent-background.png" style="width: 120px;
+      height: 92px; ">
+        <div class="endnav">
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">TESTIMONIALS </a>
+            <a href="#">FAQS</a>
+            <a href="#">INSURANCE</a>
+            <a href="#">POLICY </a>
+            <a href="#">IMPRESSUM</a>
+        </div>
+        <div>
+            <img src=" images/ic-facebook.png " style="width: 9px; height: 18px; opacity: 1; margin-right: 20px; ">
+            <img src="~/images/ic-instagram.png " style="width: 20px; height: 20px; opacity: 1; ">
+        </div>
+    </section>
+
+
+    <div class="lastsection ">
+        <p class="lasthomeline ">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat nunc libero, ac
+            malesuada ligula aliquam ac. <span class="end "> Privacy Policy</span>
+        </p>
+    </div>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js "
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM "
@@ -173,3 +454,5 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
+</body>
+</html>

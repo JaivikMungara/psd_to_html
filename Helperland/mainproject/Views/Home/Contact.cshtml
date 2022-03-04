@@ -2,6 +2,7 @@
     ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
+@model mainproject.Models.ContactU
 
 <!DOCTYPE html>
 <html>
@@ -63,38 +64,55 @@
 
 
     <section style="margin-top: 23px;">
-        <form>
+        <form asp-action="Contactus" asp-controller="Home" enctype="multipart/form-data">
             <div class="first">
-                <div><input type="text" id="fname" name="firstname" placeholder="First name"></div>
-                <div><input type="text" id="lname" name="lastname" placeholder="Last name"></div>
+                <div>
+                    <input asp-for="Name" type="text" class="form-control" type="text" id="fname" name="firstname" placeholder="First name">
+                    <span asp-validation-for="Name" class="formwarning"></span>
+
+                </div>
+                <div>
+                    
+                            <input asp-for="LastName" type="text" class="form-control" type="text" id="lname" name="lastname" placeholder="Last name">
+                            <span asp-validation-for="LastName" class="formwarning"></span>
+                
+                </div>
             </div>
             <div class="second">
                 <div class="third">
                     <div id="number">
                         <p class="fourtynine">+49</p>
                     </div>
-                    <div><input type="mobile-number" id="mobile" name="mobile" placeholder="Mobile number"></div>
+                    <div>
+
+                        <input asp-for="PhoneNumber" type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile number">
+                        <span asp-validation-for="PhoneNumber" class="formwarning"></span>
+
+                    </div>
                 </div>
                 <div>
                     <div>
-                        <input type="email" id="email" name="email" placeholder="Email address" style="  width: 299px;
+                        <input asp-for="Email" type="text" class="form-control" type="email" id="email" name="email" placeholder="Email address" style="  width: 299px;
                         height: 46px;
                         border: 1px solid #C8C8C8;
                         font-size: 16px;
                         margin-left: 16px;
                     ">
+                        <span asp-validation-for="Email" class="formwarning"></span>
+
                     </div>
                 </div>
             </div>
             <div class="four">
-                <select id="subject" name="subject" placeholder="Subject">
-                    <option value="Subject">Subject</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                <select asp-for="Subject" class="form-select" aria-label="Default select example" id="subject" name="subject" placeholder="Subject">
+                    <option value="General" selected>General</option>
+                    <option value="Inquiry"> Inquiry</option>
+                    <option value="Renewal">Renewal</option>
+                    <option value="Revocation">Revocation</option>
                 </select>
             </div>
             <div class="five">
-                <textarea rows="4" cols="50" name="comment" id="message">
+                <textarea asp-for="Message" class="form-control" rows="4" cols="50" name="comment" id="message">
                     Message</textarea>
             </div>
             <div class="submit123">
