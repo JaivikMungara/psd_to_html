@@ -1,7 +1,12 @@
 ﻿@{
     ViewBag.Title = "Htmlpage";
-    Layout = "~/Views/Shared/_Layout1.cshtml";
+    Layout ="_Layout1";
 }
+@section Custom
+{
+    <link rel="stylesheet" href="~/css/forfont.css" />
+}
+
 
 <!DOCTYPE html>
 <html>
@@ -39,7 +44,7 @@
                 <p style="font-size:30px;">/hr</p>
             </div>
         </div>
-        
+
 
 
 
@@ -73,8 +78,8 @@
                 </div>
             </div>
         </div>
-       
-  </section>
+
+    </section>
 
 
     <div class="line13">
@@ -366,7 +371,7 @@
                 <div class="g11">
                     <!-- <p>1</p> -->
                     <!-- <div class="Ellipse-649" id="arrow"><img src="images/white-upper.png" style="width: 19px;
-                height: 10px;  background-color: #525252;"> -->
+                    height: 10px;  background-color: #525252;"> -->
                     <button onclick="topFunction()" id="myBtn" class="Ellipse-649" title="Go to top">
                         <img class="whiteupper"
                              src="~/images/white-upper.png">

@@ -106,7 +106,7 @@ p.margin {
 
 @media screen and (max-width: 992px) {
 
-    .main_service {
+    .mainservice123 {
         padding-top: 31px;
     }
 
@@ -166,7 +166,7 @@ p.margin {
         display: none;
     }
 
-    .main_service {
+    .mainservice123 {
         padding-top: 31px;
         margin-left: 15%;
         margin-right: 15%;

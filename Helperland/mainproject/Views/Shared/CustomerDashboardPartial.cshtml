@@ -3,9 +3,6 @@
 @{
     String CurrentDate = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
 }
-
-
-
 @{
     int ServiceDashboardCount = 0;
 }
@@ -82,20 +79,6 @@
                 }
             </tbody>
         </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="card mobileview clearfix mx-auto" style="width:100%; padding:0% 5% 0% 5%; ">
             @if (Model.Count() > 0)
             {
@@ -108,12 +91,8 @@
                             <h6 class="d-inline pe-2">Service Id : </h6> @item.ServiceRequestId
                             <hr />
                             <span>
-
-
                                 <img src="~/image/calendar.png" alt="calender"><h6 class="d-inline pe-2 "> <span class="d-none d-sm-block">Service</span>  Date:</h6><span class="date mb-0">@item.Date</span><br>
                                 <img src="~/image/clock.png" alt="calender"><h6 class="pe-2 d-inline  "><span class="d-none d-sm-block">Service</span> Time:</h6> @item.StartTime - @item.EndTime
-
-
                             </span>
                             <hr>
                             @if (item.ServiceProvider != null)
@@ -132,13 +111,7 @@
                                 </div>
 
                                 <hr />
-
-
-
-
                             }
-
-
                             <p class="price"><h6 class="d-inline pe-2">Price:</h6> &euro; @item.TotalCost </p>
                             <hr>
                             <div class="d-flex justify-content-around">
@@ -192,28 +165,6 @@
     </div>
 
 </div>
-
-
-@*
-    <div class="modal" tabindex="-1" id="serviceRequestCancelModal">
-    <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-    <div class="modal-header">
-    <h4 class="modal-title">Cancel Service Request</h4>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-    <input type="hidden" id="CancelRequestId" name="CancelRequestId" />
-    <p><label for="cancelReason">Why you want to cancel the service request?</label></p>
-    <textarea name="cancelReason" id="cancelReason" cols="30" rows="10"></textarea>
-    </div>
-    <div class="modal-footer">
-    <button type="button" class="btn cancelBtn" id="CancelRequestBtn">Cancel Now</button>
-    </div>
-    </div>
-    </div>
-    </div>*@
-
 
 
 <div class="modal" tabindex="-1" id="deleteModelServiceRequest">

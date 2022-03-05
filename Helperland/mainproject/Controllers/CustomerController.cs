@@ -64,9 +64,6 @@ namespace mainproject.Controllers
                 ViewBag.UserType = user.UserTypeId;
 
                 userTypeId = user.UserTypeId;
-
-
-
             }
             else if (Request.Cookies["userId"] != null)
             {
@@ -79,13 +76,7 @@ namespace mainproject.Controllers
             {
                 List<CustomerDashboard> dashboard = new List<CustomerDashboard>();
 
-
-
-                //var ServiceTable = _database.ServiceRequests.Where(x => (x.UserId == user.UserId) && (x.Status == 1 || x.Status == 2)).ToList();
-
                 var ServiceTable = _database.ServiceRequests.Where(x => x.UserId == user.UserId).ToList();
-
-                //var ServiceTable = _database.ServiceRequests.Where(x=>x.UserId==user.UserId ).ToList();
                 if (ServiceTable.Any())  /*ServiceTable.Count()>0*/
                 {
                     foreach (var service in ServiceTable)
@@ -94,8 +85,6 @@ namespace mainproject.Controllers
                         CustomerDashboard dash = new CustomerDashboard();
                         dash.ServiceRequestId = service.ServiceRequestId;
                         var StartDate = service.ServiceStartDate.ToString();
-                        //dash.Date = StartDate.Substring(0, 10);
-                        //dash.StartTime = StartDate.Substring(11);
                         dash.Date = service.ServiceStartDate.ToString("dd/MM/yyyy");
                         dash.StartTime = service.ServiceStartDate.AddHours(0).ToString("HH:mm ");
                         var totaltime = (double)(service.ServiceHours + service.ExtraHours);
@@ -109,11 +98,6 @@ namespace mainproject.Controllers
                             User sp = _database.Users.Where(x => x.UserId == service.ServiceProviderId).FirstOrDefault();
 
                             dash.ServiceProvider = sp.FirstName + " " + sp.LastName;
-
-                            //decimal rating = _database.Ratings.Where(x => x.RatingTo == service.ServiceProviderId).Average(x => x.Ratings);
-
-                            //dash.SPRatings = rating;
-
                         }
 
                         dashboard.Add(dash);
@@ -181,6 +165,11 @@ namespace mainproject.Controllers
 
             return Ok(Json("false"));
         }
+
+
+
+
+
 
         public IActionResult BookService()
         {

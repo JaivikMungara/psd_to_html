@@ -27,8 +27,6 @@ namespace mainproject.Controllers
             {
 
                 string password = _database.Users.FirstOrDefault(x => x.Email == user.username).Password;
-
-               /* bool pass = BCrypt.Net.BCrypt.Verify(user.password, password);*/
                 if (_database.Users.Where(x => x.Email == user.username && x.Password == user.password).Count() > 0)
                 {
 
@@ -52,15 +50,6 @@ namespace mainproject.Controllers
                     {
                         return RedirectToAction("CustomerDashboard", "Customer");
                     }
-                    /* else if (user.UserTypeId == 2)
-                      {
-                          return RedirectToAction("SPUpcomingService", "ServicePro");
-                      }
-                      else if (user.UserTypeId == 3)
-                      {
-                          return RedirectToAction("ServiceRequest", "Admin");
-                      }*/
-
                     return RedirectToAction("CustomerDashboard", "Customer");
                 }
                 else
@@ -76,14 +65,7 @@ namespace mainproject.Controllers
             TempData["fail"] = "username and password are required";
             return RedirectToAction("Index", "Home", new { loginModal = "true" });
 
-
-
-
-
         }
-
-
-
         public IActionResult BecomeAProvider()
         {
             return View();
@@ -110,16 +92,12 @@ namespace mainproject.Controllers
                     TempData["add"] = "alert show";
                     TempData["msg"] = "Account created, Wait for admin approval";
                     return RedirectToAction("Index", "Home");
-
-
                 }
                 else
                 {
                     TempData["add"] = "alert show";
                     TempData["msg"] = "Username Exits!";
                     return View();
-
-
                 }
             }
             return View();
