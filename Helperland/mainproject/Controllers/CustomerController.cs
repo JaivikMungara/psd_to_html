@@ -366,6 +366,7 @@ namespace mainproject.Controllers
             add.CreatedDate = DateTime.Now;
             add.ModifiedDate = DateTime.Now;
             add.HasIssue = false;
+            add.Status = 1;
 
             var result = _database.ServiceRequests.Add(add);
             _database.SaveChanges();

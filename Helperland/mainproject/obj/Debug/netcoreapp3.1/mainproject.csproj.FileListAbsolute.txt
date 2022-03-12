@@ -443,3 +443,5 @@ C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Share
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\form4.cshtml.g.cs
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerDashboard.cshtml.g.cs
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CustomerDashboardPartial.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CustomerServiceHistoryPartial.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CustomerSettingPartial.cshtml.g.cs

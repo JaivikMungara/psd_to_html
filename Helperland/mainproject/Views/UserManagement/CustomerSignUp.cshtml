@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Customer Signup";
-    Layout = "~/Views/Shared/_Layout1.cshtml";
-
+    Layout = "_Layout1";
 }
 @model mainproject.Models.User;
 
@@ -10,7 +9,6 @@
 <br />
 <p class="contact-form-title">
     Create an account
-
 </p>
 <br />
 
@@ -50,10 +48,6 @@
 
             </div>
         </div>
-
-
-
-
         <div class="row">
             <div class=" col-sm-6">
                 <span asp-validation-for="Password" class="formwarning"></span>

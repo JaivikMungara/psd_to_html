@@ -89,7 +89,7 @@
                                     <span id="UsernameNav">@ViewBag.Name</span>
                                 </li>
                                 <li><a asp-action="CustomerDashboard" asp-controller="Customer" class="dropdown-item">My Dashbord</a></li>
-                                <li><a class="dropdown-item">My Setting</a></li>
+                                <li><a  class="dropdown-item" asp-controller="Customer" asp-action="CustomerDashboard" asp-route-Tablinks="SettingsTabBtn">My Setting</a></li>
                                 <li><a class="dropdown-item" asp-controller="UserManagement" asp-action="Logout">Logout</a></li>
                             </ul>
                         </div>
@@ -215,7 +215,7 @@
 
 
             <div class="book1">
-                <p class="ract">Let’s Book a Cleaner</p>
+                <a class="ract" asp-controller="Customer"  asp-action="BookService" >Let’s Book a Cleaner</a>
             </div>
             <div class="allogo">
 

@@ -27,7 +27,7 @@ if (urlcust.includes("=")) {
 	vTabId = urlcust.substring(indexofequl + 1, urlcust.length);
 }
 
-document.getElementById(vTabId).click(); $("#dashbordTable").click(function (e) {
+document.getElementById(vTabId).click(); var srId; var serviceRequestId = ""; $("#dashbordTable").click(function (e) {
 	serviceRequestId = e.target.closest("tr").getAttribute("data-value");
 	alert(serviceRequestId);
 	if (e.target.classList == "customerReschedule") {
@@ -45,7 +45,23 @@ document.getElementById(vTabId).click(); $("#dashbordTable").click(function (e) 
 
 
 	console.log(e);
-}); document.getElementById("RescheduleServiceRequest").addEventListener("click", function () {
+});
+$("#ServiceHistoryTable").click(function (e) {
+
+	serviceRequestId = e.target.closest("tr").getAttribute("data-value");
+	if (serviceRequestId != null && e.target.classList != "rateactive") {
+		document.getElementById("serviceReqdetailsbtn").click(); srId = serviceRequestId;
+	}
+});
+$('.mobileview ').on('click', function (e) {
+	serviceRequestId = e.target.closest("div.card-body").getAttribute("data-value");
+	srId = serviceRequestId;
+	if (serviceRequestId != null && (e.target.classList != "customerCancel" && e.target.classList != "customerReschedule" && e.target.classList != "rateactive")) {
+		document.getElementById("serviceReqdetailsbtn").click();
+	}
+});
+
+document.getElementById("RescheduleServiceRequest").addEventListener("click", function () {
 	var serviceStartDate = document.getElementById("selected_date").value;
 	var serviceTime = document.getElementById("selected_time").value;
 	var serviceRequestId = document.getElementById("updateRequestId").value;

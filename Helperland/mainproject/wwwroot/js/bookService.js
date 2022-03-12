@@ -240,7 +240,7 @@ function addAddressdiv() {
     document.getElementById('addAddressPostalCode').value = document.getElementById("postalcode").value;
     document.getElementById('addAddressPostalCode').disabled = true;
 
-
+    getCityFromPostalCode(document.getElementById("postalcode").value);
 }
 
 
@@ -533,3 +533,31 @@ $(document).ready(function () {
         }
     });
 });
+
+
+function getCityFromPostalCode(zip) {
+    $.ajax({
+
+        method: "GET",
+        url: "https://api.postalpincode.in/pincode/" + zip,
+        dataType: 'json',
+        cache: false,
+        success: function (result) {
+            if (result[0].status == "Error" || result[0].status == "404") {
+                $("#mSaddAddressAlert").removeClass("alert-success d-none").addClass("alert-danger").text("Enter Valid PostalCode.");
+
+            }
+            else {
+
+                $("#City").val(result[0].PostOffice[0].District);
+                $("#State").val(result[0].PostOffice[0].State).prop("disabled", true);
+                $("#City").prop("disabled", true);
+                $("#State").prop("disabled", true);
+            }
+        },
+        error: function (error) {
+
+        }
+    });
+}
+

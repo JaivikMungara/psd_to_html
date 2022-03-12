@@ -28,13 +28,24 @@
         <button class="tablinks" onclick="upcoming_service(event, 'favourite_pros')" id="favouriteProsTabBtn"> Favourite Pros </button>
         <button class="tablinks" onclick="upcoming_service(event, 'invoices')" id="invoiceTabBtn">Invoices</button>
         <button class="tablinks" onclick="upcoming_service(event, 'notification')" id="notificationTabBtn"> Notifications</button>
+        <button class="tablinks " onclick="upcoming_service(event, 'customer_Settings')" id="SettingsTabBtn"> Setting </button>
     </div>
 
     <!-- table -->
     @await Html.PartialAsync("CustomerDashboardPartial")
+    @await Html.PartialAsync("CustomerServiceHistoryPartial")
+    @await Html.PartialAsync("CustomerSettingPartial")
 
 </section>
-<!-- script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="~/js/customerDashboard.js"></script>
 
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/r-2.2.9/rg-1.1.4/datatables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
+<script src="~/js/customerDashboard.js"></script>
