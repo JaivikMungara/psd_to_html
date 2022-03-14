@@ -19,7 +19,7 @@ namespace mainproject.Controllers
             _database = database;
         }
 
-          [HttpPost]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Login(LoginUser user)
         {
@@ -27,29 +27,57 @@ namespace mainproject.Controllers
             {
 
                 string password = _database.Users.FirstOrDefault(x => x.Email == user.username).Password;
-                if (_database.Users.Where(x => x.Email == user.username && x.Password == user.password).Count() > 0)
+
+                bool pass = BCrypt.Net.BCrypt.Verify(user.password, password);
+                if (_database.Users.Where(x => x.Email == user.username && pass).Count() > 0)
                 {
 
                     var U = _database.Users.FirstOrDefault(x => x.Email == user.username);
-
-                    Console.WriteLine("1");
-
-                    if (user.remember == true)
-                    {
-                        CookieOptions cookieRemember = new CookieOptions();
-                        cookieRemember.Expires = DateTime.Now.AddSeconds(604800);
-                        Response.Cookies.Append("userId", Convert.ToString(U.UserId), cookieRemember);
-                    }
-
-
-                    HttpContext.Session.SetInt32("userId", U.UserId);
-
-
+                    ViewBag.Name = null;
 
                     if (U.UserTypeId == 0)
                     {
+                        if (user.remember == true)
+                        {
+                            CookieOptions cookieRemember = new CookieOptions();
+                            cookieRemember.Expires = DateTime.Now.AddSeconds(604800);
+                            Response.Cookies.Append("userId", Convert.ToString(U.UserId), cookieRemember);
+                        }
+
+
+                        HttpContext.Session.SetInt32("userId", U.UserId);
+
+
                         return RedirectToAction("CustomerDashboard", "Customer");
                     }
+                    else if (U.UserTypeId == 1)
+                    {
+                        if (U.IsApproved == false)
+                        {
+                            ViewBag.Name = null;
+                            TempData["add"] = "alert show";
+                            TempData["fail"] = "You are not approved by admin, please contact admin.";
+                            return RedirectToAction("Index", "Home", new { loginModal = "true" });
+                        }
+
+                        if (user.remember == true)
+                        {
+                            CookieOptions cookieRemember = new CookieOptions();
+                            cookieRemember.Expires = DateTime.Now.AddSeconds(604800);
+                            Response.Cookies.Append("userId", Convert.ToString(U.UserId), cookieRemember);
+                        }
+
+
+                        HttpContext.Session.SetInt32("userId", U.UserId);
+
+
+                        return RedirectToAction("SPServiceRequest", "Serviceprovider");
+                    }
+                    /* else if (user.UserTypeId == 3)
+                     {
+                         return RedirectToAction("ServiceRequest", "Admin");
+                     }*/
+
                     return RedirectToAction("CustomerDashboard", "Customer");
                 }
                 else
@@ -65,7 +93,12 @@ namespace mainproject.Controllers
             TempData["fail"] = "username and password are required";
             return RedirectToAction("Index", "Home", new { loginModal = "true" });
 
+
+
+
+
         }
+
         public IActionResult BecomeAProvider()
         {
             return View();
@@ -85,7 +118,7 @@ namespace mainproject.Controllers
                     user.IsRegisteredUser = true;
                     user.ModifiedBy = 123;
                     user.UserTypeId = 1;
-
+                    user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
                     _database.Users.Add(user);
                     _database.SaveChanges();
 
@@ -124,6 +157,8 @@ namespace mainproject.Controllers
                     user.IsRegisteredUser = true;
                     user.ModifiedBy = 123;
                     user.UserTypeId = 0;
+                    user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+
 
                     _database.Users.Add(user);
                     _database.SaveChanges();
@@ -196,6 +231,7 @@ namespace mainproject.Controllers
         [HttpPost]
         public IActionResult ResetPassword(ResetPassword rp)
         {
+            rp.password = BCrypt.Net.BCrypt.HashPassword(rp.password);
             var user = new User() { UserId = rp.userId, Password = rp.password, ModifiedDate = DateTime.Now };
             _database.Users.Attach(user);
             _database.Entry(user).Property(x => x.Password).IsModified = true;
