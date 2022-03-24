@@ -16,12 +16,12 @@ namespace mainproject.Models
         [NotMapped]
         [Required]
         public string LastName { get; set; }
-        [Required]
-        [DataType(DataType.EmailAddress, ErrorMessage = "E-mail is not valid")]
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address.")]
         public string Email { get; set; }
         public string Subject { get; set; }
-        [Required]
-        [StringLength(10, ErrorMessage = "Please Enter Valid Phone No")]
+        [Required(ErrorMessage = "Mobile Number is required.")]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Invalid Mobile Number.")]
         public string PhoneNumber { get; set; }
         public string Message { get; set; }
         public string UploadFileName { get; set; }

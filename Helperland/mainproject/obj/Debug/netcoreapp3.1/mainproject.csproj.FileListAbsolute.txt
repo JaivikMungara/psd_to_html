@@ -455,3 +455,7 @@ C:\Users\DELL\source\repos\mainproject\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.d
 C:\Users\DELL\source\repos\mainproject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\DELL\source\repos\mainproject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\DELL\source\repos\mainproject\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AdminPanel.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\adminServiceReq.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\adminUserManagement.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contactus.cshtml.g.cs

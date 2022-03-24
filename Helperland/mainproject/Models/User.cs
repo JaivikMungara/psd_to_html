@@ -27,8 +27,8 @@ namespace mainproject.Models
         public string FirstName { get; set; }
         [Required(ErrorMessage = "Please Enter Last Name")]
         public string LastName { get; set; }
-        [Required]
-        [DataType(DataType.EmailAddress, ErrorMessage = "E-mail is not valid")]
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address.")]
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
@@ -36,8 +36,10 @@ namespace mainproject.Models
         [Required(ErrorMessage = "Please Enter Confirm Password")]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
-        [Required]
-        [StringLength(10, ErrorMessage = "Please Enter Valid Phone No")]
+
+        [Required(ErrorMessage = "Mobile Number is required.")]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Invalid Mobile Number.")]
+
         public string Mobile { get; set; }
         public int UserTypeId { get; set; }
         public int? Gender { get; set; }

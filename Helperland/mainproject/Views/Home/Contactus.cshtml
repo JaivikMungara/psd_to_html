@@ -67,44 +67,46 @@
         <form asp-action="Contactus" asp-controller="Home" enctype="multipart/form-data">
             <div class="first">
                 <div>
-                    <input asp-for="Name" type="text" class="form-control"  id="fname"  placeholder="First name">
-                    <span asp-validation-for="Name" class="formwarning"></span>
+                    <input asp-for="Name" type="text" class="form-control" id="fname" placeholder="First name">
+                    <span asp-validation-for="Name" class="formwarning alert-danger"></span>
 
                 </div>
                 <div>
-                    
-                     <input asp-for="LastName" type="text" class="form-control"  id="lname" placeholder="Last name">
-                     <span asp-validation-for="LastName" class="formwarning"></span>
-                
+
+                    <input asp-for="LastName" type="text" class="form-control" id="lname" placeholder="Last name">
+                    <span asp-validation-for="LastName" class="formwarning alert-danger" style="margin-left:16px;"></span>
+
                 </div>
             </div>
             <div class="second">
+
                 <div class="third">
                     <div id="number">
                         <p class="fourtynine">+49</p>
                     </div>
                     <div>
 
-                        <input asp-for="PhoneNumber" type="text" class="form-control" id="mobile"  placeholder="Mobile number">
-                        <span asp-validation-for="PhoneNumber" class="formwarning"></span>
+                        <input asp-for="PhoneNumber" type="text" class="form-control" id="mobile" placeholder="Mobile number">
+                        <span asp-validation-for="PhoneNumber" class="formwarning alert-danger"></span>
 
                     </div>
                 </div>
+               
                 <div>
                     <div>
-                        <input asp-for="Email" type="text" class="form-control"  id="email"  placeholder="Email address" style="  width: 299px;
+                        <input asp-for="Email" type="text" class="form-control" id="email" placeholder="Email address" style="  width: 299px;
                         height: 46px;
                         border: 1px solid #C8C8C8;
                         font-size: 16px;
                         margin-left: 16px;
                     ">
-                        <span asp-validation-for="Email" class="formwarning"></span>
+                        <span asp-validation-for="Email" class="formwarning alert-danger" style="margin-left:16px;"></span>
 
                     </div>
                 </div>
             </div>
             <div class="four">
-                <select asp-for="Subject" class="form-select" aria-label="Default select example" id="subject"  placeholder="Subject">
+                <select asp-for="Subject" class="form-select" aria-label="Default select example" id="subject" placeholder="Subject">
                     <option value="General" selected>General</option>
                     <option value="Inquiry"> Inquiry</option>
                     <option value="Renewal">Renewal</option>
@@ -116,7 +118,7 @@
                     Message</textarea>
             </div>
             <div class="submit123">
-                <button type="submit"  id="submit">Submit</button>
+                <button type="submit" id="submit">Submit</button>
             </div>
         </form>
     </section>

@@ -61,7 +61,7 @@ namespace mainproject.Controllers
             return View();
 
         }
-        public IActionResult Contact()
+        public IActionResult Contactus()
         {
             if (HttpContext.Session.GetInt32("userId") != null)
             {
@@ -81,7 +81,7 @@ namespace mainproject.Controllers
         }
 
         [HttpPost]
-        public IActionResult Contact(ContactU contactu)
+        public IActionResult Contactus(ContactU contactu)
         {
 
             if (ModelState.IsValid)

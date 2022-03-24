@@ -28,16 +28,11 @@ namespace helperland1._0.Controllers
             User user = null;
 
             if (HttpContext.Session.GetInt32("userId") != null)
-            {
-
-                user = _db.Users.Find(HttpContext.Session.GetInt32("userId"));
+            {   user = _db.Users.Find(HttpContext.Session.GetInt32("userId"));
                 ViewBag.Name = user.FirstName;
                 ViewBag.UserType = user.UserTypeId;
 
                 userTypeId = user.UserTypeId;
-
-
-
             }
             else if (Request.Cookies["userId"] != null)
             {
@@ -49,9 +44,7 @@ namespace helperland1._0.Controllers
             if (userTypeId == 0)
             {
                 List<CustomerDashboard> dashboard = new List<CustomerDashboard>();
-
-
-
+  
                 //var ServiceTable = _db.ServiceRequests.Where(x => (x.UserId == user.UserId) && (x.Status == 1 || x.Status == 2)).ToList();
 
                 var ServiceTable = _db.ServiceRequests.Where(x => x.UserId == user.UserId).ToList();
@@ -165,25 +158,7 @@ namespace helperland1._0.Controllers
                 client.Disconnect(true);
                 client.Dispose();
 
-
-
-
-
-
-
             }
-
-
-
-
-
-
-
-
-
-
-
-
 
             rescheduleService.ModifiedDate = DateTime.Now;
 
@@ -197,10 +172,6 @@ namespace helperland1._0.Controllers
 
             return "error";
         }
-
-
-
-
 
         public int CheckConflict(ServiceRequest request)
         {
@@ -262,18 +233,6 @@ namespace helperland1._0.Controllers
             return -1;
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
         [HttpPost]
         public async Task<IActionResult> CancelServiceRequest(ServiceRequest cancel)
@@ -406,8 +365,6 @@ namespace helperland1._0.Controllers
             {
                 decimal avgrating = _db.Ratings.Where(x => x.RatingTo == sr.ServiceProviderId).Average(x => x.Ratings);
 
-
-
                 CustomerDashboard customerDashboard = new CustomerDashboard();
                 customerDashboard.AverageRating = (float)decimal.Round(avgrating, 1, MidpointRounding.AwayFromZero);
 
@@ -459,36 +416,7 @@ namespace helperland1._0.Controllers
             return Ok(Json("false"));
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         /*Book service*/
-
-
-
-
-
 
         public IActionResult BookService()
         {
@@ -655,9 +583,6 @@ namespace helperland1._0.Controllers
             return View();
         }
 
-
-
-
         public ActionResult CompleteBooking(CompleteBooking complete)
         {
             int Id = -1;
@@ -752,8 +677,6 @@ namespace helperland1._0.Controllers
                 _db.SaveChanges();
             }
 
-
-
             if (result != null && srAddrResult != null)
             {
                 sendServiceMailtoSP(result.Entity.ServiceRequestId);
@@ -764,10 +687,6 @@ namespace helperland1._0.Controllers
 
             return Ok(Json("false"));
         }
-
-
-
-
 
         public async Task sendServiceMailtoSP(int serviceId)
         {
@@ -784,12 +703,8 @@ namespace helperland1._0.Controllers
 
             }
 
-
             var serviceProviderList = _db.Users.Where(x => x.UserTypeId == 1 && x.IsApproved == true).ToList();
             var SpByBlocked = _db.FavoriteAndBlockeds.Where(x => x.TargetUserId == Id && x.IsBlocked == true).Select(x => x.UserId).ToList();
-
-
-
 
             await Task.Run(() =>
             {
@@ -827,19 +742,7 @@ namespace helperland1._0.Controllers
 
             });
 
-
-
         }
-
-
-
-
-
-
-
-
-
-
 
         [HttpGet]
         public JsonResult GetCustomerData()
@@ -891,8 +794,6 @@ namespace helperland1._0.Controllers
 
             List<UserAddress> Addresses = _db.UserAddresses.Where(x => x.UserId == Id && x.IsDeleted == false).ToList();
             return new JsonResult(Addresses);
-
-
 
         }
 
@@ -1006,19 +907,6 @@ namespace helperland1._0.Controllers
 
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
