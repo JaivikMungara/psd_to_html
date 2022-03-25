@@ -49,6 +49,7 @@
         <button class="tablinks " onclick="Sp_TabNav(event, 'BlockCustomer')" id="BlockCustomerTabBtn">Block Customer</button>
         <button class="tablinks " onclick="Sp_TabNav(event, 'Invoice')" id="InvoiceTabBtn">Invoice</button>
         <button class="tablinks " onclick="Sp_TabNav(event, 'Notification')" id="SettingsTabBtn">Notification</button>
+        <button class="tablinks  " onclick="Sp_TabNav(event, 'SPSettings')" id="SettingsTabBtn">Settings</button>
 
 
     </div>
@@ -59,6 +60,7 @@
     @await Html.PartialAsync("SpNewServiceRequest")
     @await Html.PartialAsync("SpMyRating")
     @await Html.PartialAsync("SpBlockCustomer")
+    @await Html.PartialAsync("SpSettings")
 
 
 

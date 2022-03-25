@@ -1,4 +1,4 @@
-﻿namespace helperland1._0.ViewModel
+﻿namespace mainproject.ViewModel
 {
     public class AdminservicereqDTO
     {

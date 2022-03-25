@@ -2,10 +2,13 @@
 using mainproject.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+using MailKit.Net.Smtp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using mainproject.ViewModel;
 
 namespace mainproject.Controllers
 {
@@ -52,7 +55,7 @@ namespace mainproject.Controllers
 
             List<AdminservicereqDTO> tabledata = new List<AdminservicereqDTO>();
 
-            var serviceRequestsList = _db.ServiceRequests.ToList();
+            var serviceRequestsList = _db.ServiceRequests.ToList().OrderByDescending(x => x.ServiceRequestId);
 
             foreach (ServiceRequest temp in serviceRequestsList)
             {
@@ -199,6 +202,356 @@ namespace mainproject.Controllers
             }
 
             return true;
+
+        }
+
+        public JsonResult GetEditPopupData(ServiceRequest Id)
+        {
+
+
+
+            AdminPopUpDTO adminPopUpDTO = new AdminPopUpDTO();
+
+            adminPopUpDTO.address = _db.ServiceRequestAddresses.FirstOrDefault(x => x.ServiceRequestId == Id.ServiceRequestId);
+
+            DateTime starttime = _db.ServiceRequests.Where(x => x.ServiceRequestId == Id.ServiceRequestId).Select(x => x.ServiceStartDate).FirstOrDefault();
+
+            adminPopUpDTO.Date = starttime.ToString("MM-dd-yyyy");
+
+            //adminPopUpDTO.StartTime = starttime.ToString("HH:mm:ss");
+
+            adminPopUpDTO.StartTime = starttime.ToString("HH':'mm':'ss");
+
+
+
+
+            return Json(adminPopUpDTO);
+
+
+
+        }
+
+
+
+        public JsonResult UpdateServiceReq(AdminPopUpDTO DTO)
+        {
+            ServiceRequest serviceRequest = _db.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == DTO.ServiceRequestId);
+
+            DateTime dateTime = Convert.ToDateTime(DTO.Date);
+
+            serviceRequest.ServiceStartDate = dateTime;
+
+
+
+
+
+
+            ServiceRequestAddress serviceRequestAddress = _db.ServiceRequestAddresses.FirstOrDefault(x => x.ServiceRequestId == DTO.ServiceRequestId);
+
+
+
+            serviceRequestAddress.AddressLine1 = DTO.address.AddressLine1;
+            serviceRequestAddress.AddressLine2 = DTO.address.AddressLine2;
+
+            serviceRequestAddress.PostalCode = DTO.address.PostalCode;
+            serviceRequestAddress.City = DTO.address.City;
+            serviceRequestAddress.State = DTO.address.State;
+
+            var result2 = _db.ServiceRequestAddresses.Update(serviceRequestAddress);
+            _db.SaveChanges();
+            var result1 = _db.ServiceRequests.Update(serviceRequest);
+            _db.SaveChanges();
+
+            if (result1 != null && result2 != null)
+            {
+
+                sendMail(serviceRequest);
+                return Json("true");
+            }
+            else
+            {
+                return Json("false");
+            }
+
+        }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> CencleServiceReq(ServiceRequest cancel)
+        {
+
+
+
+
+            ServiceRequest cancelService = _db.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == cancel.ServiceRequestId);
+            cancelService.Status = 4;
+
+
+            var result = _db.ServiceRequests.Update(cancelService);
+            _db.SaveChanges();
+            if (result != null)
+            {
+
+                await Task.Run(() =>
+                {
+
+                    if (cancelService.ServiceProviderId != null)
+                    {
+
+                        User temp = _db.Users.FirstOrDefault(x => x.UserId == cancelService.ServiceProviderId);
+
+
+                        MimeMessage message = new MimeMessage();
+
+                        MailboxAddress from = new MailboxAddress("Helperland",
+                        "helperland12345@gmail.com");
+                        message.From.Add(from);
+
+                        MailboxAddress to = new MailboxAddress(temp.FirstName, temp.Email);
+                        message.To.Add(to);
+
+                        message.Subject = "Service Request cancelled ";
+
+                        BodyBuilder bodyBuilder = new BodyBuilder();
+                        bodyBuilder.HtmlBody = "<h1>Service request with Id=" + cancelService.ServiceRequestId + ", has been cancled </ h1 > ";
+
+
+
+                        message.Body = bodyBuilder.ToMessageBody();
+
+                        SmtpClient client = new SmtpClient();
+                        client.Connect("smtp.gmail.com", 587, false);
+                    mailto: client.Authenticate("helperland12345@gmail.com", "password@34");
+                        client.Send(message);
+                        client.Disconnect(true);
+                        client.Dispose();
+
+                    }
+
+
+
+
+                });
+
+
+
+
+                return Ok(Json("true"));
+            }
+
+            return Ok(Json("false"));
+        }
+
+
+
+
+        public JsonResult GetUserData(AdminUserFilterDTO filterDto)
+        {
+
+            var user = _db.Users.ToList();
+
+            List<User> result = new List<User>();
+
+            foreach (User temp in user)
+            {
+                if (checkUserFilter(temp, filterDto))
+                {
+
+                    result.Add(temp);
+                }
+            }
+
+
+            return Json(result);
+
+
+
+
+
+        }
+
+        public bool checkUserFilter(User user, AdminUserFilterDTO filter)
+        {
+
+            //Console.WriteLine(filter.ToDate);
+            //Console.WriteLine(user.CreatedDate);
+
+            if (filter.Name != null)
+            {
+
+                var name = user.FirstName + " " + user.LastName;
+                if (!name.Contains(filter.Name))
+                {
+                    return false;
+                }
+            }
+
+            if (filter.UserType != null)
+            {
+                if (user.UserTypeId != filter.UserType)
+                {
+                    return false;
+                }
+            }
+
+            if (filter.Phone != null)
+            {
+                var phone = user.Mobile;
+                if (!phone.Contains(filter.Phone))
+                {
+                    return false;
+                }
+            }
+
+            if (filter.PostalCode != null)
+            {
+                if (user.ZipCode != filter.PostalCode)
+                {
+                    return false;
+                }
+            }
+
+
+            if (filter.Email != null)
+            {
+                var email = user.Email;
+                if (!email.Contains(filter.Email))
+                {
+                    return false;
+                }
+            }
+
+
+
+
+            if (filter.FromDate != null)
+            {
+                DateTime dateTime = Convert.ToDateTime(filter.FromDate);
+                if (!(user.CreatedDate >= dateTime))
+                {
+                    return false;
+                }
+
+            }
+
+            if (filter.ToDate != null)
+            {
+                DateTime dateTime = Convert.ToDateTime(filter.ToDate);
+                if (!(user.CreatedDate <= dateTime))
+                {
+                    return false;
+                }
+
+            }
+
+
+
+            return true;
+
+        }
+
+
+
+        public string UserEdit(User Id)
+        {
+            Console.WriteLine(Id.UserId);
+            User user = _db.Users.FirstOrDefault(x => x.UserId == Id.UserId);
+
+            var resultString = "Error";
+
+            if (user.IsApproved == false)
+            {
+                user.IsApproved = true;
+                user.IsActive = true;
+
+                resultString = "Service Provider Approved and Activated";
+            }
+            else if (user.IsActive == false)
+            {
+                user.IsActive = true;
+
+                resultString = "User Activated";
+            }
+            else
+            {
+                user.IsActive = false;
+
+                resultString = "User Deactivated";
+            }
+
+            var result = _db.Users.Update(user);
+            _db.SaveChanges();
+
+            if (result != null)
+            {
+                return resultString;
+            }
+
+            return "Error occured in DataBase, try again";
+
+
+        }
+
+
+        public async Task sendMail(ServiceRequest req)
+        {
+
+
+
+
+
+
+            List<User> users = new List<User>();
+
+            users.Add(_db.Users.FirstOrDefault(x => x.UserId == req.UserId));
+
+            if (req.Status != 1)
+            {
+                users.Add(_db.Users.FirstOrDefault(x => x.UserId == req.ServiceProviderId));
+            }
+
+
+
+
+
+
+            await Task.Run(() =>
+            {
+                foreach (var temp in users)
+                {
+
+                    MimeMessage message = new MimeMessage();
+
+                    MailboxAddress from = new MailboxAddress("Helperland",
+                    "vedantjotangiya@gmail.com");
+                    message.From.Add(from);
+
+                    MailboxAddress to = new MailboxAddress(temp.FirstName, temp.Email);
+                    message.To.Add(to);
+
+                    message.Subject = "Service Request Updated";
+
+                    BodyBuilder bodyBuilder = new BodyBuilder();
+                    bodyBuilder.HtmlBody = "<h1>A service with ID number " + req.ServiceRequestId + " has been updated</h1><br>" + "<h2>With time : " + req.ServiceStartDate + "</h2>";
+
+
+
+                    message.Body = bodyBuilder.ToMessageBody();
+
+                    SmtpClient client = new SmtpClient();
+                    client.Connect("smtp.gmail.com", 587, false);
+                    client.Authenticate("vedantjotangiya@gmail.com", "Vedantjot@123");
+                    client.Send(message);
+                    client.Disconnect(true);
+                    client.Dispose();
+
+                }
+
+
+            });
+
+
 
         }
         public IActionResult Index()

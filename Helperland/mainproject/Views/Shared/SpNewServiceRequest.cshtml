@@ -5,12 +5,12 @@
 <div id="NewServiceRequest" class="tab-contant">
 
     <div class="clearfix">
-        <div class="d-flex justify-content-between">
+       @* <div class="d-flex justify-content-between">
             <p class="alignleft "> Customer Service Request </p>
 
             <a asp-controller="Customer" asp-action="BookService"> <button class="alignright ">Add new request</button></a>
 
-        </div>
+        </div>*@
         <input type="checkbox" id="newRequestPet" style="margin-left:2%; transform: scale(1.5); " checked="checked">
         <label for="vehicle1"> Include pet at home </label><br><br />
 
@@ -106,7 +106,7 @@
                         aria-label="Close"></button>
             </div>
             <div class="modal-body float-start row">
-                <div class="col">
+                <div class="col-md-6  col-sm-12">
                     <h4 id="SpServiceReqDatetime">05/10/2021 08:00 - 11:30</h4>
                     <p>Duration: <span id="SpServiceReqDuration"> 3 hrs </span> </p>
                     <hr>

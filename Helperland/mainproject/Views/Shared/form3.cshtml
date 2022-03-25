@@ -51,7 +51,11 @@
                         <label for="city" class="form-label">City</label>
                         <input asp-for="City" type="text" class="form-control" name="city" placeholder="City" />
                         <span asp-validation-for="City" class="formwarning"></span>
+
+
+
                     </div>
+
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6 col-sm-12">
@@ -62,7 +66,17 @@
                             <div class="mobile-msg"></div>
                         </div>
                     </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label for="state" class="form-label">State</label>
+                        <input asp-for="State" type="text" class="form-control" name="state" placeholder="State" />
+                        <span asp-validation-for="State" class="formwarning"></span>
+
+
+
+                    </div>
                 </div>
+
+
 
                 <div>
                     <button id="addAddressSubmit" type="button" class="btn save" onclick='saveAddress()'>Save</button>

@@ -41,8 +41,8 @@ namespace mainproject.ViewModel
         public string PhoneNo { get; set; }
 
         public string Email { get; set; }
-
         public string Comments { get; set; }
+
         public float AverageRating { get; set; }
 
 

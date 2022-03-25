@@ -35,8 +35,21 @@ namespace mainproject.Controllers
                     var U = _database.Users.FirstOrDefault(x => x.Email == user.username);
                     ViewBag.Name = null;
 
+
+
+
+
+
                     if (U.UserTypeId == 0)
                     {
+                        if (U.IsActive == false)
+                        {
+                            ViewBag.Name = null;
+                            TempData["add"] = "alert show";
+                            TempData["fail"] = "You are deactivated by admin, please contact admin.";
+                            return RedirectToAction("Index", "Home", new { loginModal = "true" });
+                        }
+
                         if (user.remember == true)
                         {
                             CookieOptions cookieRemember = new CookieOptions();
@@ -52,7 +65,7 @@ namespace mainproject.Controllers
                     }
                     else if (U.UserTypeId == 1)
                     {
-                        if (U.IsApproved == false)
+                        if (U.IsApproved == false || U.IsActive == false)
                         {
                             ViewBag.Name = null;
                             TempData["add"] = "alert show";
@@ -73,12 +86,30 @@ namespace mainproject.Controllers
 
                         return RedirectToAction("SPServiceRequest", "Serviceprovider");
                     }
-                    /* else if (user.UserTypeId == 3)
-                     {
-                         return RedirectToAction("ServiceRequest", "Admin");
-                     }*/
 
-                    return RedirectToAction("CustomerDashboard", "Customer");
+                    else if (U.UserTypeId == 2)
+                    {
+                        if (U.IsActive == false)
+                        {
+                            ViewBag.Name = null;
+                            TempData["add"] = "alert show";
+                            TempData["fail"] = "You are deactivated by admin, please contact admin.";
+                            return RedirectToAction("Index", "Home", new { loginModal = "true" });
+                        }
+
+                        if (user.remember == true)
+                        {
+                            CookieOptions cookieRemember = new CookieOptions();
+                            cookieRemember.Expires = DateTime.Now.AddSeconds(604800);
+                            Response.Cookies.Append("userId", Convert.ToString(U.UserId), cookieRemember);
+                        }
+
+
+                        HttpContext.Session.SetInt32("userId", U.UserId);
+
+                        return RedirectToAction("AdminPanel", "Admin");
+                    }
+
                 }
                 else
                 {
@@ -118,6 +149,8 @@ namespace mainproject.Controllers
                     user.IsRegisteredUser = true;
                     user.ModifiedBy = 123;
                     user.UserTypeId = 1;
+                    user.IsActive = false;
+                    user.IsApproved = false;
                     user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
                     _database.Users.Add(user);
                     _database.SaveChanges();
@@ -157,6 +190,8 @@ namespace mainproject.Controllers
                     user.IsRegisteredUser = true;
                     user.ModifiedBy = 123;
                     user.UserTypeId = 0;
+                    user.IsApproved = true;
+                    user.IsActive = true;
                     user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
 
 

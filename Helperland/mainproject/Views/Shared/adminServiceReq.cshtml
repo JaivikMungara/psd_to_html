@@ -59,10 +59,10 @@
                 </div>
 
                 <div class="col">
-                    <input type="date" class="form-control" placeholder="From Date" id="filterFromdate">
+                    <input type="text" class="form-control" placeholder="From Date" id="filterFromdate" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}">
                 </div>
                 <div class="col">
-                    <input type="date" class="form-control" placeholder="To Date" id="filterTodate">
+                    <input type="text" class="form-control" placeholder="To Date" id="filterTodate" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}">
                 </div>
                 <div class="col">
                     <a class="btn btn-primary form-search me-4" id="filterSubmit">Serach</a>

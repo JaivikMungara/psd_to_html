@@ -110,13 +110,6 @@ Disable('form2Btn');
 Disable('form3Btn');
 Disable('form4Btn');
 
-
-
-
-
-
-
-
 function postalSubmit() {
 
     var data = $("#form1").serialize();
@@ -246,8 +239,6 @@ function addAddressdiv() {
 
 function saveAddress() {
 
-
-
     var data = {};
     data.AddressLine1 = document.getElementById("AddressLine1").value;
     data.AddressLine2 = document.getElementById("AddressLine2").value;
@@ -255,9 +246,6 @@ function saveAddress() {
     data.City = document.getElementById("City").value;
     data.Mobile = document.getElementById("Mobile").value;
     alert("in save address 2")
-
-
-
 
     $.ajax({
         type: 'POST',
@@ -283,19 +271,12 @@ function saveAddress() {
     });
 }
 
-
-
-
 function cancelAddress() {
     document.getElementById("addNewaddressDiv").style.display = "none";
     document.getElementById('addAddressBtn').style.display = "block";
 
 
 }
-
-
-
-
 
 function completeBookService() {
     var data = {};
@@ -390,10 +371,6 @@ function completeBookService() {
     });
 }
 
-
-
-
-
 $(document).ready(function () {
 
 
@@ -436,12 +413,6 @@ $(document).ready(function () {
 
 });
 
-
-
-
-
-
-
 $(document).ready(function () {
 
 
@@ -458,13 +429,6 @@ $(document).ready(function () {
 
 
 });
-
-
-
-
-
-
-
 
 $(document).ready(function () {
 
