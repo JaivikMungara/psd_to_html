@@ -535,8 +535,8 @@ namespace helperland1._0.Controllers
             //Console.WriteLine("2");
 
             return new JsonResult(Addresses);
-        }
 
+        }
 
         [HttpPost]
         public IActionResult AddNewAddress(UserAddress useradd)

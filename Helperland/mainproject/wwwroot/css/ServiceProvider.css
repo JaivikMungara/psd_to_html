@@ -1,4 +1,7 @@
-﻿﻿h1 {
+﻿
+
+
+h1 {
     text-align: center;
     font-size: 30px;
     color: #4F4F4F;
@@ -7,9 +10,11 @@
     padding-bottom: 40px;
 }
 
-h1 span {
-    font-weight: 700;
-}
+    h1 span {
+        font-weight: 700;
+    }
+
+
 
 html, body {
     width: 100%;
@@ -29,6 +34,12 @@ html, body {
     display: block;
 }
 
+
+
+
+
+
+
 .tab {
     float: left;
     border: 1px solid #ffffff;
@@ -36,7 +47,9 @@ html, body {
     width: 23%;
     font-weight: 400;
     height: 900px;
+    margin-right: 1%;
 }
+
 
     .tab button {
         display: block;
@@ -60,6 +73,7 @@ html, body {
         background-color: #146371;
     }
 
+
     .tab button.active {
         background-color: #146371;
     }
@@ -67,7 +81,7 @@ html, body {
 .table {
     float: left;
     padding: 0px 0px;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     width: 75% !important;
     margin-left: 10px;
 }
@@ -77,6 +91,12 @@ th {
     color: #646464;
     font-weight: 700;
     align-content: center;
+}
+
+
+tr {
+    margin-bottom: 5%;
+    border: 1px solid grey;
 }
 
 td {
@@ -93,6 +113,12 @@ p.margin {
     margin: 10px 0px;
 }
 
+
+
+
+
+
+
 .customerCancel {
     background-color: #FF6B6B;
     color: #FFFFFF;
@@ -102,6 +128,10 @@ p.margin {
     padding: 5px 12px;
     margin: 8px 0;
 }
+
+
+
+
 
 @media screen and (max-width: 992px) {
     .main_service {
@@ -140,6 +170,8 @@ p.margin {
                 margin-bottom: 10px;
             }
 
+
+
     .tab {
         height: 100%;
         display: none;
@@ -149,6 +181,8 @@ p.margin {
         text-align: center;
         transition: 0.2s;
     }
+
+
 
     #dashboard .table {
         display: none;
@@ -163,7 +197,9 @@ p.margin {
     }
 }
 
+
 @media screen and (min-width: 992px) {
+
     .mobileview {
         display: none;
     }
@@ -176,6 +212,8 @@ p.margin {
     }
 }
 
+
+
 .completed {
     border: 1px solid #67b644;
     background-color: #67b644;
@@ -183,6 +221,8 @@ p.margin {
     font-size: 13px;
     margin: 10px 0;
 }
+
+
 
 .customerReschedule {
     border: 1px solid #6DA9B5;
@@ -254,6 +294,11 @@ span img {
     font-weight: 700;
 }
 
+
+
+
+
+
 .pagenum-left .pagenum-drop {
     border: 1px solid #E1E1E1;
     border-radius: 4px;
@@ -265,13 +310,16 @@ span img {
 }
 
 .pagenum {
-    margin: 20px 0px 10px 20px; /*    display: flex;    justify-content: space-between;*/
+    margin: 20px 0px 10px 20px;
+    /*    display: flex;
+    justify-content: space-between;*/
     margin-top: 10px;
     color: #777777;
     float: left;
     font-size: 15px;
     width: 73%;
-    max-width: 800px; /*    flex-wrap: wrap;*/
+    max-width: 800px;
+    /*    flex-wrap: wrap;*/
 }
 
     .pagenum select {
@@ -312,6 +360,7 @@ span img {
     color: white
 }
 
+
 .pagenum-right a {
     padding: 10.67px 15.33px 10.33px 14.67px;
     border-radius: 50px;
@@ -326,6 +375,9 @@ span img {
         background: #1D7A8C;
         color: white;
     }
+
+
+
 
 .serviceHistoryServiceDetails {
     width: 25% !important;
@@ -351,18 +403,39 @@ span img {
     transform: rotate(180deg);
 }
 
+
+
 @media screen and (max-width: 350px) {
     .alignright.addnewRequest {
         align-self: center;
     }
 }
 
+
+
+
+
+
+
 @media (min-width: 576px) {
+
+
+    .modal-dialog {
+        max-width: 100%;
+        margin: 1.75rem auto;
+    }
+}
+
+@media (min-width:992px) {
+
     .modal-dialog {
         max-width: 60%;
         margin: 1.75rem auto;
     }
 }
+
+
+
 
 #detailsModelServiceRequest p {
     margin: 0%;
@@ -385,8 +458,16 @@ span img {
     width: fit-content;
     font-size: 14px;
     padding: 5px 12px;
-    margin: 5px; /*  border: 1px solid black;    border-radius: 30%;    padding: 10%;    margin: 5%;*/ /*    background-color :antiquewhite;*/
+    margin: 5px;
+    /*  border: 1px solid black;
+    border-radius: 30%;
+    padding: 10%;
+    margin: 5%;*/
+    /*    background-color :antiquewhite;
+*/
 }
+
+
 
 #customer_Settings .nav-tabs .nav-link {
     margin-bottom: -1px;
@@ -395,11 +476,19 @@ span img {
     border: 4px solid transparent !important;
 }
 
-    #customer_Settings .nav-tabs .nav-item.show .nav-link, #customer_Settings .nav-tabs .nav-link.active {
+    #customer_Settings .nav-tabs .nav-item.show .nav-link,
+    #customer_Settings .nav-tabs .nav-link.active {
         color: #146371 !important;
         background-color: #fff;
         border-color: #fff #fff #146371 !important;
     }
+
+
+
+
+
+
+
 
 #CSSaveDetails {
     border: 1px solid #146371;
@@ -469,9 +558,12 @@ span img {
     margin-right: 20px;
 }
 
-#addNewaddressModel lable { /*margin: 5px 0px 5px 10px;*/
+#addNewaddressModel lable {
+    /*margin: 5px 0px 5px 10px;*/
     margin: 0px;
 }
+
+
 
 #MSDeleteAddress {
     background-color: #FF6B6B;
@@ -482,7 +574,25 @@ span img {
     padding: 5px 12px;
     margin: 8px 0;
 }
-/*.completed {    border: 1px solid #67b644;    background-color: #67b644;    color: #ffffff;    font-size: 13px;    margin: 10px 0;}.cancelled {    border: 1px solid #ff6b6b;    background-color: #ff6b6b;    color: #ffffff;    font-size: 13px;    margin: 10px 0;}*/
+
+
+
+
+/*.completed {
+    border: 1px solid #67b644;
+    background-color: #67b644;
+    color: #ffffff;
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+.cancelled {
+    border: 1px solid #ff6b6b;
+    background-color: #ff6b6b;
+    color: #ffffff;
+    font-size: 13px;
+    margin: 10px 0;
+}*/
 
 .new {
     border: 1px solid #F2BB37;
@@ -499,6 +609,12 @@ span img {
     font-size: 13px;
     padding: 4px 11px 5px 11px;
 }
+
+
+
+
+
+
 
 .rateactive {
     border: 1px solid #146371;
@@ -520,6 +636,12 @@ span img {
     margin: 8px 0;
 }
 
+
+
+
+
+
+
 #export {
     border: 1px solid #146371;
     border-radius: 17px;
@@ -529,6 +651,12 @@ span img {
     padding: 5px 12px;
     margin: 8px 0;
 }
+
+
+
+
+
+
 
 .newReqAcceptBtn {
     border: 1px solid #146371;
@@ -542,6 +670,8 @@ span img {
     pointer-events: none;
 }
 
+
+
 .newReqConflictBtn {
     border: 1px solid #FF6B6B;
     border-radius: 17px;
@@ -553,6 +683,11 @@ span img {
     text-decoration: none;
 }
 
+
+
+
+
+
 #newServiceReqAccept {
     border: 1px solid #67b644;
     border-radius: 17px;
@@ -563,6 +698,12 @@ span img {
     margin: 8px 0;
 }
 
+
+
+
+
+
+
 .upcomingcancel {
     border: 1px solid #FF6B6B;
     border-radius: 17px;
@@ -571,6 +712,114 @@ span img {
     font-size: 14px;
     padding: 5px 12px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.CompleteService {
+    border: 1px solid #67b644;
+    border-radius: 17px;
+    background-color: #67b644;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+}
+
+
+
+#newServiceReqAccept {
+    border: 1px solid #67b644;
+    border-radius: 17px;
+    background-color: #67b644;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 8px 0;
+}
+
+
+
+
+
+
+
+#newServiceReqCompleteBtn {
+    border: 1px solid #67b644;
+    border-radius: 17px;
+    background-color: #67b644;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 8px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#newServiceReqCancelBtn {
+    border: 1px solid #FF6B6B;
+    border-radius: 17px;
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 8px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.upcomingcancel {
+    border: 1px solid #FF6B6B;
+    border-radius: 17px;
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+}
+
+
+
+
+
+/*Block section*/
 
 .blockCard {
     border: 2px solid grey;
@@ -581,6 +830,8 @@ span img {
     max-width: 190px;
 }
 
+
+
 .cap-icon {
     width: 50px;
     height: 50px;
@@ -590,6 +841,10 @@ span img {
     border-radius: 50%;
 }
 
+
+
+
+
 .block-cust-btn {
     border: 1px solid #FF6B6B;
     border-radius: 17px;
@@ -597,4 +852,203 @@ span img {
     color: #FFFFFF;
     font-size: 14px;
     padding: 5px 12px;
+}
+
+
+
+
+
+
+
+/*settings css */
+
+select::-ms-expand {
+    display: none;
+}
+
+
+
+
+
+.select-avtar input[type="radio"] {
+    display: none;
+}
+
+.select-avtar [type=radio] + label {
+    cursor: pointer;
+}
+
+.select-avtar input[type="radio"]:checked + label {
+    border: 3px solid #146371;
+    border-radius: 50%;
+}
+
+#SPSettings .nav-tabs .nav-link {
+    margin-bottom: -1px;
+    background: 0 0;
+    color: #525252;
+    border: 4px solid transparent !important;
+}
+
+    #SPSettings .nav-tabs .nav-item.show .nav-link,
+    #SPSettings .nav-tabs .nav-link.active {
+        color: #146371 !important;
+        font-size: 18px;
+        background-color: #fff;
+        border-color: #fff #fff #146371 !important;
+    }
+
+#mysetting,
+#password_change {
+    font-size: 18px;
+    color: #646464;
+}
+
+
+
+.blue_button {
+    border: 1px solid #146371;
+    border-radius: 17px;
+    background-color: #146371;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin: 5px;
+    padding: 3px 9px;
+}
+
+
+
+
+
+
+
+
+
+
+.select-avtar .form-check-inline {
+    display: inline-block;
+    margin-right: 0rem;
+}
+
+
+
+
+
+
+
+.select-avtar .form-check {
+    min-height: 1.5rem;
+    padding-left: 1em;
+    margin-bottom: 0.125rem;
+}
+
+
+
+.form-label {
+    margin-bottom: 0.5rem;
+    margin-top: 0.7rem;
+}
+
+
+
+
+
+/*rating*/
+
+#MyRating p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+
+
+#MyRating hr {
+    margin-top: 2%;
+}
+
+
+
+.rating-row {
+    border: 1px solid black;
+    margin: 3%;
+    padding: 1%;
+}
+
+
+
+
+
+
+
+/*===== Service Schedule ====*/
+
+.fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.fc-toolbar-title {
+    color: #646464;
+    font-weight: normal;
+}
+
+
+.fc-daygrid-day-number {
+    color: #646464;
+    text-decoration: none;
+}
+
+.fc-button-primary {
+    background-color: #fff !important;
+    border: 1px solid #646464 !important;
+    color: #646464 !important;
+}
+
+.fc-col-header-cell-cushion {
+    color: #646464;
+    text-decoration: none;
+}
+
+.ScheduleServiceLabels {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    color: #646464;
+}
+
+.GrayLabel {
+    width: 15px;
+    height: 15px;
+    background-color: #777777;
+    border: 1px solid #e1e1e1;
+    margin: auto;
+}
+
+.GreenLabel {
+    width: 15px;
+    height: 15px;
+    background-color: #146371;
+    border: 1px solid #e1e1e1;
+    margin: auto;
+    padding: 4px;
+}
+
+.ScheduleLabel {
+    display: flex;
+    align-content: center;
+    gap: 5px;
+}
+
+.fc-daygrid-body fc-daygrid-body-unbalanced {
+    width: 100% !important;
+}
+
+.presentation {
+    width: 100% !important;
 }

@@ -1,4 +1,7 @@
-﻿h1 {
+﻿
+
+
+h1 {
     text-align: center;
     font-size: 30px;
     color: #4F4F4F;
@@ -10,6 +13,8 @@
     h1 span {
         font-weight: 700;
     }
+
+
 
 html, body {
     width: 100%;
@@ -29,14 +34,17 @@ html, body {
     display: block;
 }
 
+
+
 .tab {
     float: left;
     border: 1px solid #ffffff;
     background-color: #1d7a8c;
     width: 23%;
     font-weight: 400;
-    height: 800px;
+    height: 900px;
 }
+
 
     .tab button {
         display: block;
@@ -60,6 +68,7 @@ html, body {
         background-color: #146371;
     }
 
+
     .tab button.active {
         background-color: #146371;
     }
@@ -68,7 +77,7 @@ html, body {
     float: left;
     padding: 0px 0px;
     border: 1px solid #ccc;
-    width: 75%;
+    width: 75% !important;
     margin-left: 10px;
 }
 
@@ -93,6 +102,12 @@ p.margin {
     margin: 10px 0px;
 }
 
+
+
+
+
+
+
 .customerCancel {
     background-color: #FF6B6B;
     color: #FFFFFF;
@@ -104,9 +119,11 @@ p.margin {
 }
 
 
-@media screen and (max-width: 992px) {
 
-    .mainservice123 {
+
+
+@media screen and (max-width: 992px) {
+    .main_service {
         padding-top: 31px;
     }
 
@@ -142,6 +159,8 @@ p.margin {
                 margin-bottom: 10px;
             }
 
+
+
     .tab {
         height: 100%;
         display: none;
@@ -152,7 +171,13 @@ p.margin {
         transition: 0.2s;
     }
 
-    .table {
+
+
+    #dashboard .table {
+        display: none;
+    }
+
+    #service_history .table {
         display: none;
     }
 
@@ -161,12 +186,14 @@ p.margin {
     }
 }
 
+
 @media screen and (min-width: 992px) {
+
     .mobileview {
         display: none;
     }
 
-    .mainservice123 {
+    .main_service {
         padding-top: 31px;
         margin-left: 15%;
         margin-right: 15%;
@@ -192,6 +219,8 @@ p.margin {
     font-size: 13px;
     margin: 10px 0;
 }
+
+
 
 .customerReschedule {
     border: 1px solid #6DA9B5;
@@ -263,6 +292,10 @@ span img {
     font-weight: 700;
 }
 
+
+
+
+
 .pagenum-left .pagenum-drop {
     border: 1px solid #E1E1E1;
     border-radius: 4px;
@@ -274,13 +307,24 @@ span img {
 }
 
 .pagenum {
-    margin: 20px 0;
-    display: flex;
-    justify-content: space-between;
+    margin: 20px 0px 10px 20px;
+    /*    display: flex;
+    justify-content: space-between;*/
     margin-top: 10px;
     color: #777777;
-    flex-wrap: wrap;
+    float: left;
+    font-size: 15px;
+    width: 73%;
+    max-width: 800px;
+    /*    flex-wrap: wrap;*/
 }
+
+    .pagenum select {
+        margin: 0px 15px 0px 5px;
+        border: 1px solid #E1E1E1;
+        border-radius: 4px;
+        padding: 10px 5px;
+    }
 
 .pagenum-left {
     display: flex;
@@ -314,6 +358,338 @@ span img {
 }
 
 
+.pagenum-right a {
+    padding: 10.67px 15.33px 10.33px 14.67px;
+    border-radius: 50px;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #E1E1E1;
+    margin-left: 3px;
+    font-size: 14px;
+}
+
+    .pagenum-right a.current {
+        background: #1D7A8C;
+        color: white;
+    }
+
+
+
+
+.serviceHistoryServiceDetails {
+    width: 25% !important;
+}
+
+.serviceHistoryServiceProvider {
+    width: 30% !important;
+}
+
+.serviceHistoryPayment {
+    width: 15% !important;
+}
+
+.serviceHistoryStatus {
+    width: 15% !important;
+}
+
+.serviceHistoryRate {
+    width: 15% !important;
+}
+
 .transform_btn {
     transform: rotate(180deg);
+}
+
+
+
+@media screen and (max-width: 350px) {
+    .alignright.addnewRequest {
+        align-self: center;
+    }
+}
+
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 750px;
+        margin: 1.75rem auto;
+    }
+}
+
+#detailsModelServiceRequest p {
+    margin: 0%;
+    font-weight: 500;
+}
+
+#detailsModelServiceRequest span {
+    font-weight: 400;
+}
+
+#CDSDAmount {
+    color: #1d7a8c;
+    font-weight: 500;
+}
+
+.extraElement {
+    display: inline-grid;
+    border: 1px solid #6DA9B5;
+    border-radius: 17px;
+    width: fit-content;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 5px;
+    /*  border: 1px solid black;
+    border-radius: 30%;
+    padding: 10%;
+    margin: 5%;*/
+    /*    background-color :antiquewhite;
+*/
+}
+
+
+
+#customer_Settings .nav-tabs .nav-link {
+    margin-bottom: -1px;
+    background: 0 0;
+    color: #525252;
+    border: 4px solid transparent !important;
+}
+
+    #customer_Settings .nav-tabs .nav-item.show .nav-link,
+    #customer_Settings .nav-tabs .nav-link.active {
+        color: #146371 !important;
+        background-color: #fff;
+        border-color: #fff #fff #146371 !important;
+    }
+
+
+
+
+
+
+
+
+#CSSaveDetails {
+    border: 1px solid #146371;
+    border-radius: 17px;
+    background-color: #146371;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 0px 0px 0px 20px;
+}
+
+#CSChangePassword {
+    border: 1px solid #146371;
+    border-radius: 17px;
+    background-color: #146371;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 10px 0px 0px 10px;
+}
+
+#addNewaddressbtn {
+    border: 1px solid #146371;
+    border-radius: 17px;
+    background-color: #146371;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 10px 0px 0px 10px;
+}
+
+#password_change lable {
+    margin: 5px 0px 5px 10px;
+}
+
+#alladdress button {
+    border: 1px solid transparent;
+    background: none;
+}
+
+.deleteiconimg {
+    width: 18px;
+    height: 18px;
+}
+
+#alladdress p {
+    margin: 0px 0px 0px 0px;
+}
+
+#addAddressSubmit {
+    border: 1px solid #146371;
+    border-radius: 17px;
+    background-color: #146371;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin-right: 20px;
+}
+
+#updateAddressSubmit {
+    border: 1px solid #146371;
+    border-radius: 17px;
+    background-color: #146371;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin-right: 20px;
+}
+
+#addNewaddressModel lable {
+    /*margin: 5px 0px 5px 10px;*/
+    margin: 0px;
+}
+
+
+
+#MSDeleteAddress {
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+    border: 1px solid #6DA9B5;
+    border-radius: 17px;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 8px 0;
+}
+
+
+
+
+/*.completed {
+    border: 1px solid #67b644;
+    background-color: #67b644;
+    color: #ffffff;
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+.cancelled {
+    border: 1px solid #ff6b6b;
+    background-color: #ff6b6b;
+    color: #ffffff;
+    font-size: 13px;
+    margin: 10px 0;
+}*/
+
+.new {
+    border: 1px solid #F2BB37;
+    background-color: #F2BB37;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 4px 11px 5px 11px;
+}
+
+.pending {
+    border: 1px solid #1FB6FF;
+    background-color: #1FB6FF;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 4px 11px 5px 11px;
+}
+
+
+
+
+
+
+
+.rateactive {
+    border: 1px solid #146371;
+    border-radius: 17px;
+    background-color: #146371;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 8px 0;
+}
+
+.rateDisabled {
+    border: 1px solid #6DA9B5;
+    border-radius: 17px;
+    background-color: #6DA9B5;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 8px 0;
+}
+
+
+
+
+
+
+
+#export {
+    border: 1px solid #146371;
+    border-radius: 17px;
+    background-color: #146371;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 8px 0;
+}
+
+
+
+
+
+
+
+
+
+/*Block section*/
+
+.blockCard {
+    border: 2px solid grey;
+    padding: 2%;
+    margin: 2%;
+    text-align: center;
+    max-height: 241px;
+    max-width: 240px;
+}
+
+
+
+
+
+
+
+#favouritePros .cap-icon {
+    width: 50px;
+    height: 50px;
+    padding: 7px 7px;
+    border: solid 1px #aaa;
+    background-color: var(--white);
+    border-radius: 50%;
+    float: none;
+}
+
+
+
+.block-sp-btn {
+    border: 1px solid #FF6B6B;
+    border-radius: 17px;
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 2%;
+}
+
+
+
+
+
+
+
+.fav-sp-btn {
+    border: 1px solid #FF6B6B;
+    border-radius: 17px;
+    background-color: #2b8799;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 2%;
 }

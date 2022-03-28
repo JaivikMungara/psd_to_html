@@ -459,3 +459,6 @@ C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Admin
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\adminServiceReq.cshtml.g.cs
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\adminUserManagement.cshtml.g.cs
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contactus.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\SpSettings.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\SpServiceSchedule.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\navbar.cshtml.g.cs

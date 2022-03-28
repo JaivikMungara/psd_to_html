@@ -6,23 +6,6 @@
     opacity: 0.8;
 }
 
-.mainstar {
-    display: flex;
-    justify-content: center;
-    margin-top: 9px;
-}
-.line {
-    width: 62px;
-    height: 1px;
-    opacity: 1;
-    border-bottom: 1px solid #CCCCCC;
-    margin-top: 14px;
-}
-.star789 {
-    width: 24px;
-    height: 25px;
-    opacity: 1;
-}
 
 .faq-navbar-brand {
     top: 6px;

@@ -51,9 +51,9 @@
                 <div class="navbar-nav ms-auto">
 
                     <div class="user-icon nav-item">
-                        <img src="/Images/user.png" alt="...">
+                        <img src="~/images/user.png" alt="...">
                         <span class="admin-name">@ViewBag.Name</span>
-                        <a asp-controller="UserManagement" asp-action="Logout"><img src="~/images/logout.png" alt="" class="logout"></a>
+                        <a asp-controller="UserManagement" asp-action="logout"><img src="~/images/logout.png" alt="" class="logout"></a>
                     </div>
 
                 </div>
@@ -92,6 +92,8 @@
 
         </div>
     </section>
+
+
 
     <section class="popupModel">
 
@@ -244,6 +246,93 @@
 
 
 
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary d-none" id="RefundModelBtn" data-bs-toggle="modal"
+                data-bs-target="#RefundModel">
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="RefundModel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered" style="max-width: 550px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title w700" id="exampleModalLabel">Refund Amount</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-danger d-none  d-flex justify-content-center" style="max-width:800px" id="AdminRefundAlert" role="alert">
+                        </div>
+
+                        <div class="row ps-3">
+                            <div class="col-3 w500">
+
+                                <div class="row">Paid Amount </div>
+                                <span id="PaidAmount">5400</span>&euro;
+                            </div>
+                            <div class="col-4 w500">
+                                <div class="row">Refund Amount </div>
+                                <span id="RefundAmount">0</span>  &euro;
+                            </div>
+                            <div class="col-5 w500">
+                                <div class="row">In Balance Amount </div>
+                                <span id="BalanceAmount">5400</span> &euro;
+                            </div>
+
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <label class="form-label w500">Amount</label>
+
+                                <div class="input-group">
+
+                                    <input type="number" class="form-control" value="0" id="RefundPercentage">
+                                    <span class="input-group-text">Percentage</span>
+                                </div>
+
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label w500">Calculate</label>
+
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"> Calculate</span>
+                                    <input type="text" id="CalculateAmount" class="form-control" disabled>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="form-label w500 mt-3">Why you want to refund amount?</label>
+                        <textarea name="" class="form-control" id="WhyRefund"
+                                  placeholder="Why you want to refund amount?"></textarea>
+
+                        <label class="form-label w500 mt-3">Call Center EMP Notes</label>
+                        <textarea name="" class="form-control" id="CallNotes" placeholder="Enter Notes"></textarea>
+
+
+
+
+                        <div class="row my-3 px-3">
+                            <button class="btn btn-primary" style="background-color:#1FB6FF; border-radius: 0%; border-color: #1FB6FF;"
+                                    type="button" id="RefundSubmit">
+                                Refund
+                            </button>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
 
 
 
@@ -282,6 +371,9 @@
 
 
     </section>
+
+
+
 
     <!-- script -->
 

@@ -41,7 +41,7 @@
                                     <p>@item.ServiceRequestId</p>
                                 </td>
                                 <td data-label="Service Date">
-                                    <div> <img src="/images/calendar.png" alt="calender"> @item.Date </div>
+                                    <div> <img src="~/images/calendar2.png" alt="calender"> @item.Date </div>
                                     <p class="service-time"> @item.StartTime - @item.EndTime </p>
                                 </td>
                                 <td data-label="Service Provider" class="clearfix">
@@ -88,8 +88,8 @@
                             <h6 class="d-inline pe-2">Service Id : </h6> @item.ServiceRequestId
                             <hr />
                             <span>
-                                <img src="/images/calendar2.png" alt="calender"><h6 class="d-inline pe-2 "> <span class="d-none d-sm-block">Service</span>  Date:</h6><span class="date mb-0">@item.Date</span><br>
-                                <img src="/images/calendar2.png" alt="calender"><h6 class="pe-2 d-inline  "><span class="d-none d-sm-block">Service</span> Time:</h6> @item.StartTime - @item.EndTime
+                                <img src="~/images/calendar2.png" alt="calender"><h6 class="d-inline pe-2 "> <span class="d-none d-sm-block">Service</span>  Date:</h6><span class="date mb-0">@item.Date</span><br>
+                                <img src="~/images/calendar2.png" alt="calender"><h6 class="pe-2 d-inline  "><span class="d-none d-sm-block">Service</span> Time:</h6> @item.StartTime - @item.EndTime
                             </span>
                             <hr>
                             @if (item.ServiceProvider != null)

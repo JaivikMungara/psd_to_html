@@ -51,7 +51,7 @@ namespace mainproject.Controllers
 
         public JsonResult GetServiceRequest(AdminServiceFilterDTO filter)
         {
-            Console.WriteLine(filter.ServiceRequestId);
+            //Console.WriteLine(filter.ServiceRequestId);
 
             List<AdminservicereqDTO> tabledata = new List<AdminservicereqDTO>();
 
@@ -70,7 +70,7 @@ namespace mainproject.Controllers
                     Dto.StartTime = temp.ServiceStartDate.AddHours(0).ToString("HH:mm ");
                     var totaltime = (double)(temp.ServiceHours + temp.ExtraHours);
                     Dto.EndTime = temp.ServiceStartDate.AddHours(totaltime).ToString("HH:mm ");
-                    Dto.Status = (int)temp.Status;
+                    //Dto.Status = (int)temp.Status;
                     Dto.TotalCost = temp.TotalCost;
                     /* customer */
 
@@ -524,7 +524,7 @@ namespace mainproject.Controllers
                     MimeMessage message = new MimeMessage();
 
                     MailboxAddress from = new MailboxAddress("Helperland",
-                    "vedantjotangiya@gmail.com");
+                    "helperland12345@gmail.com");
                     message.From.Add(from);
 
                     MailboxAddress to = new MailboxAddress(temp.FirstName, temp.Email);
@@ -541,7 +541,7 @@ namespace mainproject.Controllers
 
                     SmtpClient client = new SmtpClient();
                     client.Connect("smtp.gmail.com", 587, false);
-                    client.Authenticate("vedantjotangiya@gmail.com", "Vedantjot@123");
+                    client.Authenticate("helperland12345@gmail.com", "password@34");
                     client.Send(message);
                     client.Disconnect(true);
                     client.Dispose();
@@ -554,6 +554,54 @@ namespace mainproject.Controllers
 
 
         }
+
+        //refund
+
+
+
+
+        public JsonResult GetAdminRefundData(ServiceRequest Id)
+        {
+
+
+            Console.WriteLine(Id.ServiceRequestId);
+            var req = _db.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == Id.ServiceRequestId);
+
+
+            var myData = new
+            {
+                TotalCost = req.TotalCost,
+                RefundAmount = req.RefundedAmount
+
+            };
+
+            return Json(myData);
+        }
+
+        public string AdminRefundUpdate(ServiceRequest req)
+        {
+            Console.WriteLine(req.RefundedAmount);
+            Console.WriteLine(req.ServiceRequestId);
+
+
+            ServiceRequest obj = _db.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == req.ServiceRequestId);
+
+
+            obj.RefundedAmount = req.RefundedAmount;
+
+            var result = _db.ServiceRequests.Update(obj);
+
+            _db.SaveChanges();
+
+            if (result != null)
+            {
+
+                return "true";
+            }
+
+            return "error";
+        }
+
         public IActionResult Index()
         {
             return View();
