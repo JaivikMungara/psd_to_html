@@ -1,6 +1,6 @@
 ﻿using mainproject.Models;
 
-namespace helperland1._0.ViewModel
+namespace mainproject.ViewModel
 {
     public class AdminPopUpDTO
     {
@@ -25,3 +25,4 @@ namespace helperland1._0.ViewModel
         public string CallCenterNote { get; set; }
     }
 }
+

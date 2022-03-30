@@ -679,7 +679,7 @@ namespace helperland1._0.Controllers
 
             if (result != null && srAddrResult != null)
             {
-                sendServiceMailtoSP(result.Entity.ServiceRequestId);
+                sendServiceMailtoSP(result.Entity.ServiceRequestId, result.Entity.ZipCode);
                 return Ok(Json(result.Entity.ServiceRequestId));
 
 
@@ -688,7 +688,7 @@ namespace helperland1._0.Controllers
             return Ok(Json("false"));
         }
 
-        public async Task sendServiceMailtoSP(int serviceId)
+        public async Task sendServiceMailtoSP(int serviceId,String zipcode)
         {
             int Id = -1;
 
@@ -703,19 +703,19 @@ namespace helperland1._0.Controllers
 
             }
 
-            var serviceProviderList = _db.Users.Where(x => x.UserTypeId == 1 && x.IsApproved == true).ToList();
+            var serviceProviderList = _db.Users.Where(x => x.UserTypeId == 1 && x.IsActive == true && x.IsApproved == true && x.ZipCode == zipcode).ToList();
             var BlockedBySp = _db.FavoriteAndBlockeds.Where(x => x.TargetUserId == Id && x.IsBlocked == true).Select(x => x.UserId).ToList();
 
-            var SpByBlocked = _db.FavoriteAndBlockeds.Where(x => x.TargetUserId == Id && x.IsBlocked == true).Select(x => x.UserId).ToList();
+            var SpBlockedByCust = _db.FavoriteAndBlockeds.Where(x => x.TargetUserId == Id && x.IsBlocked == true).Select(x => x.UserId).ToList();
 
-            //BlockedBySp.AddRange(SpBlockedByCust);
+            BlockedBySp.AddRange(SpBlockedByCust);
             var blocked = BlockedBySp;
 
             await Task.Run(() =>
             {
                 foreach (var temp in serviceProviderList)
                 {
-                    if (!SpByBlocked.Contains(temp.UserId))
+                    if (!blocked.Contains(temp.UserId))
                     {
                         MimeMessage message = new MimeMessage();
 

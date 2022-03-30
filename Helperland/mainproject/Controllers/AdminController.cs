@@ -1,4 +1,4 @@
-﻿using helperland1._0.ViewModel;
+﻿using mainproject.ViewModel;
 using mainproject.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using mainproject.ViewModel;
 
 namespace mainproject.Controllers
 {
@@ -28,8 +27,8 @@ namespace mainproject.Controllers
             {
                 Id = Convert.ToInt32(Request.Cookies["userId"]);
             }
-
-            if (Id == null)
+            Console.WriteLine(Id + "36");
+            if (Id == null || Id == 0)
             {
                 return RedirectToAction("Index", "Home", new { loginFail = "true" });
             }
@@ -70,7 +69,7 @@ namespace mainproject.Controllers
                     Dto.StartTime = temp.ServiceStartDate.AddHours(0).ToString("HH:mm ");
                     var totaltime = (double)(temp.ServiceHours + temp.ExtraHours);
                     Dto.EndTime = temp.ServiceStartDate.AddHours(totaltime).ToString("HH:mm ");
-                    //Dto.Status = (int)temp.Status;
+                    Dto.Status = (int)temp.Status;
                     Dto.TotalCost = temp.TotalCost;
                     /* customer */
 
@@ -602,9 +601,6 @@ namespace mainproject.Controllers
             return "error";
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+        
     }
 }

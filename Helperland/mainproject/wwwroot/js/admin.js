@@ -207,21 +207,21 @@ function getadminservicereq() {
                     '    </td>' +
                     '    <td data-label="Service date">' +
                     '        <p>' +
-                    '            <img src="~/images/calendar2.png" alt="calender">' +
+                    '            <img src="/images/calendar2.png" alt="calender this is alternative from js file">' +
                     '                ' + result[i].date + ' <br>' +
-                    '                    <img src="~/images/layer-14.png" alt="clock">' +
+                    '                    <img src="/images/layer-14.png" alt="clock">' +
                     '                      ' + result[i].startTime + '-' + result[i].endTime + '</p>' +
                     '                                </td>' +
                     '                <td data-label="Customers details">' +
                     '                    <p>' +
                     '                       ' + result[i].customerName + ' <br>' +
-                    '                            <img src="~/images/layer-15.png"' +
+                    '                            <img src="/images/layer-15.png"' +
                     '                                alt="home">' + result[i].address + '' +
                     '                                    </p>' +
                     '                                </td>' +
                     '                        <td>' +
                     '                            <div class="cap-icon ' + display + '">' +
-                    '                                <img src="~/images/' + result[i].userProfilePicture + '"' +
+                    '                                <img src="/images/' + result[i].userProfilePicture + '"' +
                     '                                    alt="..">' +
                     '                                    </div>' + result[i].serviceProvider +
                     '                                <div class=' + display + '>' + star +
@@ -234,7 +234,7 @@ function getadminservicereq() {
                     '                            <td data-label="Actions">' +
                     '                                <div class="popup" onclick="reply_click(this.id)"' +
                     '                                    id="' + result[i].serviceRequestId + '">' +
-                    '                                    <img src="~/images/group-38.png" alt="...">' +
+                    '                                    <img src="/images/group-38.png" alt="...">' +
                     '                                        <div class="popuptext" id="' + result[i].serviceRequestId + '_popup">' + popupfield +
                     '                                        </div>' +
                     '                                    </div>' +
@@ -684,7 +684,7 @@ function getAdminUserData() {
                     '' +
                     '                            </td>' +
                     '                            <td data-label="Date of Registration">' +
-                    '                                <p> <img class="me-2" src="~/images/calendar2.png" alt="calender">' + createdDateTemp + '</p>' +
+                    '                                <p> <img class="me-2" src="/images/calendar2.png" alt="calender">' + createdDateTemp + '</p>' +
                     '                            </td>' +
                     '                            <td data-label="User Type">' +
                     '                                <p>' + userTypeTemp + '</p>' +
@@ -701,7 +701,7 @@ function getAdminUserData() {
                     '                                </td>' +
                     '                            <td data-label="Actions">' +
                     '                                <div class="popup" onclick="reply_click(this.id)" id="U' + result[i].userId + '"><img' +
-                    '                                        src="~/images/group-38.png" alt="...">' +
+                    '                                        src="/images/group-38.png" alt="...">' +
                     '                                    <div class="popuptext userpopup" data-value="' + result[i].userId + '" id="U' + result[i].userId + '_popup">' +
                     popup +
                     '                                    </div>' +
@@ -927,10 +927,10 @@ function adminserviceDatatable() {
         pagingType: "full_numbers",
         language: {
             paginate: {
-                first: "<img src='~/images/pagination-first.png' alt='first'/>",
-                previous: "<img src='~/images/pagination-left.png' alt='previous' />",
-                next: "<img src='~/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-                last: "<img src='~/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+                first: "<img src='/images/pagination-first.png' alt='first'/>",
+                previous: "<img src='/images/pagination-left.png' alt='previous' />",
+                next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
+                last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
             },
 
             info: "Total Records : _MAX_",
@@ -962,10 +962,10 @@ function adminUserDatatable() {
         pagingType: "full_numbers",
         language: {
             paginate: {
-                first: "<img src='~/images/pagination-first.png' alt='first'/>",
-                previous: "<img src='~/images/pagination-left.png' alt='previous' />",
-                next: "<img src='~/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-                last: "<img src='~/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+                first: "<img src='/images/pagination-first.png' alt='first'/>",
+                previous: "<img src='/images/pagination-left.png' alt='previous' />",
+                next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
+                last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
             },
 
             info: "Total Records : _MAX_",

@@ -416,10 +416,10 @@ function getUpcomingServiceTable() {
 
                 $('#UpcomingServiceTbody').append('<tr class="text-center" data-value=' + result[i].serviceRequestId + ' ><td data-label="Service ID">'
                     + '<p class="margin">' + result[i].serviceRequestId + '</p></td>'
-                    + '<td data-label="Service date"> <div><img src="~/images/calendar2.png" alt="calender">' + result[i].date + ' </div>'
-                    + '<div><img src="~/images/layer-14.png" alt="clock">' + result[i].startTime + '-' + result[i].endTime + '</div></td>'
+                    + '<td data-label="Service date"> <div><img src="/images/calendar2.png" alt="calender">' + result[i].date + ' </div>'
+                    + '<div><img src="/images/layer-14.png" alt="clock">' + result[i].startTime + '-' + result[i].endTime + '</div></td>'
                     + '<td class="text-start" data-lable="Customer Details"><div class= "ms-4">' + result[i].customerName + '</div >'
-                    + '<div class="d-flex" ><span><img class="me-0" src="~/images/layer-15.png" alt=""></span> <span>' + result[i].address + ' </span></div></td>'
+                    + '<div class="d-flex" ><span><img class="me-0" src="/images/layer-15.png" alt=""></span> <span>' + result[i].address + ' </span></div></td>'
                     + '<td data-label="Completed"> <p class= "margin" >  <button class=' + completeclass + '>Complete</button></P></td >'
                     + '<td data-label="Action"><p class="margin"><button data-bs-toggle="modal" data-bs-target="#SPdeleteModelServiceRequest" class="upcomingcancel">Cancel</button></P>	</td></tr >'
                 )
@@ -714,10 +714,10 @@ function getServiceHistoryTable() {
 
                 $('#ServiceHistoryTbody').append(' <tr class= "text-center" data-value=' + result[i].serviceRequestId + ' > <td data-label="Service ID">'
                     + '<p class="margin">' + result[i].serviceRequestId + '</p></td>'
-                    + '<td data-label="Service date"> <div><img src="~/images/calendar2.png" alt="calender">' + result[i].date + ' </div>'
-                    + '<div><img src="~/images/layer-14.png" alt="clock">' + result[i].startTime + '-' + result[i].endTime + '</div></td>'
+                    + '<td data-label="Service date"> <div><img src="/images/calendar2.png" alt="calender">' + result[i].date + ' </div>'
+                    + '<div><img src="/images/layer-14.png" alt="clock">' + result[i].startTime + '-' + result[i].endTime + '</div></td>'
                     + '<td class="text-start" data-lable="Customer Details"><div class= "ms-4">' + result[i].customerName + '</div >'
-                    + '<div class="d-flex" ><span><img class="me-0" src="~/images/layer-15.png" alt=""></span> <span>' + result[i].address + ' </span>'
+                    + '<div class="d-flex" ><span><img class="me-0" src="/images/layer-15.png" alt=""></span> <span>' + result[i].address + ' </span>'
                     + '</div></td></tr>');
 
             }
@@ -1111,8 +1111,8 @@ $(document).on('click', '#MyRatingTabBtn', function () {
                 $('#RatingList').append('<div class="row  rating-row"><div class="row"><div class="col-3">'
                     + '<p>' + result[i].serviceRequestId + '</p>'
                     + '<p>' + result[i].customerName + '</p></div><div class="col-5">'
-                    + '<p> <span><img src="~/images/calendar2.png" alt=""></span> <span class="upcoming-date"><b>' + result[i].serviceDate + '</b></span></p>'
-                    + ' <p><span><img src="~/images/layer-14.png" alt=""></span><span>' + result[i].startTime + ' - ' + result[i].endTime + '</span></p></div>'
+                    + '<p> <span><img src="/images/calendar2.png" alt=""></span> <span class="upcoming-date"><b>' + result[i].serviceDate + '</b></span></p>'
+                    + ' <p><span><img src="/images/layer-14.png" alt=""></span><span>' + result[i].startTime + ' - ' + result[i].endTime + '</span></p></div>'
                     + '<div class="col-4"><p>Rating</p>'
                     + '<div class="star-ratingmodel text-start">' + star + '</div></div></div><hr />'
                     + '<div class="row"><p><b>Customer Comments</b></p><p>' + result[i].comments + '</p></div></div>'
@@ -1157,10 +1157,10 @@ var Newservicerequest = new DataTable("#SPServiceRequestTable", {
     pagingType: "full_numbers",
     language: {
         paginate: {
-            first: "<img src='~/images/pagination-first.png' alt='first' />",
-            previous: "<img src='~/images/pagination-left.png' alt='previous' />",
-            next: "<img src='~/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-            last: "<img src='~/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+            first: "<img src='/images/pagination-first.png' alt='first' />",
+            previous: "<img src='/images/pagination-left.png' alt='previous' />",
+            next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
+            last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
         },
 
         info: "Total Records : _MAX_",
@@ -1189,10 +1189,10 @@ function ServiceHistoryDatatable() {
         pagingType: "full_numbers",
         language: {
             paginate: {
-                first: "<img src='~/images/pagination-first.png' alt='first'/>",
-                previous: "<img src='~/images/pagination-left.png' alt='previous' />",
-                next: "<img src='~/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-                last: "<img src='~/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+                first: "<img src='/images/pagination-first.png' alt='first'/>",
+                previous: "<img src='/images/pagination-left.png' alt='previous' />",
+                next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
+                last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
             },
 
             info: "Total Records : _MAX_",
@@ -1222,10 +1222,10 @@ function upcomingserviceDatatable() {
         pagingType: "full_numbers",
         language: {
             paginate: {
-                first: "<img src='~/images/pagination-first.png' alt='first'/>",
-                previous: "<img src='~/images/pagination-left.png' alt='previous' />",
-                next: "<img src='~/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-                last: "<img src='~/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+                first: "<img src='/images/pagination-first.png' alt='first'/>",
+                previous: "<img src='/images/pagination-left.png' alt='previous' />",
+                next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
+                last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
             },
 
             info: "Total Records : _MAX_",

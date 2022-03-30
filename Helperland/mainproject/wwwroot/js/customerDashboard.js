@@ -656,9 +656,9 @@ function getAddress() {
                         + '<td><p><strong> Address: </strong>' + result[i].addressLine1 + ", " + result[i].addressLine2 + ', ' + result[i].city + ' - ' + result[i].postalCode + '</p>'
                         + '<p><strong>Phone number: </strong>' + result[i].mobile + '</p></td>'
                         + '<td class="myAddressBtns"><button class="myAddressButton myAddressEditBtn" data-value=' + result[i].addressId + '>'
-                        + '<img src="~/images/edit.jpg" />  </button > '
+                        + '<img src="/images/edit.jpg" />  </button > '
                         + '<button class="myAddressButton myAddressDeleteBtn" data-value=' + result[i].addressId + '>'
-                        + ' <img src="~/images/deleteiconadd.png" class="deleteiconimg" /> </button> </td > </tr > '
+                        + ' <img src="/images/deleteiconadd.png" class="deleteiconimg" /> </button> </td > </tr > '
                     );
                 }
 
@@ -1040,10 +1040,10 @@ const dashbordTablepagination = new DataTable("#dashbordTable", {
     pagingType: "full_numbers",
     language: {
         paginate: {
-            first: "<img src='~/images/pagination-first.png' alt='first'/>",
-            previous: "<img src='~/images/pagination-left.png' alt='previous' />",
-            next: "<img src='~/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-            last: "<img src='~/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+            first: "<img src='/images/pagination-first.png' alt='first'/>",
+            previous: "<img src='/images/pagination-left.png' alt='previous' />",
+            next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
+            last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
         },
         info: "Total Records : _MAX_",
         lengthMenu: "Show_MENU_Entries",
@@ -1058,10 +1058,10 @@ const ServiceHistoryTablepagination = new DataTable("#ServiceHistoryTable", {
     pagingType: "full_numbers",
     language: {
         paginate: {
-            first: "<img src='~/images/pagination-first.png' alt='first'/>",
-            previous: "<img src='~/images/pagination-left.png' alt='previous' />",
-            next: "<img src='~/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-            last: "<img src='~/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+            first: "<img src='/images/pagination-first.png' alt='first'/>",
+            previous: "<img src='/images/pagination-left.png' alt='previous' />",
+            next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
+            last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
         },
         info: "Total Records : _MAX_",
         lengthMenu: "Show_MENU_Entries",
