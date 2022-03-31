@@ -1062,10 +1062,10 @@ $("#SPChangePassword").on('click', function () {
         $("#mSchangePasswordAlert").removeClass("alert-success d-none").addClass("alert-danger").text("New password is Required.");
         $("mSnewpassword").focus();
     }
-    else if (!paswordtest.test(data.newPassword)) {
-        $("#mSchangePasswordAlert").removeClass("alert-success d-none").addClass("alert-danger").text("please enter strong password.");
-        $("mSnewpassword").focus();
-    }
+   // else if (!paswordtest.test(data.newPassword)) {
+     //   $("#mSchangePasswordAlert").removeClass("alert-success d-none").addClass("alert-danger").text("please enter strong password.");
+       // $("mSnewpassword").focus();
+    //}
     else if (data.confirmPassword == "") {
         $("#mSchangePasswordAlert").removeClass("alert-success d-none").addClass("alert-danger").text("Confirm password is Required.");
         $("#mSconfirmpassword").focus();
