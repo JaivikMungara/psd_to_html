@@ -927,10 +927,10 @@ function adminserviceDatatable() {
         pagingType: "full_numbers",
         language: {
             paginate: {
-                first: "<img src='/images/pagination-first.png' alt='first'/>",
-                previous: "<img src='/images/pagination-left.png' alt='previous' />",
-                next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-                last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+                first: "<img src='/images/first-page.png' alt='first'/>",
+                previous: "<img src='/images/first-page.png' alt='previous' />",
+                next: "<img src='/images/first-page.png' alt='next' style='transform: rotate(180deg)' />",
+                last: "<img src='/images/first-page.png' alt='first' style='transform: rotate(180deg) ' />",
             },
 
             info: "Total Records : _MAX_",
@@ -962,10 +962,10 @@ function adminUserDatatable() {
         pagingType: "full_numbers",
         language: {
             paginate: {
-                first: "<img src='/images/pagination-first.png' alt='first'/>",
-                previous: "<img src='/images/pagination-left.png' alt='previous' />",
-                next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-                last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+                first: "<img src='/images/first-page.png' alt='first'/>",
+                previous: "<img src='/images/first-page.png' alt='previous' />",
+                next: "<img src='/images/first-page.png' alt='next' style='transform: rotate(180deg)' />",
+                last: "<img src='/images/first-page.png' alt='first' style='transform: rotate(180deg) ' />",
             },
 
             info: "Total Records : _MAX_",

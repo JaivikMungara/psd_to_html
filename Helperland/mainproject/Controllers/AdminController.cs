@@ -69,7 +69,7 @@ namespace mainproject.Controllers
                     Dto.StartTime = temp.ServiceStartDate.AddHours(0).ToString("HH:mm ");
                     var totaltime = (double)(temp.ServiceHours + temp.ExtraHours);
                     Dto.EndTime = temp.ServiceStartDate.AddHours(totaltime).ToString("HH:mm ");
-                    Dto.Status = (int)temp.Status;
+                    //Dto.Status = (int)temp.Status;
                     Dto.TotalCost = temp.TotalCost;
                     /* customer */
 
@@ -595,8 +595,8 @@ namespace mainproject.Controllers
             if (result != null)
             {
 
-                return "true";
             }
+                return "true";
 
             return "error";
         }

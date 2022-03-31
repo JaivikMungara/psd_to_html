@@ -1040,10 +1040,10 @@ const dashbordTablepagination = new DataTable("#dashbordTable", {
     pagingType: "full_numbers",
     language: {
         paginate: {
-            first: "<img src='/images/pagination-first.png' alt='first'/>",
-            previous: "<img src='/images/pagination-left.png' alt='previous' />",
-            next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-            last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+            first: "<img src='/images/first-page.png' alt='first'/>",
+            previous: "<img src='/images/first-page.png' alt='previous' />",
+            next: "<img src='/images/first-page.png' alt='next' style='transform: rotate(180deg)' />",
+            last: "<img src='/images/first-page.png' alt='first' style='transform: rotate(180deg) ' />",
         },
         info: "Total Records : _MAX_",
         lengthMenu: "Show_MENU_Entries",
@@ -1058,10 +1058,10 @@ const ServiceHistoryTablepagination = new DataTable("#ServiceHistoryTable", {
     pagingType: "full_numbers",
     language: {
         paginate: {
-            first: "<img src='/images/pagination-first.png' alt='first'/>",
-            previous: "<img src='/images/pagination-left.png' alt='previous' />",
-            next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-            last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+            first: "<img src='/images/first-page.png' alt='first'/>",
+            previous: "<img src='/images/first-page.png' alt='previous' />",
+            next: "<img src='/images/first-page.png' alt='next' style='transform: rotate(180deg)' />",
+            last: "<img src='/images/first-page.png' alt='first' style='transform: rotate(180deg) ' />",
         },
         info: "Total Records : _MAX_",
         lengthMenu: "Show_MENU_Entries",
@@ -1160,7 +1160,7 @@ $(document).on('click', '#favouriteProsTabBtn', function () {
 
                 $('#favouriteProsGrid').append('<div  class="col-4 blockCard ">' +
                     '<div>' +
-                    '<img class= "cap-icon" src = "~/images/cap.png " alt = ".." >' +
+                    '<img class= "cap-icon" src = "/images/cap.png " alt = ".." >' +
                     '</div >' +
                     '<br/>' +
                     '<h3> ' + result[i].user.firstName + '  </h3>' +

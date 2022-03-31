@@ -288,7 +288,7 @@ namespace mainproject.Controllers
             double mins = ((double)(request.ServiceHours + request.ExtraHours)) * 60;
             DateTime endTimeRequest = request.ServiceStartDate.AddMinutes(mins + 60);
 
-            request.ServiceStartDate = request.ServiceStartDate.AddMinutes(-60);
+            var ServiceStartDate = request.ServiceStartDate.AddMinutes(-60);
             //Console.WriteLine(endTimeRequest);
             //Console.WriteLine(request.ServiceStartDate);
             foreach (ServiceRequest booked in list)

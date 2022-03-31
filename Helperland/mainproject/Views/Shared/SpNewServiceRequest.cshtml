@@ -5,12 +5,12 @@
 <div id="NewServiceRequest" class="tab-contant">
 
     <div class="clearfix">
-       @* <div class="d-flex justify-content-between">
-            <p class="alignleft "> Customer Service Request </p>
+        @*<div class="d-flex justify-content-between">
+                <p class="alignleft "> Customer Service Request </p>
 
-            <a asp-controller="Customer" asp-action="BookService"> <button class="alignright ">Add new request</button></a>
+                <a asp-controller="Customer" asp-action="BookService"> <button class="alignright ">Add new request</button></a>
 
-        </div>*@
+            </div>*@
         <input type="checkbox" id="newRequestPet" style="margin-left:2%; transform: scale(1.5); " checked="checked">
         <label for="vehicle1"> Include pet at home </label><br><br />
 
@@ -75,8 +75,8 @@
                 }
 
 
-            </tbody>
 
+            </tbody>
 
 
         </table>
@@ -90,6 +90,7 @@
 
 
 
+<!--Sp New Service requ details model -->
 <!--Sp New Service requ details model -->
 
 
@@ -130,21 +131,18 @@
                     <hr>
 
 
-
-
-
-
                     <div id="detailPopUpNew"><button id="newServiceReqAccept" type="submit">Accept</button></div>
 
                     <div id="detailPopUpUpComing">
                         <button id="newServiceReqCompleteBtn" type="submit">Complete</button>
-                        <button id="newServiceReqCancelBtn" type="submit">Cancel</button>
+                        <button id="newServiceReqCancelBtn" data-bs-toggle="modal" data-bs-target="#SPdeleteModelServiceRequest" type="submit">Cancel</button>
                     </div>
+
+
+
+
                 </div>
-                <div class="col" id="newServiceReqMap">
-
-
-
+                <div class="col-md-6 col-sm-12" id="newServiceReqMap">
                 </div>
 
             </div>
@@ -154,27 +152,3 @@
 
 
 
-@* alert popup*@
-
-<button type="button" class="btn btn-primary d-none" id="acceptAlert" data-bs-toggle="modal" data-bs-target="#alertPopup">
-    alert popup
-</button>
-
-<div class="modal fade" id="alertPopup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width:500px">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-                <h4 class="modal-title" id="NewServiceAcceptStatus">  </h4>
-                <h5 id="Model_SID"></h5>
-
-
-            </div>
-
-        </div>
-    </div>
-</div>

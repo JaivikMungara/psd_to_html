@@ -824,10 +824,10 @@ span img {
 .blockCard {
     border: 2px solid grey;
     padding: 2%;
-    margin: 5%;
+    margin: 2%;
     text-align: center;
     max-height: 241px;
-    max-width: 190px;
+    width: 190px;
 }
 
 
@@ -1051,4 +1051,14 @@ select::-ms-expand {
 
 .presentation {
     width: 100% !important;
+}
+
+
+
+
+
+
+
+#customerBlockTable {
+    width: 75% !important;
 }

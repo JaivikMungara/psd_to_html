@@ -320,7 +320,7 @@ $("#newServiceReqAccept").on('click', function () {
                     $("#alertPopup").modal("hide");
 
                 }, 3000);
-                alert(result);
+                // alert(result);
             }
 
         },
@@ -439,7 +439,7 @@ function getUpcomingServiceTable() {
 
         },
         error: function (error) {
-            console.log(error);
+            ////console.log(error);
         }
     });
 
@@ -467,11 +467,11 @@ $("#SPUpcomingServiceTable").click(function (e) {
 
 $(document).on('click', '.CompleteService', function () {
 
-    alert(serviceRequestId);
+    // alert(serviceRequestId);
 
     var data = {};
     data.ServiceRequestId = parseInt(serviceRequestId);
-    alert(data.ServiceRequestId);
+    // alert(data.ServiceRequestId);
     $.ajax({
         type: 'GET',
         url: '/ServiceProvider/CompleteService',
@@ -480,12 +480,16 @@ $(document).on('click', '.CompleteService', function () {
         success: function (result) {
 
             if (result == "true") {
-                alert("Service Request marked as completed");
+
+                document.getElementById("acceptAlert").click();
+                $('#NewServiceAcceptStatus').text("Service Request marked as completed").css("color", "Green");
                 window.location.reload();
 
             }
             else {
-                alert("opps! something went wrong");
+                document.getElementById("acceptAlert").click();
+                $('#NewServiceAcceptStatus').text("oops! something went wrong").css("color", "red");
+
 
             }
 
@@ -522,7 +526,8 @@ document.getElementById("SpCancelRequestBtn").addEventListener("click", function
                 window.location.reload();
             }
             else {
-                alert("fail");
+                document.getElementById("acceptAlert").click();
+                $('#NewServiceAcceptStatus').text("fail").css("color", "red");
             }
         },
         error: function () {
@@ -540,13 +545,17 @@ document.getElementById("SpCancelRequestBtn").addEventListener("click", function
 $(document).on('click', '#BlockCustomerTabBtn', function () {
 
 
+    if ($.fn.DataTable.isDataTable("#customerBlockTable")) {
+        $('#customerBlockTable').DataTable().clear().destroy();
+    }
+
 
     $.ajax({
         type: "GET",
         url: '/ServiceProvider/getCustomer',
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
         success: function (result) {
-            $('#customerGrid').empty();
+            $('#customerBlockTbody').empty();
 
 
 
@@ -569,20 +578,39 @@ $(document).on('click', '#BlockCustomerTabBtn', function () {
 
 
 
-                $('#customerGrid').append('<div  class="col-4 blockCard ">' +
-                    '<div>' +
-                    '<img class= "cap-icon" src = "~/images/cap.png " alt = ".." >' +
-                    '</div >' +
-                    '<br/>' +
-                    '<h3> ' + result[i].user.firstName + '  </h3>' +
-                    '<br/>' +
+                //'<div  class="col-4 blockCard ">' +
+                //    '<div>' +
+                //    '<img class= "cap-icon" src = "/image/cap.png " alt = ".." >' +
+                //    '</div >' +
+                //    '<br/>' +
+                //    '<h3> ' + result[i].user.firstName + '  </h3>' +
+                //    '<br/>' +
+                //    '<button id="' + result[i].user.userId + 'B" class="' + block + ' block-cust-btn">Block</button>' +
+                //    '<button id="' + result[i].user.userId + 'U" class="' + unblock + ' block-cust-btn">Un-Block</button>' +
+                //    '</div >'
+
+
+
+
+                var html = ' <tr class="blockCard">' +
+                    '<td class="d-block" > <img class= "cap-icon" src = "/images/cap.png " alt = ".." ></td>' +
+                    ' <td class="d-block"><h3> ' + result[i].user.firstName + '  </h3></td>' +
+                    '<td class="d-block">' +
                     '<button id="' + result[i].user.userId + 'B" class="' + block + ' block-cust-btn">Block</button>' +
                     '<button id="' + result[i].user.userId + 'U" class="' + unblock + ' block-cust-btn">Un-Block</button>' +
-                    '</div >'
-                )
+
+                    '</td>' +
+                    ' </tr >'
+
+
+
+                $('#customerBlockTbody').append(html)
+
+
+
             }
 
-
+            customerBlockDataTable();
 
 
 
@@ -591,7 +619,7 @@ $(document).on('click', '#BlockCustomerTabBtn', function () {
 
         },
         error: function (error) {
-            console.log(error);
+            ////console.log(error);
         }
     });
 
@@ -733,7 +761,7 @@ function getServiceHistoryTable() {
 
         },
         error: function (error) {
-            console.log(error);
+            //console.log(error);
         }
     });
 
@@ -829,7 +857,7 @@ function getsettingsdata() {
 
                 var dateOfBirth = result.user.dateOfBirth.split('T');
                 var dateOfBirthArray = dateOfBirth[0].split("-");
-                console.log(dateOfBirthArray);
+                //console.log(dateOfBirthArray);
                 $("#dateofbirth").val(dateOfBirthArray[2]);
                 $("#dateofmonth").val(dateOfBirthArray[1]);
                 $("#dobyear").val(dateOfBirthArray[0]);
@@ -858,7 +886,7 @@ function getsettingsdata() {
     });
 }
 $("#SPSettingspincode").keyup(function () {
-    console.log($("#SPSettingspincode").val());
+    //console.log($("#SPSettingspincode").val());
     if ($("#SPSettingspincode").val().length == 6) {
         getCityFromPostalCode($("#SPSettingspincode").val());
     }
@@ -875,7 +903,7 @@ function getCityFromPostalCode(zip) {
 
             }
             else {
-                console.log(result);
+                //console.log(result);
                 $("#SPSettingscity").val(result[0].PostOffice[0].District).prop("disabled", true);
                 $("#SPSettingsState").val(result[0].PostOffice[0].State).prop("disabled", true);
 
@@ -1157,10 +1185,10 @@ var Newservicerequest = new DataTable("#SPServiceRequestTable", {
     pagingType: "full_numbers",
     language: {
         paginate: {
-            first: "<img src='/images/pagination-first.png' alt='first' />",
-            previous: "<img src='/images/pagination-left.png' alt='previous' />",
-            next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-            last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+            first: "<img src='/images/first-page.png' alt='first' />",
+            previous: "<img src='/images/first-page.png' alt='previous' />",
+            next: "<img src='/images/first-page.png' alt='next' style='transform: rotate(180deg)' />",
+            last: "<img src='/images/first-page.png' alt='first' style='transform: rotate(180deg) ' />",
         },
 
         info: "Total Records : _MAX_",
@@ -1189,10 +1217,10 @@ function ServiceHistoryDatatable() {
         pagingType: "full_numbers",
         language: {
             paginate: {
-                first: "<img src='/images/pagination-first.png' alt='first'/>",
-                previous: "<img src='/images/pagination-left.png' alt='previous' />",
-                next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-                last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+                first: "<img src='/images/first-page.png' alt='first'/>",
+                previous: "<img src='/images/first-page.png' alt='previous' />",
+                next: "<img src='/images/first-page.png' alt='next' style='transform: rotate(180deg)' />",
+                last: "<img src='/images/first-page.png' alt='first' style='transform: rotate(180deg) ' />",
             },
 
             info: "Total Records : _MAX_",
@@ -1222,10 +1250,10 @@ function upcomingserviceDatatable() {
         pagingType: "full_numbers",
         language: {
             paginate: {
-                first: "<img src='/images/pagination-first.png' alt='first'/>",
-                previous: "<img src='/images/pagination-left.png' alt='previous' />",
-                next: "<img src='/images/pagination-left.png' alt='next' style='transform: rotate(180deg)' />",
-                last: "<img src='/images/pagination-first.png' alt='first' style='transform: rotate(180deg) ' />",
+                first: "<img src='/images/first-page.png' alt='first'/>",
+                previous: "<img src='/images/first-page.png' alt='previous' />",
+                next: "<img src='/images/first-page.png' alt='next' style='transform: rotate(180deg)' />",
+                last: "<img src='/images/first-page.png' alt='first' style='transform: rotate(180deg) ' />",
             },
 
             info: "Total Records : _MAX_",
@@ -1242,6 +1270,40 @@ function upcomingserviceDatatable() {
     });
 
 }
+
+
+
+
+
+
+
+function customerBlockDataTable() {
+    $("#customerBlockTable").DataTable({
+        dom: 't<"pagenum d-flex justify-content-between "<"pagenum-left"li><"pagenum-right"p>>',
+        responsive: true,
+        pagingType: "full_numbers",
+        language: {
+            paginate: {
+                first: "<img src='/images/first-page.png' alt='first'/>",
+                previous: "<img src='/images/first-page.png' alt='previous' />",
+                next: "<img src='/images/first-page.png' alt='next' style='transform: rotate(180deg)' />",
+                last: "<img src='/images/first-page.png' alt='first' style='transform: rotate(180deg) ' />",
+            },
+            info: "Total Records : _MAX_",
+
+        }
+
+    });
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1268,7 +1330,7 @@ function addServiceSchedule() {
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 
         success: function (result) {
-            console.log(result);
+            //console.log(result);
             var events = [];
             if (result != "false") {
 
@@ -1278,7 +1340,7 @@ function addServiceSchedule() {
                         bgColor = "#146371";
                     }
 
-                    console.log("result" + i + " : " + result[i].serviceRequestId);
+                    ////console.log("result" + i + " : " + result[i].serviceRequestId);
                     events.push({
                         id: result[i].serviceRequestId,
                         start: result[i].date,
@@ -1288,7 +1350,7 @@ function addServiceSchedule() {
                     });
                 }
 
-                console.log(events);
+                ////console.log(events);
 
                 calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: 'dayGridMonth',
@@ -1300,7 +1362,7 @@ function addServiceSchedule() {
                     events: events,
                     eventClick: function (info) {
 
-                        console.log(info.event.id);
+                        ////console.log(info.event.id);
                         serviceRequestId = info.event.id;
                         $("#spserviceReqdetailsbtn").click();
                     },
@@ -1308,7 +1370,8 @@ function addServiceSchedule() {
                 calendar.render();
             }
             else {
-                alert("something went wrong!");
+                document.getElementById("acceptAlert").click();
+                $('#NewServiceAcceptStatus').text("something went wrong").css("color", "red");
             }
         },
         error: function (error) {

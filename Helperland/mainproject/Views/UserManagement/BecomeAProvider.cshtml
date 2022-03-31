@@ -98,17 +98,17 @@ opacity: 1;">
 
                     <form asp-controller="UserManagement" asp-action="BecomeAProvider" method='post'>
                         <div>
-                            <span asp-validation-for="FirstName" class="formwarning"></span>
+                            <span asp-validation-for="FirstName"  class="formwarning alert-danger"></span>
                             <input type="text" id="fname"  asp-for="FirstName" placeholder="First name" />
                         </div>
                         <div style="padding-top: 15px;">
-                            <span asp-validation-for="LastName" class="formwarning"></span>
+                            <span asp-validation-for="LastName" class="formwarning alert-danger"></span>
 
                             <input type="text" asp-for="LastName" id="lname" placeholder="Last name" />
                         </div>
 
                         <div style="padding-top: 15px;">
-                            <span asp-validation-for="Email" class="formwarning"></span>
+                            <span asp-validation-for="Email" class="formwarning alert-danger"></span>
 
                             <input type="text" asp-for="Email" id="email" placeholder="email address" />
                         </div>
@@ -117,16 +117,18 @@ opacity: 1;">
                                 <p style="font-size: 16px;padding-left: 12px;padding-top: 11px;">+49</p>
                             </div>
                             <div>
+                                <span asp-validation-for="Mobile" class="formwarning alert-danger"></span>
+
                                 <input type="text" asp-for="Mobile" id="mobile" style="width: 305px;" placeholder="Mobile number" />
                             </div>
                         </div>
                         <div style="padding-top: 15px;">
-                            <span asp-validation-for="Password" class="formwarning"></span>
+                            <span asp-validation-for="Password" class="formwarning alert-danger"></span>
 
                             <input type="password" id="password" asp-for="Password" placeholder="password" />
                         </div>
                         <div style="padding-top: 15px;">
-                            <span asp-validation-for="ConfirmPassword" class="formwarning"></span>
+                            <span asp-validation-for="ConfirmPassword" class="formwarning alert-danger"></span>
 
                             <input type="password" id="conformpassword" asp-for="ConfirmPassword" placeholder="conform password" />
                         </div>

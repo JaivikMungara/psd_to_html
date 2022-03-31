@@ -25,8 +25,7 @@
 
     <div class="tab" id="verticaltab">
 
-
-        <button class="tablinks" onclick="Sp_TabNav(event, 'Dashboard')" id="DashboardTabBtn">Dashboard</button>
+        <button class="tablinks" id="DashboardTabBtn">Dashboard</button>
 
 
         <button class="tablinks" onclick="Sp_TabNav(event, 'NewServiceRequest')" id="NewServiceRequestTabBtn">
@@ -48,8 +47,8 @@
         <button class="tablinks" onclick="Sp_TabNav(event, 'ServiceHistory')" id="ServiceHistoryTabBtn">Service History</button>
         <button class="tablinks" onclick="Sp_TabNav(event, 'MyRating')" id="MyRatingTabBtn">My Rating</button>
         <button class="tablinks " onclick="Sp_TabNav(event, 'BlockCustomer')" id="BlockCustomerTabBtn">Block Customer</button>
-        <button class="tablinks " onclick="Sp_TabNav(event, 'Invoice')" id="InvoiceTabBtn">Invoice</button>
-        <button class="tablinks " onclick="Sp_TabNav(event, 'Notification')" id="SettingsTabBtn">Notification</button>
+        <button class="tablinks " id="InvoiceTabBtn">Invoice</button>
+        <button class="tablinks ">Notification</button>
         <button class="tablinks  " onclick="Sp_TabNav(event, 'SPSettings')" id="SettingsTabBtn">Settings</button>
 
 
@@ -64,6 +63,48 @@
     @await Html.PartialAsync("SpSettings")
     @await Html.PartialAsync("SpServiceSchedule")
 
+
+    <button type="button" class="btn btn-primary d-none" id="acceptAlert" data-bs-toggle="modal" data-bs-target="#alertPopup">
+        alert popup
+    </button>
+
+    <div class="modal fade" id="alertPopup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width:500px">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <h4 class="modal-title" id="NewServiceAcceptStatus">  </h4>
+                    <h5 id="Model_SID"></h5>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal" tabindex="-1" id="SPdeleteModelServiceRequest">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 500px">
+            <div class="modal-content">
+                <input type="hidden" id="CancelRequestId" name="CancelRequestId" />
+                <div class="modal-header">
+                    <h5 class="modal-title">Cancel Service Request</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Are you sure, want to cancel this request</h4>
+                    <div class="text-center">
+                        <button class="customerCancel" type="button" data-bs-dismiss="modal" class="mt-2 cancel" id="SpCancelRequestBtn">Yes, Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -94,3 +135,4 @@
 <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
 <script src="~/js/serviceProvider.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>

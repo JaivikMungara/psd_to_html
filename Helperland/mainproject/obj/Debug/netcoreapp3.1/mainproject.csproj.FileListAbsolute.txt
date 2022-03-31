@@ -462,3 +462,4 @@ C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Home\
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\SpSettings.cshtml.g.cs
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\SpServiceSchedule.cshtml.g.cs
 C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\navbar.cshtml.g.cs
+C:\Users\DELL\source\repos\mainproject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\logout.cshtml.g.cs
