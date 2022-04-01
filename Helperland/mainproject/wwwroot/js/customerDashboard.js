@@ -656,9 +656,9 @@ function getAddress() {
                         + '<td><p><strong> Address: </strong>' + result[i].addressLine1 + ", " + result[i].addressLine2 + ', ' + result[i].city + ' - ' + result[i].postalCode + '</p>'
                         + '<p><strong>Phone number: </strong>' + result[i].mobile + '</p></td>'
                         + '<td class="myAddressBtns"><button class="myAddressButton myAddressEditBtn" data-value=' + result[i].addressId + '>'
-                        + '<img src="/images/group-38.png" />  </button > '
+                        + '<img src="../images/group-38.png" />  </button > '
                         + '<button class="myAddressButton myAddressDeleteBtn" data-value=' + result[i].addressId + '>'
-                        + ' <img src="/images/group-38.png" class="deleteiconimg" /> </button> </td > </tr > '
+                        + ' <img src="../images/group-38.png" class="deleteiconimg" /> </button> </td > </tr > '
                     );
                 }
 

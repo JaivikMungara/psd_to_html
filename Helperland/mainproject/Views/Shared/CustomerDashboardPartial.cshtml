@@ -41,14 +41,16 @@
                                     <p>@item.ServiceRequestId</p>
                                 </td>
                                 <td data-label="Service Date">
-                                    <div> <img src="~/images/calendar2.png"/> @item.Date </div>
+                                    <div>
+                                        <img src="/images/calendar2.png" /> @item.Date
+                                    </div>
                                     
                                     <p class="service-time"> @item.StartTime - @item.EndTime </p>
                                 </td>
                                 <td data-label="Service Provider" class="clearfix">
                                     @if (item.ServiceProvider != null)
                                     {
-                                        <div class="cap-icon"> <img src=@item.UserProfilePicture class="spavtar" alt=".."> </div><div style="font-weight:400" class="text-start"> @item.ServiceProvider</div>
+                                        <div class="cap-icon"> <img src="/images/cap.png" class="spavtar" alt=".."> </div><div style="font-weight:400" class="text-start"> @item.ServiceProvider</div>
                                         <div>
                                             @for (int i = 1; i <= 5; i++)
                                             {
