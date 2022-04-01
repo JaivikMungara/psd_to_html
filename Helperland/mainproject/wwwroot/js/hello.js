@@ -433,7 +433,7 @@ function getAddress() {
                 console.log(result);
                 $("#alladdress").empty();
                 for (var i = 0; i < result.length; i++) {
-                    $("#alladdress").append('<tr data-value=' + result[i].addressId + ' >' + '<td><p><strong> Address: </strong>' + result[i].addressLine1 + ", " + result[i].addressLine2 + ', ' + result[i].city + ' - ' + result[i].postalCode + '</p>' + '<p><strong>Phone number: </strong>' + result[i].mobile + '</p></td>' + '<td class="myAddressBtns"><button class="myAddressButton myAddressEditBtn" data-value=' + result[i].addressId + '>' + '<img src="~/images/edit.jpg" />  </button > ' + '<button class="myAddressButton myAddressDeleteBtn" data-value=' + result[i].addressId + '>' + ' <img src="~/images/deleteiconadd.png" class="deleteiconimg" /> </button> </td > </tr > ');
+                    $("#alladdress").append('<tr data-value=' + result[i].addressId + ' >' + '<td><p><strong> Address: </strong>' + result[i].addressLine1 + ", " + result[i].addressLine2 + ', ' + result[i].city + ' - ' + result[i].postalCode + '</p>' + '<p><strong>Phone number: </strong>' + result[i].mobile + '</p></td>' + '<td class="myAddressBtns"><button class="myAddressButton myAddressEditBtn" data-value=' + result[i].addressId + '>' + '<img src="../images/group-38.png" alt="this is group-38" />  </button > ' + '<button class="myAddressButton myAddressDeleteBtn" data-value=' + result[i].addressId + '>' + ' <img src="~/images/deleteiconadd.png" class="deleteiconimg" /> </button> </td > </tr > ');
                 }
             } else { alert("something wrong"); }
         }, error: function () { alert("error"); }
